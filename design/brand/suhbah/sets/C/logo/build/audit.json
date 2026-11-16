@@ -1,0 +1,134 @@
+{
+  "schema": "brand-identity/audit@1",
+  "findings": [
+    {
+      "id": "logo.ids",
+      "component": "logo",
+      "severity": "info",
+      "measured": null,
+      "threshold": null,
+      "message": "symbol.svg: 2 element(s) without an id",
+      "suggested_fix": "give every primitive a semantic id so edits change one element per round"
+    },
+    {
+      "id": "logo.contrast",
+      "component": "logo",
+      "severity": "warn",
+      "measured": 2.16,
+      "threshold": ">= 3.0:1 (WCAG 2.2 SC 1.4.11, practice)",
+      "message": "full-color: brand-1 #3cc2c4 on #ffffff is 2.16:1",
+      "suggested_fix": "use a one-colour version on this ground, or declare logo.device tile|outline",
+      "roles": [
+        "brand-1"
+      ]
+    },
+    {
+      "id": "logo.contrast",
+      "component": "logo",
+      "severity": "warn",
+      "measured": 1.53,
+      "threshold": ">= 3.0:1 (WCAG 2.2 SC 1.4.11, practice)",
+      "message": "full-color: brand-2 #ffc94d on #ffffff is 1.53:1",
+      "suggested_fix": "use a one-colour version on this ground, or declare logo.device tile|outline",
+      "roles": [
+        "brand-2"
+      ]
+    },
+    {
+      "id": "logo.contrast",
+      "component": "logo",
+      "severity": "warn",
+      "measured": 2.16,
+      "threshold": ">= 3.0:1 (WCAG 2.2 SC 1.4.11, practice)",
+      "message": "on-light-background: brand-1 #3cc2c4 on #ffffff is 2.16:1",
+      "suggested_fix": "use a one-colour version on this ground, or declare logo.device tile|outline",
+      "roles": [
+        "brand-1"
+      ]
+    },
+    {
+      "id": "logo.contrast",
+      "component": "logo",
+      "severity": "warn",
+      "measured": 1.53,
+      "threshold": ">= 3.0:1 (WCAG 2.2 SC 1.4.11, practice)",
+      "message": "on-light-background: brand-2 #ffc94d on #ffffff is 1.53:1",
+      "suggested_fix": "use a one-colour version on this ground, or declare logo.device tile|outline",
+      "roles": [
+        "brand-2"
+      ]
+    },
+    {
+      "id": "logo.contrast",
+      "component": "logo",
+      "severity": "warn",
+      "measured": 2.16,
+      "threshold": ">= 3.0:1 (WCAG 2.2 SC 1.4.11, practice)",
+      "message": "symbol-only: brand-1 #3cc2c4 on #ffffff is 2.16:1",
+      "suggested_fix": "use a one-colour version on this ground, or declare logo.device tile|outline",
+      "roles": [
+        "brand-1"
+      ]
+    },
+    {
+      "id": "logo.light-swap",
+      "component": "logo",
+      "severity": "info",
+      "measured": 1.53,
+      "threshold": null,
+      "message": "symbol-only: brand-2 #ffc94d is 1.53:1 on #ffffff; drawn in the light text colour #171c26 (a colour stays only where it reads)",
+      "suggested_fix": null,
+      "roles": [
+        "brand-2"
+      ]
+    },
+    {
+      "id": "logo.light-swap",
+      "component": "logo",
+      "severity": "info",
+      "measured": 1.53,
+      "threshold": null,
+      "message": "favicon-16: brand-2 #ffc94d is 1.53:1 on #ffffff; drawn in the light text colour #171c26 (a colour stays only where it reads)",
+      "suggested_fix": null,
+      "roles": [
+        "brand-2"
+      ]
+    },
+    {
+      "id": "logo.light-swap",
+      "component": "logo",
+      "severity": "info",
+      "measured": 1.53,
+      "threshold": null,
+      "message": "favicon-32: brand-2 #ffc94d is 1.53:1 on #ffffff; drawn in the light text colour #171c26 (a colour stays only where it reads)",
+      "suggested_fix": null,
+      "roles": [
+        "brand-2"
+      ]
+    },
+    {
+      "id": "logo.light-swap",
+      "component": "logo",
+      "severity": "info",
+      "measured": 1.53,
+      "threshold": null,
+      "message": "favicon-48: brand-2 #ffc94d is 1.53:1 on #ffffff; drawn in the light text colour #171c26 (a colour stays only where it reads)",
+      "suggested_fix": null,
+      "roles": [
+        "brand-2"
+      ]
+    },
+    {
+      "id": "logo.small-size",
+      "component": "logo",
+      "severity": "warn",
+      "measured": {
+        "stroke_px2": 0.03,
+        "gap_px2": 10.22
+      },
+      "threshold": "1 px (raster erosion test, heuristic, uncalibrated)",
+      "message": "symbol at 16 px: features narrower than 1 px (lost 0.03 px², clogged 10.22 px²)",
+      "suggested_fix": "add or simplify symbol-small.svg: fewer, bolder parts"
+    }
+  ]
+}

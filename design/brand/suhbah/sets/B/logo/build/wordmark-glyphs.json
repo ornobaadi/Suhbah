@@ -1,0 +1,108 @@
+{
+ "units": "wordmark: cap height 100, cap top y=0, baseline y=100, x from the pen origin; index = data-glyph",
+ "text": "suhbah",
+ "glyphs": [
+  {
+   "index": 1,
+   "char": "s",
+   "x0": 3.87,
+   "x1": 74.55,
+   "pen_x": 0.0,
+   "advance": 77.27,
+   "cap_top": 0,
+   "baseline": 100,
+   "stems": []
+  },
+  {
+   "index": 2,
+   "char": "u",
+   "x0": 79.24,
+   "x1": 151.52,
+   "pen_x": 74.24,
+   "advance": 83.03,
+   "cap_top": 0,
+   "baseline": 100,
+   "stems": [
+    [
+     79.24,
+     101.21
+    ],
+    [
+     129.18,
+     151.52
+    ]
+   ]
+  },
+  {
+   "index": 3,
+   "char": "h",
+   "x0": 160.0,
+   "x1": 232.88,
+   "pen_x": 154.24,
+   "advance": 83.79,
+   "cap_top": 0,
+   "baseline": 100,
+   "stems": [
+    [
+     160.15,
+     182.85
+    ],
+    [
+     211.06,
+     232.88
+    ]
+   ]
+  },
+  {
+   "index": 4,
+   "char": "b",
+   "x0": 240.76,
+   "x1": 317.27,
+   "pen_x": 235.0,
+   "advance": 85.76,
+   "cap_top": 0,
+   "baseline": 100,
+   "stems": [
+    [
+     240.89,
+     262.58
+    ],
+    [
+     295.14,
+     317.27
+    ]
+   ]
+  },
+  {
+   "index": 5,
+   "char": "a",
+   "x0": 320.61,
+   "x1": 393.64,
+   "pen_x": 317.73,
+   "advance": 80.76,
+   "cap_top": 0,
+   "baseline": 100,
+   "stems": []
+  },
+  {
+   "index": 6,
+   "char": "h",
+   "x0": 401.21,
+   "x1": 474.09,
+   "pen_x": 395.45,
+   "advance": 83.79,
+   "cap_top": 0,
+   "baseline": 100,
+   "stems": [
+    [
+     401.36,
+     424.06
+    ],
+    [
+     452.27,
+     474.09
+    ]
+   ]
+  }
+ ]
+}

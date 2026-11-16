@@ -1,0 +1,39 @@
+{
+  "schema": "brand-identity/audit@1",
+  "findings": [
+    {
+      "id": "logo.ids",
+      "component": "logo",
+      "severity": "info",
+      "measured": null,
+      "threshold": null,
+      "message": "symbol.svg: 2 element(s) without an id",
+      "suggested_fix": "give every primitive a semantic id so edits change one element per round"
+    },
+    {
+      "id": "logo.small-size",
+      "component": "logo",
+      "severity": "warn",
+      "measured": {
+        "stroke_px2": 0.03,
+        "gap_px2": 10.22
+      },
+      "threshold": "1 px (raster erosion test, heuristic, uncalibrated)",
+      "message": "symbol at 16 px: features narrower than 1 px (lost 0.03 px², clogged 10.22 px²)",
+      "suggested_fix": "add or simplify symbol-small.svg: fewer, bolder parts"
+    },
+    {
+      "id": "logo.segment-lightness",
+      "component": "logo",
+      "severity": "warn",
+      "measured": 0.018,
+      "threshold": ">= 0.1 (to calibrate)",
+      "message": "symbol parts brand-1 #0b7d5e and brand-2 #c7224f touch and differ by OKLCH L 0.02: separated by hue alone",
+      "suggested_fix": "separate adjacent colour segments in lightness, not hue alone",
+      "roles": [
+        "brand-1",
+        "brand-2"
+      ]
+    }
+  ]
+}

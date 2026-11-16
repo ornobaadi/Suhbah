@@ -1,0 +1,28 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "suhbah-companion",
+          "appId": "1:453225929820:android:0ac06f1726ed66ce749a99",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "suhbah-companion",
+          "configurations": {
+            "android": "1:453225929820:android:0ac06f1726ed66ce749a99",
+            "ios": "1:453225929820:ios:39a935b7d4b78842749a99",
+            "macos": "1:453225929820:ios:39a935b7d4b78842749a99",
+            "web": "1:453225929820:web:981cdd0ee5f73965749a99",
+            "windows": "1:453225929820:web:2a2296400065ab6b749a99"
+          }
+        }
+      }
+    }
+  },
+  "firestore": {
+    "rules": "firestore.rules"
+  }
+}

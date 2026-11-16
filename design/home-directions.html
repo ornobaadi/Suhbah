@@ -1,0 +1,334 @@
+<title>Rafiq Home Directions</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Amiri:wght@400;700&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: a gallery of five phone frames, each a self-contained visual world; the page around them stays quiet. */
+:root{
+  --bg:#f3f4f1; --fg:#1d2420; --muted:#66706a; --line:#d9ddd6; --chip:#e7ebe4;
+  --ui:"Plus Jakarta Sans",system-ui,sans-serif; --mono:"JetBrains Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121614;--fg:#e8ece8;--muted:#9aa49d;--line:#2a312d;--chip:#1f2622;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121614;--fg:#e8ece8;--muted:#9aa49d;--line:#2a312d;--chip:#1f2622;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--ui);margin:0}
+.wrap{max-width:1500px;margin:0 auto;padding-block:40px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header.top{max-width:68ch;display:grid;gap:10px;margin-bottom:36px}
+header.top h1{font-size:clamp(26px,4vw,38px);margin:0;letter-spacing:-.02em;text-wrap:balance}
+header.top p{margin:0;color:var(--muted);line-height:1.6;font-size:15px}
+.state{font-family:var(--mono);font-size:12px;color:var(--muted);background:var(--chip);border-radius:6px;padding:8px 10px;width:fit-content;max-width:100%}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:48px 28px}
+.opt{display:grid;gap:14px;align-content:start;min-width:0}
+.opt .meta{display:grid;gap:6px}
+.opt .tag{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.opt h2{margin:0;font-size:20px;letter-spacing:-.01em}
+.opt p{margin:0;color:var(--muted);font-size:14px;line-height:1.55}
+.opt ul{margin:0;padding-left:18px;color:var(--muted);font-size:13px;line-height:1.6}
+
+/* phone frame */
+.phone{width:340px;max-width:100%;aspect-ratio:340/720;border-radius:40px;padding:10px;background:#0d0f0e;box-shadow:0 20px 50px -20px rgba(0,0,0,.35);margin:0 auto}
+.screen{width:100%;height:100%;border-radius:31px;overflow:hidden;position:relative;display:flex;flex-direction:column}
+.sb{display:flex;justify-content:space-between;padding:10px 22px 0;font-size:11px;font-weight:600;opacity:.75}
+.navbar{margin-top:auto;display:flex;justify-content:space-around;padding:10px 6px 14px;font-size:10px;font-weight:600}
+.navbar span{display:grid;justify-items:center;gap:3px;opacity:.5}
+.navbar span.on{opacity:1}
+.navbar i{width:18px;height:18px;border-radius:6px;display:block;background:currentColor;opacity:.85}
+.navbar span.on i{border-radius:50%}
+button{font:inherit;cursor:pointer;border:0}
+button:focus-visible{outline:2px solid #4c8;outline-offset:2px}
+
+/* ---------- 1. Together Arc ---------- */
+.v1{background:#fbf8f2;color:#20322c}
+.v1 .hd{display:flex;justify-content:space-between;align-items:center;padding:14px 20px 0}
+.v1 .bond{font-weight:700;font-size:15px}
+.v1 .bond small{display:block;font-weight:500;font-size:11px;color:#7b8a83}
+.v1 .streak{background:#f1e7d0;color:#7a5a17;font-size:12px;font-weight:700;padding:5px 10px;border-radius:99px}
+.v1 .arc{position:relative;margin:10px auto 0;width:280px;height:150px}
+.v1 .arc .c{position:absolute;left:0;right:0;bottom:6px;text-align:center}
+.v1 .arc .c b{font-size:44px;letter-spacing:-.03em;display:block;line-height:1}
+.v1 .arc .c span{font-size:11px;color:#7b8a83}
+.v1 .next{margin:14px 16px 0;background:#1f5c4d;color:#f4efe2;border-radius:20px;padding:14px 16px;display:flex;justify-content:space-between;align-items:center}
+.v1 .next b{font-size:18px;display:block}
+.v1 .next small{opacity:.75;font-size:11px}
+.v1 .next button{background:#e9c46a;color:#2a2410;font-weight:700;font-size:12px;padding:9px 14px;border-radius:99px}
+.v1 .pills{display:flex;gap:6px;margin:14px 16px 0}
+.v1 .pill{flex:1;border-radius:14px;background:#efeae0;padding:8px 0;text-align:center;font-size:11px;font-weight:700;color:#5e6c66;display:grid;gap:5px;justify-items:center}
+.v1 .pill .d{display:flex;gap:3px}
+.v1 .pill .d i{width:7px;height:7px;border-radius:50%;background:#d6d1c6}
+.v1 .pill.now{outline:1.5px dashed #1f5c4d}
+.v1 .cards{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 16px 0}
+.v1 .card{background:#fff;border:1px solid #eee6d6;border-radius:16px;padding:11px;font-size:11px;color:#6c7a74}
+.v1 .card b{display:block;color:#20322c;font-size:13px;margin-bottom:6px}
+.v1 .bar{height:6px;background:#efeae0;border-radius:9px;overflow:hidden}
+.v1 .bar i{display:block;height:100%;width:62%;background:linear-gradient(90deg,#1f5c4d 0 55%,#c9884a 55%)}
+.v1 .navbar{color:#1f5c4d}
+
+/* ---------- 2. Saff ---------- */
+.v2{background:#ffffff;color:#141414}
+.v2 .hd{padding:18px 22px 0;display:flex;justify-content:space-between;align-items:baseline}
+.v2 .hd b{font-size:13px;font-weight:700;letter-spacing:.02em}
+.v2 .hd span{font-size:12px;color:#888}
+.v2 .big{padding:18px 22px 0}
+.v2 .big .k{font-size:12px;color:#888}
+.v2 .big .n{font-family:"Fraunces",Georgia,serif;font-size:64px;line-height:1;letter-spacing:-.03em}
+.v2 .big .n small{font-size:20px;color:#888;letter-spacing:0}
+.v2 .rows{margin:22px 22px 0;display:grid;gap:14px}
+.v2 .cols,.v2 .row{display:grid;grid-template-columns:62px repeat(5,1fr);gap:6px;align-items:center}
+.v2 .cols span{font-size:10px;text-align:center;color:#999;font-weight:600;letter-spacing:.06em}
+.v2 .row .who{font-size:12px;font-weight:600;display:flex;align-items:center;gap:6px}
+.v2 .row .who i{width:9px;height:9px;border-radius:2px}
+.v2 .t{aspect-ratio:1;border-radius:10px;border:1.5px solid #e6e6e6}
+.v2 .t.a{background:#2f6f62;border-color:#2f6f62}
+.v2 .t.r{background:#b9733f;border-color:#b9733f}
+.v2 .t.m{background:#f1f1f1;border-color:#f1f1f1}
+.v2 .t.now{border-style:dashed;border-color:#141414}
+.v2 .note{margin:22px 22px 0;padding-top:16px;border-top:1px solid #eee;display:flex;justify-content:space-between;align-items:center;font-size:13px}
+.v2 .note small{display:block;color:#888;font-size:11px;margin-top:2px}
+.v2 .note button{background:#141414;color:#fff;border-radius:10px;padding:10px 14px;font-size:12px;font-weight:600}
+.v2 .sub{margin:16px 22px 0;display:flex;gap:18px;font-size:12px;color:#666}
+.v2 .sub b{color:#141414}
+.v2 .navbar{color:#141414;border-top:1px solid #f0f0f0}
+
+/* ---------- 3. Day Path ---------- */
+.v3{background:linear-gradient(180deg,#f3c9a0 0%,#e9a988 30%,#5b5f8f 78%,#2d2f55 100%);color:#fff}
+.v3 .hd{padding:16px 20px 0;display:flex;justify-content:space-between;font-size:12px}
+.v3 .hd b{font-size:15px}
+.v3 .hijri{opacity:.85}
+.v3 .sky{position:relative;height:220px;margin-top:6px}
+.v3 .sky svg{position:absolute;inset:0;width:100%;height:100%}
+.v3 .ttl{text-align:center;margin-top:-6px}
+.v3 .ttl .k{font-size:12px;opacity:.85}
+.v3 .ttl .n{font-size:30px;font-weight:800;letter-spacing:-.02em}
+.v3 .ttl .s{font-size:12px;opacity:.85}
+.v3 .glass{margin:16px 16px 0;background:rgba(255,255,255,.14);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.22);border-radius:22px;padding:14px}
+.v3 .mem{display:flex;justify-content:space-between;align-items:center;font-size:13px;padding:6px 0}
+.v3 .mem+.mem{border-top:1px solid rgba(255,255,255,.15)}
+.v3 .mem .dots{display:flex;gap:5px}
+.v3 .mem .dots i{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.25)}
+.v3 .mem .dots i.y{background:#ffe2a8}
+.v3 .mem .dots i.p{background:#bfe3d6}
+.v3 .cta{margin:12px 16px 0;display:flex;gap:8px}
+.v3 .cta button{flex:1;padding:12px;border-radius:16px;font-weight:700;font-size:13px}
+.v3 .cta .p{background:#fff;color:#2d2f55}
+.v3 .cta .g{background:rgba(255,255,255,.16);color:#fff}
+.v3 .navbar{color:#fff}
+
+/* ---------- 4. Mihrab ---------- */
+.v4{background:#0f3b3a;color:#efe6cf}
+.v4 .hd{padding:16px 20px 0;display:flex;justify-content:space-between;align-items:center}
+.v4 .hd b{font-size:14px;letter-spacing:.04em}
+.v4 .hd span{font-size:11px;border:1px solid rgba(232,200,120,.5);color:#e8c878;border-radius:99px;padding:4px 10px}
+.v4 .niy{text-align:center;font-size:11.5px;opacity:.7;margin:10px 30px 0;font-style:italic}
+.v4 .arch{position:relative;width:210px;height:250px;margin:14px auto 0}
+.v4 .arch svg{width:100%;height:100%}
+.v4 .arch .c{position:absolute;left:0;right:0;top:118px;text-align:center}
+.v4 .arch .c b{font-size:40px;color:#0f3b3a;display:block;line-height:1}
+.v4 .arch .c small{font-size:11px;color:#0f3b3a;font-weight:600}
+.v4 .five{display:flex;justify-content:center;gap:14px;margin-top:14px;font-size:10px;letter-spacing:.08em}
+.v4 .five span{display:grid;justify-items:center;gap:6px;opacity:.85}
+.v4 .five i{width:26px;height:26px;border-radius:50% 50% 6px 6px;border:1.5px solid rgba(232,200,120,.5)}
+.v4 .five i.f{background:#e8c878;border-color:#e8c878}
+.v4 .five i.h{background:linear-gradient(90deg,#e8c878 50%,transparent 50%)}
+.v4 .five i.now{border-style:dashed;border-color:#efe6cf}
+.v4 .bar{margin:18px 18px 0;background:rgba(255,255,255,.06);border:1px solid rgba(232,200,120,.25);border-radius:16px;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;font-size:12px}
+.v4 .bar b{display:block;font-size:14px;color:#fff}
+.v4 .bar button{background:#e8c878;color:#0f3b3a;font-weight:700;border-radius:12px;padding:9px 12px;font-size:12px}
+.v4 .navbar{color:#e8c878}
+
+/* ---------- 5. Next Prayer First ---------- */
+.v5{background:#eef1ec;color:#1b2a22}
+.v5 .hd{padding:16px 18px 0;display:flex;justify-content:space-between;align-items:center}
+.v5 .chip{background:#fff;border-radius:99px;padding:6px 10px 6px 6px;display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600}
+.v5 .chip i{width:20px;height:20px;border-radius:50%;display:inline-block}
+.v5 .hero{margin:14px 14px 0;background:#2e5e4e;color:#fff;border-radius:28px;padding:20px}
+.v5 .hero .k{font-size:12px;opacity:.75}
+.v5 .hero .n{font-size:48px;font-weight:800;letter-spacing:-.03em;line-height:1.05}
+.v5 .hero .s{font-size:13px;opacity:.85}
+.v5 .hero button{margin-top:16px;width:100%;background:#dff0c8;color:#1b2a22;border-radius:18px;padding:16px;font-weight:800;font-size:15px}
+.v5 .hero .alt{display:flex;justify-content:center;gap:16px;margin-top:10px;font-size:11px;opacity:.75}
+.v5 .duo{margin:12px 14px 0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.v5 .p{background:#fff;border-radius:20px;padding:12px}
+.v5 .p .who{font-size:12px;font-weight:700;display:flex;align-items:center;gap:6px}
+.v5 .p .who i{width:10px;height:10px;border-radius:50%}
+.v5 .p .seg{display:flex;gap:3px;margin:10px 0 8px}
+.v5 .p .seg i{flex:1;height:6px;border-radius:4px;background:#e3e7e1}
+.v5 .p small{font-size:11px;color:#6d7a72}
+.v5 .tog{margin:10px 14px 0;background:#fff;border-radius:20px;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;font-size:12px}
+.v5 .tog b{font-size:20px}
+.v5 .tog .ring{width:38px;height:38px;border-radius:50%;background:conic-gradient(#2e5e4e 0 75%,#e3e7e1 0)}
+.v5 .navbar{color:#2e5e4e;background:#fff;margin-top:auto}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <h1>Five ways to open the app</h1>
+    <p>Each phone shows the same moment so you can compare them fairly: Ayesha and Rafi's bond, Tuesday mid-afternoon. Fajr and Dhuhr have passed and Asr starts in 42 minutes. Ayesha prayed both. Rafi prayed Dhuhr; his Fajr shows as neutral grey, never red.</p>
+    <div class="state">Together so far: 3 of 4 = 75% · Shared streak 12 days · Next: Asr 4:12 PM</div>
+  </header>
+
+  <div class="grid">
+
+  <!-- 1 -->
+  <section class="opt">
+    <div class="phone"><div class="screen v1">
+      <div class="sb"><span>3:30</span><span>●●● 82%</span></div>
+      <div class="hd"><div class="bond">Ayesha &amp; Rafi<small>Tue · 14 Jumada I</small></div><div class="streak">12 days together</div></div>
+      <div class="arc">
+        <svg viewBox="0 0 280 150" aria-label="Together arc, 75 percent">
+          <g id="arcdots"></g>
+        </svg>
+        <div class="c"><b>75%</b><span>Together today · Yesterday 100%</span></div>
+      </div>
+      <div class="next"><div><small>Next prayer</small><b>Asr · 4:12 PM</b><small>in 42 min</small></div><button>Remind us</button></div>
+      <div class="pills">
+        <div class="pill">F<div class="d"><i style="background:#1f5c4d"></i><i></i></div></div>
+        <div class="pill">D<div class="d"><i style="background:#1f5c4d"></i><i style="background:#c9884a"></i></div></div>
+        <div class="pill now">A<div class="d"><i></i><i></i></div></div>
+        <div class="pill">M<div class="d"><i></i><i></i></div></div>
+        <div class="pill">I<div class="d"><i></i><i></i></div></div>
+      </div>
+      <div class="cards">
+        <div class="card"><b>Salawat goal</b>620 / 1,000 together<div class="bar" style="margin-top:7px"><i></i></div></div>
+        <div class="card"><b>Quran</b>Ayesha 4 pages<br>Rafi 2 pages</div>
+      </div>
+      <div class="navbar"><span class="on"><i></i>Together</span><span><i></i>Dhikr</span><span><i></i>Me</span><span><i></i>Settings</span></div>
+    </div></div>
+    <div class="meta">
+      <span class="tag">Direction 1</span>
+      <h2>Together Arc</h2>
+      <p>The PRD screen as written. A semicircle of dots, one per completed deed, in each person's color. Cream, deep emerald and a soft gold.</p>
+      <ul><li>Best for: the couple "feel" and screenshots for marketing</li><li>Tradeoff: the densest of the five; needs the most UI to build</li></ul>
+    </div>
+  </section>
+
+  <!-- 2 -->
+  <section class="opt">
+    <div class="phone"><div class="screen v2">
+      <div class="sb"><span>3:30</span><span>●●● 82%</span></div>
+      <div class="hd"><b>AYESHA &amp; RAFI</b><span>Tue 14 Jumada I</span></div>
+      <div class="big"><div class="k">Together today</div><div class="n">75<small>%</small></div></div>
+      <div class="rows">
+        <div class="cols"><span></span><span>FAJR</span><span>DHUHR</span><span>ASR</span><span>MAGH</span><span>ISHA</span></div>
+        <div class="row"><div class="who"><i style="background:#2f6f62"></i>Ayesha</div><div class="t a"></div><div class="t a"></div><div class="t now"></div><div class="t"></div><div class="t"></div></div>
+        <div class="row"><div class="who"><i style="background:#b9733f"></i>Rafi</div><div class="t m"></div><div class="t r"></div><div class="t now"></div><div class="t"></div><div class="t"></div></div>
+      </div>
+      <div class="note"><div>Asr at 4:12 PM<small>in 42 minutes</small></div><button>I prayed</button></div>
+      <div class="sub"><span><b>12</b> day streak</span><span><b>620</b>/1000 salawat</span></div>
+      <div class="navbar"><span class="on"><i></i>Today</span><span><i></i>Dhikr</span><span><i></i>Me</span></div>
+    </div></div>
+    <div class="meta">
+      <span class="tag">Direction 2</span>
+      <h2>Saff</h2>
+      <p>A <em>saff</em> is the row you stand in for prayer. Each member gets one row of five tiles, so the day reads like a grid. Plain white, one serif number.</p>
+      <ul><li>Best for: building in a week; it's mostly a grid</li><li>Tradeoff: rows side by side invite comparison, against "together over versus"</li></ul>
+    </div>
+  </section>
+
+  <!-- 3 -->
+  <section class="opt">
+    <div class="phone"><div class="screen v3">
+      <div class="sb"><span>3:30</span><span>●●● 82%</span></div>
+      <div class="hd"><b>Ayesha &amp; Rafi</b><span class="hijri">14 Jumada I</span></div>
+      <div class="sky">
+        <svg viewBox="0 0 320 220" aria-label="Path of the sun through today's prayers">
+          <path d="M20 190 Q160 -40 300 190" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="1.5" stroke-dasharray="3 5"/>
+          <g font-family="Plus Jakarta Sans,sans-serif" font-size="10" fill="#fff" text-anchor="middle">
+            <circle cx="34" cy="160" r="7" fill="#ffe2a8"/><circle cx="34" cy="160" r="3" fill="#bfe3d6" opacity="0"/><text x="34" y="182">Fajr</text>
+            <circle cx="160" cy="76" r="7" fill="#ffe2a8"/><text x="160" y="64">Dhuhr</text>
+            <circle cx="236" cy="104" r="9" fill="none" stroke="#fff" stroke-width="2"/><circle cx="214" cy="92" r="11" fill="#fff6dc"/><text x="246" y="126">Asr</text>
+            <circle cx="284" cy="164" r="6" fill="rgba(255,255,255,.3)"/><text x="284" y="184">Maghrib</text>
+            <circle cx="304" cy="206" r="5" fill="rgba(255,255,255,.2)"/>
+          </g>
+        </svg>
+      </div>
+      <div class="ttl"><div class="k">Asr in</div><div class="n">42 min</div><div class="s">Together today 75% · 12 day streak</div></div>
+      <div class="glass">
+        <div class="mem"><span>Ayesha</span><div class="dots"><i class="y"></i><i class="y"></i><i></i><i></i><i></i></div></div>
+        <div class="mem"><span>Rafi</span><div class="dots"><i></i><i class="p"></i><i></i><i></i><i></i></div></div>
+      </div>
+      <div class="cta"><button class="p">I prayed</button><button class="g">🤲 Send du'a</button></div>
+      <div class="navbar"><span class="on"><i></i>Today</span><span><i></i>Dhikr</span><span><i></i>Me</span></div>
+    </div></div>
+    <div class="meta">
+      <span class="tag">Direction 3</span>
+      <h2>Day Path</h2>
+      <p>The sun moving across the sky, with prayers as stops along its path. The background follows the real time of day: dawn pink, afternoon amber, night indigo.</p>
+      <ul><li>Best for: a memorable look; nobody else in the category does this</li><li>Tradeoff: five sky themes to tune, and contrast is harder at midday</li></ul>
+    </div>
+  </section>
+
+  <!-- 4 -->
+  <section class="opt">
+    <div class="phone"><div class="screen v4">
+      <div class="sb"><span>3:30</span><span>●●● 82%</span></div>
+      <div class="hd"><b>AYESHA &amp; RAFI</b><span>12 days</span></div>
+      <div class="niy">"To be among those who guard their prayers"</div>
+      <div class="arch">
+        <svg viewBox="0 0 210 250" aria-label="Mihrab filling to 75 percent">
+          <defs>
+            <clipPath id="mh"><path d="M10 250 V110 Q10 30 105 8 Q200 30 200 110 V250 Z"/></clipPath>
+            <pattern id="geo" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M12 0 L24 12 L12 24 L0 12Z" fill="none" stroke="rgba(15,59,58,.18)" stroke-width="1"/></pattern>
+          </defs>
+          <path d="M10 250 V110 Q10 30 105 8 Q200 30 200 110 V250 Z" fill="rgba(255,255,255,.04)" stroke="#e8c878" stroke-width="1.5"/>
+          <g clip-path="url(#mh)"><rect x="0" y="70" width="210" height="180" fill="#e8c878"/><rect x="0" y="70" width="210" height="180" fill="url(#geo)"/></g>
+        </svg>
+        <div class="c"><b>75%</b><small>together today</small></div>
+      </div>
+      <div class="five">
+        <span><i class="f"></i>FAJR</span><span><i class="f"></i>DHUHR</span><span><i class="now"></i>ASR</span><span><i></i>MAGH</span><span><i></i>ISHA</span>
+      </div>
+      <div class="bar"><div><b>Asr · 4:12 PM</b>in 42 min</div><button>Prayed</button></div>
+      <div class="navbar"><span class="on"><i></i>Together</span><span><i></i>Dhikr</span><span><i></i>Me</span></div>
+    </div></div>
+    <div class="meta">
+      <span class="tag">Direction 4</span>
+      <h2>Mihrab</h2>
+      <p>The bond's progress fills a prayer-niche arch with gold and a faint geometric pattern. Individual names are hidden; only the shared fill shows. The bond's intention sits above it.</p>
+      <ul><li>Best for: the "no comparison, sincerity first" principle</li><li>Tradeoff: least information at a glance; who-did-what lives one tap away</li></ul>
+    </div>
+  </section>
+
+  <!-- 5 -->
+  <section class="opt">
+    <div class="phone"><div class="screen v5">
+      <div class="sb"><span>3:30</span><span>●●● 82%</span></div>
+      <div class="hd"><div class="chip"><i style="background:#2e5e4e"></i>Ayesha &amp; Rafi ▾</div><div class="chip" style="padding-left:10px">12 days</div></div>
+      <div class="hero">
+        <div class="k">Next prayer</div>
+        <div class="n">Asr</div>
+        <div class="s">4:12 PM · in 42 min</div>
+        <button>Mark Dhuhr ✓ prayed</button>
+        <div class="alt"><span>Remind me later</span><span>Log another prayer</span></div>
+      </div>
+      <div class="duo">
+        <div class="p"><div class="who"><i style="background:#2e5e4e"></i>You</div><div class="seg"><i style="background:#2e5e4e"></i><i style="background:#2e5e4e"></i><i></i><i></i><i></i></div><small>2 so far today</small></div>
+        <div class="p"><div class="who"><i style="background:#c08a4a"></i>Rafi</div><div class="seg"><i></i><i style="background:#c08a4a"></i><i></i><i></i><i></i></div><small>Prayed Dhuhr · 🤲</small></div>
+      </div>
+      <div class="tog"><div>Together today<br><b>75%</b></div><div class="ring"></div></div>
+      <div class="navbar"><span class="on"><i></i>Home</span><span><i></i>Dhikr</span><span><i></i>Me</span></div>
+    </div></div>
+    <div class="meta">
+      <span class="tag">Direction 5</span>
+      <h2>Next Prayer First</h2>
+      <p>Built around one job: log the prayer you're on with one big button. Partners and the together score sit underneath. Sage green, Material 3 shapes.</p>
+      <ul><li>Best for: the one-week build and daily speed (P5, one tap)</li><li>Tradeoff: looks the most like a regular utility app</li></ul>
+    </div>
+  </section>
+
+  </div>
+</div>
+
+<script>
+// Direction 1: build the dotted arc. 20 dots; first 15 filled (75%), alternating member colors, misses stay grey.
+(function(){
+  var g=document.getElementById('arcdots'); if(!g) return;
+  var n=20, cx=140, cy=140, r=118, out='';
+  for(var i=0;i<n;i++){
+    var a=Math.PI - (Math.PI*i/(n-1));
+    var x=cx + r*Math.cos(a), y=cy - r*Math.sin(a);
+    var fill = i<15 ? (i%3===2 ? '#c9884a' : '#1f5c4d') : '#e4dfd4';
+    out+='<circle cx="'+x.toFixed(1)+'" cy="'+y.toFixed(1)+'" r="7" fill="'+fill+'"/>';
+  }
+  g.innerHTML=out;
+})();
+</script>

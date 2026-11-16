@@ -1,0 +1,45 @@
+{
+  "schema": "brand-identity/brief@1",
+  "brand": "Suhbah",
+  "tagline": "Pray together, even when apart.",
+  "site": null,
+  "languages": [
+    "en"
+  ],
+  "doc_lang": "en",
+  "numbers": true,
+  "components": {
+    "logo": "new",
+    "type": "new",
+    "palette": "new"
+  },
+  "sources": {},
+  "sets": 3,
+  "sector": "Shared worship tracker app for Muslims",
+  "audience": "Muslim couples, friends and small circles who want to keep up prayers, Quran and istighfar together",
+  "attributes": [
+    "warm",
+    "companionable",
+    "playful",
+    "calm"
+  ],
+  "competitors": [
+    "Muslim Pro",
+    "Pillars",
+    "Athan",
+    "Tarteel",
+    "Everyday Muslim"
+  ],
+  "axes": [],
+  "copy": {
+    "sentence": {
+      "en": "Two people, one arc. Log your prayers and watch your day fill up together."
+    },
+    "nav": [
+      "Today",
+      "Journey",
+      "Me"
+    ],
+    "cta": "Invite your Rafiq"
+  }
+}

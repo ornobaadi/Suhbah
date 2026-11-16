@@ -1,0 +1,496 @@
+{
+  "schema": "brand-identity/identity@1",
+  "brand": {
+    "name": "Suhbah",
+    "tagline": "Pray together, even when apart.",
+    "languages": [
+      "en"
+    ],
+    "doc_lang": "en",
+    "sector": "Shared worship tracker app for Muslims",
+    "numbers": true,
+    "copy": {
+      "sentence": {
+        "en": "Two people, one arc. Log your prayers and watch your day fill up together."
+      },
+      "nav": [
+        "Today",
+        "Journey",
+        "Me"
+      ],
+      "cta": "Invite your Rafiq"
+    }
+  },
+  "set": {
+    "id": "A",
+    "name": "Two Gardens",
+    "recommended": true,
+    "mechanism": "Two people, two colours, one arc: the mark is the app's own together arc, and the two halves are the only saturated colours on a clean white ground.",
+    "expression_move": "The two-colour arc is the only loud thing; everything else is ink on white.",
+    "differs_by": "Muslim Pro, Athan and Pillars lead with a single green or teal. Suhbah keeps a green half so it still reads as a Muslim app, and adds a crimson half that none of them use: the second person."
+  },
+  "axes": {
+    "warm_cool": -1,
+    "playful_serious": -1,
+    "quiet_loud": -1
+  },
+  "components": {
+    "logo": {
+      "mode": "new",
+      "status": "proposed",
+      "source": null,
+      "sha256": null
+    },
+    "type": {
+      "mode": "new",
+      "status": "proposed",
+      "source": null,
+      "sha256": null
+    },
+    "palette": {
+      "mode": "new",
+      "status": "proposed",
+      "source": null,
+      "sha256": null
+    }
+  },
+  "type": {
+    "pairing_mode": "contrast",
+    "display": {
+      "family": "Bricolage Grotesque",
+      "source": "google",
+      "license": "OFL-1.1",
+      "weights": [
+        700
+      ],
+      "location": {
+        "opsz": 96,
+        "wdth": 100,
+        "wght": 700
+      },
+      "features": [],
+      "case": "lower",
+      "tracking": -20,
+      "fallback": "system-ui, sans-serif",
+      "file": null
+    },
+    "text": {
+      "family": "Plus Jakarta Sans",
+      "source": "google",
+      "license": "OFL-1.1",
+      "weights": [
+        400,
+        600
+      ],
+      "location": {
+        "wght": 400
+      },
+      "features": [
+        "tnum"
+      ],
+      "case": "as-is",
+      "tracking": 0,
+      "fallback": "system-ui, sans-serif",
+      "file": null
+    },
+    "mono": null
+  },
+  "logo": {
+    "type": "symbol+wordmark",
+    "concept": "The together arc from the Today screen, drawn as three strokes split into two halves.",
+    "symbol": "logo/symbol.svg",
+    "wordmark": {
+      "text": "suhbah",
+      "role": "display",
+      "location": null,
+      "tracking": -20,
+      "case": "lower"
+    },
+    "monogram": null,
+    "lockups": [
+      "horizontal",
+      "stacked"
+    ],
+    "colors": {
+      "left": "brand-1",
+      "right": "brand-2",
+      "wordmark": "text"
+    },
+    "tags": [
+      "abstract-geometric"
+    ],
+    "clear_space": {
+      "unit": "cap-height",
+      "multiple": 1,
+      "inferred": true
+    },
+    "min_size": {
+      "px": 24,
+      "mm": 8
+    }
+  },
+  "palette": "palette.json",
+  "defaults_used": [],
+  "rationale": [
+    {
+      "claim": "The arc mark and both typefaces are kept from the app as the founder approved them; only the colours change between sets.",
+      "evidence": "practice",
+      "source": "DESIGN.md"
+    },
+    {
+      "claim": "Green conforms to the category while the crimson half is unshared among the named competitors.",
+      "evidence": "judgement",
+      "source": "designer"
+    }
+  ],
+  "derived": [
+    {
+      "file": "card.png",
+      "requires": [
+        "logo",
+        "type",
+        "palette"
+      ],
+      "inputs_sha256": "73c46b9cc10cb5a9cf82306a81446ceeb13e36030140361225f7ddbbfafddd9f"
+    }
+  ],
+  "audit": {
+    "schema": "brand-identity/audit@1",
+    "passed": true,
+    "counts": {
+      "gate": 0,
+      "warn": 12,
+      "info": 12
+    },
+    "findings": [
+      {
+        "id": "palette.distinct.light.success-primary",
+        "component": "palette",
+        "severity": "warn",
+        "measured": 5.35,
+        "threshold": 10.0,
+        "message": "light: success #087868 and primary #0b7d5e are only CIEDE2000 5.3 apart; users may read one as the other",
+        "suggested_fix": {
+          "change": "modes.light.success",
+          "from": "#087868",
+          "to": "#006253",
+          "how": "darken by OKLCH L -0.08, same hue"
+        },
+        "roles": [
+          "light.success",
+          "light.primary"
+        ]
+      },
+      {
+        "id": "palette.cvd.dark.protan.primary-accent",
+        "component": "palette",
+        "severity": "warn",
+        "measured": 9.19,
+        "threshold": 10.0,
+        "message": "dark: primary and accent collapse to CIEDE2000 9.2 for protanopia (#928b71 vs #8b8985)",
+        "suggested_fix": {
+          "change": "modes.dark.accent",
+          "from": "#ef7185",
+          "to": "#e3667b",
+          "how": "never carry meaning by colour alone (icon/label); or darken by OKLCH L -0.04, same hue"
+        },
+        "roles": [
+          "dark.primary",
+          "dark.accent"
+        ]
+      },
+      {
+        "id": "palette.isoluminant.light.primary-light.accent",
+        "component": "palette",
+        "severity": "warn",
+        "measured": 2.4,
+        "threshold": 12.0,
+        "message": "#0b7d5e and #c7224f are both saturated (C* 38/66) with almost equal lightness (Delta L* 2.4); edges between them vibrate and text on either is unreadable",
+        "suggested_fix": {
+          "change": "light.accent",
+          "from": "#c7224f",
+          "to": "#a30034",
+          "how": "darken by OKLCH L -0.10, same hue"
+        },
+        "roles": [
+          "light.primary",
+          "light.accent"
+        ]
+      },
+      {
+        "id": "palette.isoluminant.dark.primary-dark.accent",
+        "component": "palette",
+        "severity": "warn",
+        "measured": 7.8,
+        "threshold": 12.0,
+        "message": "#1d9673 and #ef7185 are both saturated (C* 42/52) with almost equal lightness (Delta L* 7.8); edges between them vibrate and text on either is unreadable",
+        "suggested_fix": {
+          "change": "dark.accent",
+          "from": "#ef7185",
+          "to": "#fd7e91",
+          "how": "lighten by OKLCH L +0.04, same hue"
+        },
+        "roles": [
+          "dark.primary",
+          "dark.accent"
+        ]
+      },
+      {
+        "id": "palette.structure.lightness-range",
+        "component": "palette",
+        "severity": "warn",
+        "measured": 2.4,
+        "threshold": 25,
+        "message": "brand and action colours span only Delta L* 2.4; without a clear light/dark step between them the palette reads flat (lightness contrast is the strongest harmony predictor, O'Donovan 2011)",
+        "suggested_fix": {
+          "change": "brand/accent",
+          "how": "move the accent (not a locked brand colour) at least 25 L* away from the primary"
+        },
+        "roles": [
+          "brand",
+          "light.primary",
+          "light.accent"
+        ]
+      },
+      {
+        "id": "palette.extended.ui.light.ext-1",
+        "component": "palette",
+        "severity": "warn",
+        "measured": 2.18,
+        "threshold": 3.0,
+        "message": "light: ext-1 #e9a21b is 2.18:1 on the light background #ffffff; as a stripe, chart series or thin line it needs 3:1 (WCAG 1.4.11)",
+        "suggested_fix": {
+          "change": "extended.ext-1",
+          "from": "#e9a21b",
+          "to": "#b0720a",
+          "how": "use ext-1-600 for stripes, chart series and thin lines"
+        },
+        "roles": [
+          "ext-1"
+        ]
+      },
+      {
+        "id": "palette.contrast.light.border-on-background",
+        "component": "palette",
+        "severity": "info",
+        "measured": 1.25,
+        "threshold": 3.0,
+        "message": "light: border #e3e7e5 on background #ffffff is 1.25:1, below 3.0:1 (borders: dividers are exempt, input outlines need 3:1; WCAG 2, no rounding)",
+        "suggested_fix": {
+          "change": "modes.light.border",
+          "from": "#e3e7e5",
+          "to": "#6a7671",
+          "how": "use neutral-500 (same scale)",
+          "ratio_after": 4.73
+        },
+        "roles": [
+          "light.border",
+          "light.background"
+        ]
+      },
+      {
+        "id": "palette.contrast.dark.border-on-background",
+        "component": "palette",
+        "severity": "info",
+        "measured": 1.89,
+        "threshold": 3.0,
+        "message": "dark: border #36453f on background #07120e is 1.89:1, below 3.0:1 (borders: dividers are exempt, input outlines need 3:1; WCAG 2, no rounding)",
+        "suggested_fix": {
+          "change": "modes.dark.border",
+          "from": "#36453f",
+          "to": "#6a7671",
+          "how": "use neutral-500 (same scale)",
+          "ratio_after": 4.03
+        },
+        "roles": [
+          "dark.border",
+          "dark.background"
+        ]
+      },
+      {
+        "id": "palette.gamut.brand-1",
+        "component": "palette",
+        "severity": "info",
+        "measured": 0.98,
+        "threshold": 0.9,
+        "message": "#0b7d5e sits at the sRGB gamut edge (98% of max chroma); vivid colours like this often fall outside CMYK process gamut: specify Lab D50 + tolerance, check with the printer, consider a spot colour",
+        "suggested_fix": null,
+        "roles": [
+          "brand-1"
+        ]
+      },
+      {
+        "id": "palette.gamut.brand-2",
+        "component": "palette",
+        "severity": "info",
+        "measured": 0.91,
+        "threshold": 0.9,
+        "message": "#c7224f sits at the sRGB gamut edge (91% of max chroma); vivid colours like this often fall outside CMYK process gamut: specify Lab D50 + tolerance, check with the printer, consider a spot colour",
+        "suggested_fix": null,
+        "roles": [
+          "brand-2"
+        ]
+      },
+      {
+        "id": "palette.structure.greyscale.brand-1-brand-2",
+        "component": "palette",
+        "severity": "info",
+        "measured": 2.4,
+        "threshold": 15.0,
+        "message": "#0b7d5e and #c7224f differ by only Delta L* 2.4; side by side in a logo they merge in greyscale/one-colour print",
+        "suggested_fix": null,
+        "roles": [
+          "brand-1",
+          "brand-2"
+        ]
+      },
+      {
+        "id": "palette.harmony.primary-accent",
+        "component": "palette",
+        "severity": "info",
+        "measured": -0.99,
+        "threshold": -0.3,
+        "message": "Ou-Luo two-colour model scores #0b7d5e + #c7224f at -0.99 (negative = less harmonious on a grey CRT test, no context): model signal only; the pairing table in references/pairing.md takes precedence",
+        "suggested_fix": null,
+        "roles": [
+          "light.primary",
+          "light.accent"
+        ]
+      },
+      {
+        "id": "type.display.coverage.en_Latn.extended",
+        "component": "type",
+        "severity": "info",
+        "measured": "95/102",
+        "threshold": "100% auxiliary + punctuation",
+        "message": "Bricolage Grotesque lacks English auxiliary/punctuation characters: Ĕ Ĭ Ŏ ĕ ĭ ŏ ʻ",
+        "suggested_fix": "fine if the brand never writes them (loanwords, names); else another family"
+      },
+      {
+        "id": "type.display.confusables",
+        "component": "type",
+        "severity": "info",
+        "measured": 0.941,
+        "threshold": "0.9 (heuristic, uncalibrated)",
+        "message": "Bricolage Grotesque: I/l look alike at small sizes (IoU 0.94 at 48 px)",
+        "suggested_fix": "no ss/cv alternates; choose another face for small text and data"
+      },
+      {
+        "id": "type.display.web-weight",
+        "component": "type",
+        "severity": "info",
+        "measured": 126,
+        "threshold": null,
+        "message": "Bricolage Grotesque: ~126 KB WOFF2 for the brief's characters (one variable file, all weights; estimate)",
+        "suggested_fix": null
+      },
+      {
+        "id": "type.text.coverage.en_Latn.extended",
+        "component": "type",
+        "severity": "info",
+        "measured": "101/102",
+        "threshold": "100% auxiliary + punctuation",
+        "message": "Plus Jakarta Sans lacks English auxiliary/punctuation characters: ʻ",
+        "suggested_fix": "fine if the brand never writes them (loanwords, names); else another family"
+      },
+      {
+        "id": "type.text.confusables",
+        "component": "type",
+        "severity": "warn",
+        "measured": 0.925,
+        "threshold": "0.9 (heuristic, uncalibrated)",
+        "message": "Plus Jakarta Sans: I/l look alike at small sizes (IoU 0.93 at 48 px)",
+        "suggested_fix": "try ss01 'Lancip Alternates', ss02 'Lurus Alternates', ss03 'Lingkar Alternates'"
+      },
+      {
+        "id": "type.text.web-weight",
+        "component": "type",
+        "severity": "info",
+        "measured": 27,
+        "threshold": null,
+        "message": "Plus Jakarta Sans: ~27 KB WOFF2 for the brief's characters (one variable file, all weights; estimate)",
+        "suggested_fix": null
+      },
+      {
+        "id": "logo.ids",
+        "component": "logo",
+        "severity": "info",
+        "measured": null,
+        "threshold": null,
+        "message": "symbol.svg: 2 element(s) without an id",
+        "suggested_fix": "give every primitive a semantic id so edits change one element per round"
+      },
+      {
+        "id": "logo.small-size",
+        "component": "logo",
+        "severity": "warn",
+        "measured": {
+          "stroke_px2": 0.03,
+          "gap_px2": 10.22
+        },
+        "threshold": "1 px (raster erosion test, heuristic, uncalibrated)",
+        "message": "symbol at 16 px: features narrower than 1 px (lost 0.03 px², clogged 10.22 px²)",
+        "suggested_fix": "add or simplify symbol-small.svg: fewer, bolder parts"
+      },
+      {
+        "id": "logo.segment-lightness",
+        "component": "logo",
+        "severity": "warn",
+        "measured": 0.018,
+        "threshold": ">= 0.1 (to calibrate)",
+        "message": "symbol parts brand-1 #0b7d5e and brand-2 #c7224f touch and differ by OKLCH L 0.02: separated by hue alone",
+        "suggested_fix": "separate adjacent colour segments in lightness, not hue alone",
+        "roles": [
+          "brand-1",
+          "brand-2"
+        ]
+      },
+      {
+        "id": "default.gold-brass-accent",
+        "component": "cohesion",
+        "severity": "warn",
+        "measured": null,
+        "threshold": null,
+        "message": "matches the AI-defaults list (gold-brass-accent) without a brief-grounded reason",
+        "suggested_fix": "justify it in defaults_used[] from the brief, or change it"
+      },
+      {
+        "id": "cohesion.sets-close",
+        "component": "cohesion",
+        "severity": "warn",
+        "measured": [
+          "A–B",
+          "B–C"
+        ],
+        "threshold": "2 axes, 2 steps",
+        "message": "sets too alike on the axes: A–B, B–C differ by 2+ steps on fewer than 2 axes (heuristic)",
+        "suggested_fix": null
+      },
+      {
+        "id": "cohesion.no-default-free-set",
+        "component": "cohesion",
+        "severity": "warn",
+        "measured": null,
+        "threshold": null,
+        "message": "every set uses at least one AI-defaults item; build one set without any",
+        "suggested_fix": null
+      }
+    ],
+    "defaults": {
+      "matched": [
+        "gold-brass-accent"
+      ]
+    }
+  },
+  "palette_build": {
+    "strategy": null,
+    "accent": null,
+    "light_bg": "#FFFFFF",
+    "dark_bg": null,
+    "neutral_tint": null,
+    "neutral_chroma": null,
+    "extra": [
+      "#E9A21B:Saffron:streak flame and celebration only"
+    ]
+  }
+}

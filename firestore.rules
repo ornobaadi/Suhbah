@@ -1,0 +1,46 @@
+rules_version = '2';
+
+// Suhbah: each user owns their profile and daily logs. A partner can read
+// them only while both are members of the same pair.
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() { return request.auth != null; }
+    function me() { return request.auth.uid; }
+
+    function pairedWith(uid) {
+      let myPair = get(/databases/$(database)/documents/users/$(me())).data.get('pairId', null);
+      return myPair != null
+        && exists(/databases/$(database)/documents/pairs/$(myPair))
+        && get(/databases/$(database)/documents/pairs/$(myPair)).data.members.hasAll([me(), uid]);
+    }
+
+    match /users/{uid} {
+      allow read: if signedIn() && (uid == me() || pairedWith(uid));
+      allow write: if signedIn() && uid == me();
+
+      match /days/{day} {
+        allow read: if signedIn() && (uid == me() || pairedWith(uid));
+        allow write: if signedIn() && uid == me();
+      }
+    }
+
+    match /pairs/{code} {
+      // Open pairs (one member) can be read by anyone signed in, so a joiner can check the code.
+      allow read: if signedIn() && (resource == null || resource.data.members.size() < 2 || me() in resource.data.members);
+      allow create: if signedIn() && request.resource.data.members == [me()];
+      allow update: if signedIn()
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['members'])
+        && (
+          // join: add myself to a one-member pair
+          (resource.data.members.size() == 1 && !(me() in resource.data.members)
+            && request.resource.data.members.hasAll(resource.data.members)
+            && request.resource.data.members.size() == 2
+            && me() in request.resource.data.members)
+          // leave: remove only myself
+          || (me() in resource.data.members
+            && !(me() in request.resource.data.members)
+            && request.resource.data.members.size() == resource.data.members.size() - 1)
+        );
+    }
+  }
+}

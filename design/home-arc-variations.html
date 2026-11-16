@@ -1,0 +1,248 @@
+<title>Rafiq Arc Variations</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: gallery of five phones. Each phone is its own world, themed through per-screen tokens; the page frame stays neutral. */
+:root{
+  --bg:#f2f3f1; --fg:#1b201d; --muted:#67706b; --chip:#e5e8e3;
+  --ui:"Plus Jakarta Sans",system-ui,sans-serif;
+  --display:"Bricolage Grotesque","Plus Jakarta Sans",system-ui,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#111412;--fg:#e9ece9;--muted:#9aa39d;--chip:#1e2421;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#111412;--fg:#e9ece9;--muted:#9aa39d;--chip:#1e2421;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--ui);margin:0}
+.wrap{max-width:1560px;margin:0 auto;padding-block:40px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.top{max-width:70ch;display:grid;gap:10px;margin-bottom:36px}
+.top h1{font-family:var(--display);font-weight:800;font-size:clamp(28px,4vw,40px);margin:0;letter-spacing:-.02em;text-wrap:balance}
+.top p{margin:0;color:var(--muted);line-height:1.6;font-size:15px}
+.state{font-family:var(--mono);font-size:12px;color:var(--muted);background:var(--chip);border-radius:6px;padding:8px 10px;width:fit-content;max-width:100%}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:52px 28px}
+.opt{display:grid;gap:14px;align-content:start;min-width:0}
+.meta{display:grid;gap:6px}
+.tag{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.meta h2{margin:0;font-family:var(--display);font-size:22px;letter-spacing:-.01em}
+.meta p{margin:0;color:var(--muted);font-size:14px;line-height:1.55}
+.meta ul{margin:0;padding-left:18px;color:var(--muted);font-size:13px;line-height:1.6}
+
+/* ---- phone shell ---- */
+.phone{width:340px;max-width:100%;aspect-ratio:340/740;border-radius:42px;padding:10px;background:#0c0e0d;box-shadow:0 24px 50px -22px rgba(0,0,0,.4);margin:0 auto}
+.screen{--bg:#fff;--ink:#111;--sub:#777;--card:#fff;--line:#eee;--A:#38f;--B:#f58;--pill:#fdf0d8;--pillInk:#8a5a10;
+  width:100%;height:100%;border-radius:33px;overflow:hidden;position:relative;background:var(--bg);color:var(--ink);font-family:var(--ui)}
+.sb{display:flex;justify-content:space-between;padding:10px 22px 0;font-size:11px;font-weight:600;opacity:.7}
+.hd{display:flex;align-items:center;justify-content:space-between;padding:10px 18px 0}
+.logo{display:flex;align-items:center;gap:7px;font-family:var(--display);font-weight:700;font-size:16px}
+.logo svg{width:20px;height:20px}
+.hdr{display:flex;align-items:center;gap:10px;font-size:12px;font-weight:700}
+.hdr .st{display:flex;align-items:center;gap:4px}
+.hdr .av{width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,var(--A) 50%,var(--B) 50%)}
+.arcwrap{position:relative;margin:4px auto 0;width:300px;max-width:100%}
+.arcwrap svg{width:100%;display:block;overflow:visible}
+.num{position:absolute;left:0;right:0;bottom:0;text-align:center;line-height:.86}
+.num b{font-family:var(--display);font-weight:800;font-size:78px;letter-spacing:-.04em;display:block}
+.num span{font-family:var(--display);font-weight:800;font-size:13px;letter-spacing:.14em}
+.under{display:grid;justify-items:center;gap:8px;margin-top:10px}
+.legend{display:flex;gap:12px;font-size:11px;color:var(--sub)}
+.legend i{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:4px;vertical-align:1px}
+.yest{background:var(--pill);color:var(--pillInk);font-family:var(--display);font-weight:800;font-size:11px;letter-spacing:.08em;padding:6px 12px;border-radius:99px}
+.yest em{font-style:normal;opacity:.75;margin-right:4px}
+.sec{padding:16px 16px 0}
+.sec h3{margin:0;font-family:var(--display);font-weight:800;font-size:17px}
+.sec .ss{font-size:11px;color:var(--sub);margin-top:2px}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:10px 16px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:11px 12px;min-width:0}
+.card.wide{grid-column:1/-1}
+.ct{display:flex;justify-content:space-between;align-items:center;font-size:12px;font-weight:700}
+.ct span{font-weight:500;color:var(--sub);font-size:10.5px}
+/* mirrored prayer card (formula: two people meet in the middle) */
+.mirror{display:grid;grid-template-columns:1fr 26px 1fr;align-items:center;gap:6px;margin-top:9px}
+.segs{display:flex;gap:3px}
+.segs.r{flex-direction:row-reverse}
+.seg{flex:1;height:22px;border-radius:5px;transform:skewX(-10deg)}
+.segs.r .seg{transform:skewX(10deg)}
+.mid{width:26px;height:26px;border-radius:50%;background:var(--line);display:grid;place-items:center}
+.mid svg{width:14px;height:14px}
+.lbls{display:grid;grid-template-columns:1fr 26px 1fr;gap:6px;margin-top:5px;font-size:9px;font-weight:700;color:var(--sub);letter-spacing:.05em}
+.lbls div{display:flex;justify-content:space-around}
+.lbls .r{flex-direction:row-reverse}
+/* dhikr ring */
+.ring{width:66px;height:66px;border-radius:50%;margin:8px auto 4px;display:grid;place-items:center}
+.ring div{width:46px;height:46px;border-radius:50%;background:var(--card);display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:12px}
+.cap{text-align:center;font-size:10.5px;color:var(--sub)}
+/* quran book */
+.book{display:flex;justify-content:center;gap:2px;margin:9px 0 4px}
+.page{width:32px;height:44px;border:1.5px solid var(--line);position:relative;overflow:hidden;background:var(--card)}
+.page.l{border-radius:8px 2px 2px 8px}.page.r{border-radius:2px 8px 8px 2px}
+.page i{position:absolute;left:0;right:0;bottom:0}
+.vals{display:flex;justify-content:center;gap:14px;font-family:var(--display);font-weight:800;font-size:13px}
+/* bottom nav */
+.nav{position:absolute;left:0;right:0;bottom:0;display:flex;align-items:center;justify-content:space-around;padding:10px 12px 16px;background:var(--bg);border-top:1px solid var(--line);font-size:10px;font-weight:600;color:var(--sub)}
+.nav span{display:grid;justify-items:center;gap:3px}
+.nav span i{width:18px;height:3px;border-radius:2px;background:currentColor;opacity:.4}
+.nav .on{color:var(--ink)}
+.nav .on i{opacity:1;background:var(--A)}
+.fab{position:absolute;right:16px;bottom:66px;width:50px;height:50px;border-radius:16px;background:var(--ink);color:var(--bg);display:grid;place-items:center;font-size:24px;font-weight:300;box-shadow:0 8px 18px -8px rgba(0,0,0,.5)}
+
+/* prayer list (variation 2) */
+.plist{display:grid;gap:5px;padding:10px 16px 0}
+.pr{display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:8px 12px;font-size:12.5px;font-weight:700}
+.pr small{font-weight:500;color:var(--sub);margin-left:6px;font-size:11px}
+.pr .bd{display:flex;gap:4px}
+.pr .bd i{width:13px;height:13px;border-radius:50%}
+.pr .now{font-size:10px;color:var(--A);font-weight:700}
+/* timeline (variation 5) */
+.tl{position:relative;display:flex;justify-content:space-between;padding:12px 6px 4px}
+.tl:before{content:"";position:absolute;left:18px;right:18px;top:27px;height:2px;background:var(--line)}
+.stop{position:relative;display:grid;justify-items:center;gap:5px;font-size:9.5px;font-weight:700;color:var(--sub);letter-spacing:.04em}
+.dd{width:30px;height:30px;border-radius:50%;overflow:hidden;display:flex;border:2px solid var(--card)}
+.dd i{flex:1}
+
+/* ---- per-variation tokens ---- */
+.t1{--bg:#eef4f2;--ink:#11201b;--sub:#6b7c75;--card:#fbfdfc;--line:#dfe8e4;--A:#2a9d8f;--B:#e59a2f;--pill:#fbeacb;--pillInk:#8d5a10}
+.t2{--bg:#f7f4fb;--ink:#1d1830;--sub:#7a7290;--card:#fff;--line:#ebe5f3;--A:#5468d9;--B:#bb4f93;--pill:#efe8fb;--pillInk:#4b3c86}
+.t3{--bg:#0d2627;--ink:#f2ecdc;--sub:#8fb1aa;--card:#133233;--line:#1f4344;--A:#76d3b6;--B:#f0c36a;--pill:#1d3f3c;--pillInk:#f0c36a}
+.t4{--bg:#f3eee6;--ink:#2a2018;--sub:#857565;--card:#fbf8f3;--line:#e6ddd0;--A:#1d6e74;--B:#c96a43;--pill:#e8dccb;--pillInk:#6a4a2c}
+.t5{--bg:#ffffff;--ink:#0f1222;--sub:#7b8094;--card:#f5f6fa;--line:#eceef4;--A:#3a7bff;--B:#ff8a5c;--pill:#eef3ff;--pillInk:#2a56c2}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <h1>The together arc, five ways</h1>
+    <p>All five keep the formula from your references: two people's dots meet in one arc, a huge "together" number sits in the middle, a "yesterday" pill below, then a Today's Progress section where every card shows both people side by side. What changes is the shape, the material and how worship maps onto each card.</p>
+    <div class="state">Same moment in every phone · After Maghrib · Ayesha: 5 of 5 done · Rafi: 2 of 4 done (Fajr not logged) · Together 7 of 9 = 78% · Isha at 6:49 PM</div>
+  </header>
+  <div class="grid" id="grid"></div>
+</div>
+
+<script>
+var V = [
+  {cls:'t1', shape:'semi', tag:'Variation 1', name:'Crescent Split', label:'TOGETHER TODAY', cards:'formula',
+   desc:'Closest to the reference. Three rows of dots in a half circle, teal for Ayesha on the left, amber for Rafi on the right. The Prayers card mirrors both people around a crescent, the way the reference mirrors sleep around a moon.',
+   pros:['Most proven layout, easy to read at a glance','Tradeoff: closest to the original, so it needs its own colors and copy to stand apart']},
+  {cls:'t2', shape:'beads', tag:'Variation 2', name:'Tasbih', label:'DHIKR & PRAYER TOGETHER', cards:'list',
+   desc:'The arc is a string of prayer beads with a larger imam bead at the top. Beads fill in each person\'s color as they log. Below it, the five prayers are a simple list with two beads per row.',
+   pros:['Instantly reads as Islamic without any extra icons','Tradeoff: one row of beads holds fewer dots, so progress steps look bigger']},
+  {cls:'t3', shape:'dome', tag:'Variation 3', name:'Night Dome', label:'TOGETHER TONIGHT', cards:'formula',
+   desc:'A dark, evening version where the arc is a dome with a crescent finial on top. Mint and gold on deep green. It could switch to this theme automatically after Maghrib.',
+   pros:['Calm at night, when Isha and Fajr reminders land','Tradeoff: needs a matching light theme for the daytime']},
+  {cls:'t4', shape:'pointed', tag:'Variation 4', name:'Arch', label:'TOGETHER TODAY', cards:'bento',
+   desc:'The dots trace a pointed Islamic arch instead of a half circle, like a mosque window. Warm sand with deep teal and terracotta. A 2x2 grid below covers prayers, dhikr, Quran and adhkar.',
+   pros:['Most distinctive silhouette; works well as an app icon and share card','Tradeoff: the arch is taller, so the cards start lower on the screen']},
+  {cls:'t5', shape:'gap', tag:'Variation 5', name:'Two Halves', label:'', cards:'timeline',
+   desc:'Each person gets their own half of the arc, with a gap and a crescent at the top where they meet. Crisp white with blue and coral. Prayers show as a timeline from Fajr to Isha, each stop split between the two of you.',
+   pros:['Clearest for duos; you always know which side is yours','Tradeoff: the gap makes it look more like two separate scores']}
+];
+
+// Today's state. 1 = done, 0 = not done (pale, never red), 2 = upcoming
+var A = {name:'Ayesha', prayers:[1,1,1,1,2], adhkar:[1,1], quran:4, dhikr:400};
+var B = {name:'Rafi',   prayers:[0,1,1,0,2], adhkar:[0,0], quran:2, dhikr:220};
+var PR = ['Fajr','Dhuhr','Asr','Maghrib','Isha'], PT=['5:02','12:10','3:34','5:31','6:49'];
+var aFill = 1.0, bFill = 0.5;
+
+var crescent = '<svg viewBox="0 0 24 24"><path d="M15 3a9 9 0 1 0 6 15.5A7.5 7.5 0 0 1 15 3z" fill="currentColor"/></svg>';
+
+function pt(shape, t, R, cx, cy){
+  if(shape==='pointed'){
+    var e=40, w=R, Rr=w+e, phi=Math.acos(-e/Rr), left=t<=.5, u=left? t/.5 : (1-t)/.5;
+    var a=Math.PI - u*(Math.PI-phi), x=cx+e+Rr*Math.cos(a), y=cy-Rr*Math.sin(a);
+    return left? [x,y] : [2*cx-x,y];
+  }
+  var ry = shape==='dome' ? R*1.12 : R, a=Math.PI*(1-t);
+  return [cx+R*Math.cos(a), cy-ry*Math.sin(a)];
+}
+
+function arcSVG(v){
+  var W=300, H = v.shape==='pointed'?190 : v.shape==='dome'?175 : 160, cx=150, cy=H-6, out='';
+  var rings = v.shape==='beads' ? [{R:132,n:25,r:8.5}] : [{R:132,n:23,r:6.6},{R:115,n:20,r:6.6},{R:98,n:17,r:6.6}];
+  if(v.shape==='beads'){
+    var d=''; for(var k=0;k<=60;k++){var p=pt('semi',k/60,132,cx,cy); d+=(k?'L':'M')+p[0].toFixed(1)+' '+p[1].toFixed(1);}
+    out+='<path d="'+d+'" fill="none" stroke="var(--line)" stroke-width="2"/>';
+  }
+  rings.forEach(function(g){
+    for(var i=0;i<g.n;i++){
+      var t=i/(g.n-1);
+      if(v.shape==='gap' && Math.abs(t-.5)<.09) continue;
+      if(v.shape==='beads' && i===(g.n-1)/2) continue;
+      var p=pt(v.shape==='beads'?'semi':v.shape,t,g.R,cx,cy), left=t<.5;
+      var frac = left ? t/.5 : (1-t)/.5;
+      var on = left ? frac <= aFill+1e-6 : frac <= bFill;
+      var col = left ? 'var(--A)' : 'var(--B)';
+      if(Math.abs(t-.5)<1e-6) col='var(--A)';
+      out+='<circle cx="'+p[0].toFixed(1)+'" cy="'+p[1].toFixed(1)+'" r="'+g.r+'" fill="'+col+'"'+(on?'':' opacity=".22"')+'/>';
+    }
+  });
+  var topY = pt(v.shape==='beads'?'semi':v.shape,.5,132,cx,cy)[1];
+  if(v.shape==='beads') out+='<circle cx="150" cy="'+topY+'" r="12" fill="var(--ink)"/><path d="M150 '+(topY-12)+' v-10" stroke="var(--ink)" stroke-width="2"/>';
+  if(v.shape==='dome'||v.shape==='gap') out+='<g transform="translate(139 '+(topY-(v.shape==='dome'?30:12))+')" color="var(--B)"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M15 3a9 9 0 1 0 6 15.5A7.5 7.5 0 0 1 15 3z" fill="currentColor"/></svg></g>';
+  if(v.label){
+    var lr=146, id='lp'+v.cls, a0=Math.PI*0.80, a1=Math.PI*0.20;
+    if(v.shape==='pointed'){ out+='<text x="150" y="8" text-anchor="middle" font-family="Bricolage Grotesque,sans-serif" font-size="10" font-weight="700" letter-spacing="2.5" fill="var(--sub)">'+v.label+'</text>'; }
+    else {
+      var ry = v.shape==='dome'? lr*1.12 : lr;
+      out+='<path id="'+id+'" d="M'+(cx+lr*Math.cos(a0)).toFixed(1)+' '+(cy-ry*Math.sin(a0)).toFixed(1)+' A'+lr+' '+ry+' 0 0 1 '+(cx+lr*Math.cos(a1)).toFixed(1)+' '+(cy-ry*Math.sin(a1)).toFixed(1)+'" fill="none"/>';
+      if(v.shape!=='dome' && v.shape!=='beads') out+='<text font-family="Bricolage Grotesque,sans-serif" font-size="10" font-weight="700" letter-spacing="2.5" fill="var(--sub)"><textPath href="#'+id+'" startOffset="50%" text-anchor="middle">'+v.label+'</textPath></text>';
+    }
+  }
+  return '<svg viewBox="0 -14 '+W+' '+(H+14)+'" aria-label="Together arc, 78 percent">'+out+'</svg>';
+}
+
+function fillCol(s, c){ return s===1 ? 'background:'+c : s===2 ? 'background:transparent;border:1.5px dashed '+c+';opacity:.7' : 'background:'+c+';opacity:.2'; }
+
+function mirrorCard(){
+  var a=A.prayers.map(function(s){return '<i class="seg" style="'+fillCol(s,'var(--A)')+'"></i>';}).join('');
+  var b=B.prayers.map(function(s){return '<i class="seg" style="'+fillCol(s,'var(--B)')+'"></i>';}).join('');
+  var L='<div>'+['F','D','A','M','I'].map(function(x){return '<span>'+x+'</span>';}).join('')+'</div>';
+  return '<div class="card wide"><div class="ct">Prayers<span>Isha at 6:49 PM</span></div>'+
+    '<div class="mirror"><div class="segs">'+a+'</div><div class="mid" style="color:var(--sub)">'+crescent+'</div><div class="segs r">'+b+'</div></div>'+
+    '<div class="lbls">'+L+'<span></span>'+L.replace('<div>','<div class="r">')+'</div></div>';
+}
+function dhikrCard(){
+  var tot=1000, a=A.dhikr/tot*100, b=(A.dhikr+B.dhikr)/tot*100;
+  return '<div class="card"><div class="ct">Salawat<span>Fri goal</span></div><div class="ring" style="background:conic-gradient(var(--A) 0 '+a+'%,var(--B) 0 '+b+'%,var(--line) 0)"><div>620</div></div><div class="cap">of 1,000 together</div></div>';
+}
+function quranCard(){
+  return '<div class="card"><div class="ct">Quran<span>pages</span></div><div class="book"><div class="page l"><i style="height:'+(A.quran/5*100)+'%;background:var(--A)"></i></div><div class="page r"><i style="height:'+(B.quran/5*100)+'%;background:var(--B)"></i></div></div><div class="vals"><span style="color:var(--A)">'+A.quran+'</span><span style="color:var(--B)">'+B.quran+'</span></div></div>';
+}
+function adhkarCard(){
+  function row(lbl,ia){return '<div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px;font-size:11px;color:var(--sub)">'+lbl+'<span style="display:flex;gap:4px"><i style="width:14px;height:14px;border-radius:5px;'+fillCol(A.adhkar[ia],'var(--A)')+'"></i><i style="width:14px;height:14px;border-radius:5px;'+fillCol(B.adhkar[ia],'var(--B)')+'"></i></span></div>';}
+  return '<div class="card"><div class="ct">Adhkar<span>daily</span></div>'+row('Morning',0)+row('Evening',1)+'</div>';
+}
+function listBlock(){
+  return '<div class="plist">'+PR.map(function(p,i){
+    function bead(s,c){return '<i style="'+fillCol(s,c)+'"></i>';}
+    var right = A.prayers[i]===2 ? '<span class="now">next</span>' : '<span></span>';
+    return '<div class="pr"><span>'+p+'<small>'+PT[i]+'</small></span>'+right+'<span class="bd">'+bead(A.prayers[i],'var(--A)')+bead(B.prayers[i],'var(--B)')+'</span></div>';
+  }).join('')+'</div>';
+}
+function timelineCard(){
+  function half(s,c){return '<i style="'+(s===1?'background:'+c:s===2?'background:var(--card)':'background:'+c+';opacity:.2')+'"></i>';}
+  return '<div class="card wide"><div class="ct">Prayers<span>Isha next</span></div><div class="tl">'+PR.map(function(p,i){
+    var up=A.prayers[i]===2;
+    return '<div class="stop"><div class="dd" style="'+(up?'border:2px dashed var(--sub)':'')+'">'+half(A.prayers[i],'var(--A)')+half(B.prayers[i],'var(--B)')+'</div>'+p.slice(0,3).toUpperCase()+'</div>';
+  }).join('')+'</div></div>';
+}
+
+function screen(v){
+  var cards='';
+  if(v.cards==='formula') cards='<div class="cards">'+mirrorCard()+dhikrCard()+quranCard()+'</div>';
+  if(v.cards==='list') cards=listBlock();
+  if(v.cards==='bento') cards='<div class="cards">'+mirrorCard()+dhikrCard()+adhkarCard()+'</div>';
+  if(v.cards==='timeline') cards='<div class="cards">'+timelineCard()+dhikrCard()+quranCard()+'</div>';
+  var sub = v.cards==='list' ? '7 of 9 deeds done between you' : 'Ayesha is all caught up, Rafi has Isha to go';
+  return '<div class="screen '+v.cls+'">'+
+    '<div class="sb"><span>6:12</span><span>●●● 74%</span></div>'+
+    '<div class="hd"><div class="logo"><span style="color:var(--A)">'+crescent+'</span>rafiq</div><div class="hdr"><span class="st">🔥 12</span><span>☰</span><span class="av"></span></div></div>'+
+    '<div class="arcwrap">'+arcSVG(v)+'<div class="num"><b>78</b><span>PERCENT</span></div></div>'+
+    '<div class="under"><div class="legend"><span><i style="background:var(--A)"></i>Ayesha</span><span><i style="background:var(--B)"></i>Rafi</span></div><div class="yest"><em>100%</em>YESTERDAY</div></div>'+
+    '<div class="sec"><h3>Today\'s Progress</h3><div class="ss">'+sub+'</div></div>'+cards+
+    '<div class="fab" aria-label="Log a prayer">+</div>'+
+    '<div class="nav"><span class="on"><i></i>Together</span><span><i></i>Dhikr</span><span><i></i>Insights</span><span><i></i>Me</span></div>'+
+  '</div>';
+}
+
+document.getElementById('grid').innerHTML = V.map(function(v){
+  return '<section class="opt"><div class="phone">'+screen(v)+'</div><div class="meta"><span class="tag">'+v.tag+'</span><h2>'+v.name+'</h2><p>'+v.desc+'</p><ul>'+v.pros.map(function(p){return '<li>'+p+'</li>';}).join('')+'</ul></div></section>';
+}).join('');
+</script>

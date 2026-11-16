@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "453225929820",
+    "project_id": "suhbah-companion",
+    "storage_bucket": "suhbah-companion.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:453225929820:android:0ac06f1726ed66ce749a99",
+        "android_client_info": {
+          "package_name": "com.ornobaadi.suhbah"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "453225929820-cc9p0aa651qld83sm7eca8k7mn4tei52.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ornobaadi.suhbah",
+            "certificate_hash": "ec10a4a9c415c00413646d73222b1f3af41345cc"
+          }
+        },
+        {
+          "client_id": "453225929820-a3gi161o21r25cnoq6q6kghnqj61kpnd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzcK0mNUzHlLHZzZ2bVVnrK1zzd6VVQ24"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "453225929820-a3gi161o21r25cnoq6q6kghnqj61kpnd.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "453225929820-vukr4kgtjcd2o272gdmivq5o5g74d705.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.ornobaadi.suhbah"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

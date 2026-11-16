@@ -1,0 +1,192 @@
+<title>Rafiq Home Screen Islamic</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500&family=Amiri:wght@400;700&display=swap">
+<style>
+/* Layout: two phones side by side (in progress, and the 100% moment) with short notes; page frame stays neutral. */
+:root{
+  --bg:#f2f3f1; --fg:#1b201d; --muted:#67706b; --chip:#e5e8e3;
+  --ui:"Plus Jakarta Sans",system-ui,sans-serif;
+  --display:"Bricolage Grotesque","Plus Jakarta Sans",system-ui,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#111412;--fg:#e9ece9;--muted:#9aa39d;--chip:#1e2421;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#111412;--fg:#e9ece9;--muted:#9aa39d;--chip:#1e2421;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--ui);margin:0}
+.wrap{max-width:1100px;margin:0 auto;padding-block:40px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.top{max-width:68ch;display:grid;gap:10px;margin-bottom:32px}
+.top h1{font-family:var(--display);font-weight:800;font-size:clamp(28px,4vw,40px);margin:0;letter-spacing:-.02em}
+.top p{margin:0;color:var(--muted);line-height:1.6;font-size:15px}
+.ctrl{display:flex;gap:8px;flex-wrap:wrap}
+.ctrl button{font:600 13px var(--ui);background:var(--chip);color:var(--fg);border:0;border-radius:99px;padding:8px 14px;cursor:pointer}
+.ctrl button:focus-visible{outline:2px solid var(--muted);outline-offset:2px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:40px 28px}
+.opt{display:grid;gap:12px;align-content:start;min-width:0}
+.tag{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-align:center}
+
+.phone{width:340px;max-width:100%;aspect-ratio:340/740;border-radius:42px;padding:10px;background:#0c0e0d;box-shadow:0 24px 50px -22px rgba(0,0,0,.4);margin:0 auto}
+.screen{--sbg:#fcfdfc;--ink:#11201b;--sub:#6b7c75;--card:#ffffff;--line:#e4ebe8;--A:#0E9F8E;--B:#FF355E;--pill:#e8f2ee;--pillInk:#0b6f63;--gold:#0E9F8E;
+  width:100%;height:100%;border-radius:33px;overflow:hidden;position:relative;background:var(--sbg);color:var(--ink);font-family:var(--ui)}
+.sb{display:flex;justify-content:space-between;padding:10px 22px 0;font-size:11px;font-weight:600;opacity:.7}
+.hd{display:flex;align-items:center;justify-content:space-between;padding:10px 18px 0}
+.logo{display:flex;align-items:center;gap:7px;font-family:var(--display);font-weight:700;font-size:16px}
+.logo svg{width:20px;height:20px}
+.hdr{display:flex;align-items:center;gap:12px;font-size:12px;font-weight:700}
+.hdr .st{display:flex;align-items:center;gap:3px}
+.hdr .menu{display:grid;gap:3px}.hdr .menu i{display:block;width:14px;height:2px;border-radius:2px;background:var(--ink)}
+.av{width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,var(--A) 50%,var(--B) 50%)}
+.arcwrap{position:relative;margin:4px auto 0;width:300px;max-width:100%}
+.arcwrap svg{width:100%;display:block;overflow:visible}
+.num{position:absolute;left:0;right:0;bottom:0;text-align:center;line-height:.86}
+.num b{font-family:var(--display);font-weight:800;font-size:78px;letter-spacing:-.04em;display:block}
+.num span{font-family:var(--display);font-weight:800;font-size:13px;letter-spacing:.14em}
+.under{display:grid;justify-items:center;gap:8px;margin-top:10px}
+.legend{display:flex;gap:12px;font-size:11px;color:var(--sub)}
+.legend i{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:4px;vertical-align:1px}
+.yest{background:var(--pill);color:var(--pillInk);font-family:var(--display);font-weight:800;font-size:11px;letter-spacing:.08em;padding:6px 12px;border-radius:99px}
+.yest em{font-style:normal;opacity:.75;margin-right:4px}
+.sec{padding:16px 16px 0}
+.sec h3{margin:0;font-family:var(--display);font-weight:800;font-size:17px}
+.sec .ss{font-size:11px;color:var(--sub);margin-top:2px}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:10px 16px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:11px 12px;min-width:0}
+.card.wide{grid-column:1/-1}
+.ct{display:flex;justify-content:space-between;align-items:center;font-size:12px;font-weight:700}
+.ct span{font-weight:500;color:var(--sub);font-size:10.5px}
+/* waqt shapes */
+.mirror{display:grid;grid-template-columns:1fr 26px 1fr;align-items:center;gap:6px;margin-top:9px}
+.segs{display:flex;gap:3px}.segs.r{flex-direction:row-reverse}
+.seg{flex:1;height:22px;border-radius:5px;transform:skewX(-10deg);transition:background .3s,opacity .3s}
+.segs.r .seg{transform:skewX(10deg)}
+.mid{width:26px;height:26px;border-radius:50%;background:var(--line);display:grid;place-items:center;color:var(--sub)}
+.mid svg{width:14px;height:14px}
+.lbls{display:grid;grid-template-columns:1fr 26px 1fr;gap:6px;margin-top:5px;font-size:9px;font-weight:700;color:var(--sub);letter-spacing:.05em}
+.lbls div{display:flex;justify-content:space-around}.lbls .r{flex-direction:row-reverse}
+/* quran book */
+.book{display:flex;justify-content:center;gap:2px;margin:9px 0 4px}
+.page{width:34px;height:46px;border:1.5px solid var(--line);position:relative;overflow:hidden;background:var(--card)}
+.page.l{border-radius:9px 2px 2px 9px}.page.r{border-radius:2px 9px 9px 2px}
+.page i{position:absolute;left:0;right:0;bottom:0;transition:height .4s}
+.page b{position:absolute;inset:0;background:repeating-linear-gradient(180deg,transparent 0 8px,rgba(255,255,255,.35) 8px 9px)}
+.vals{display:flex;justify-content:center;gap:18px;font-family:var(--display);font-weight:800;font-size:13px}
+.vals small{font-weight:600;color:var(--sub);font-size:10px}
+/* istighfar: a mini crescent split */
+.mini{display:block;width:96px;margin:6px auto 0;overflow:visible}
+.mini text{font-family:"Bricolage Grotesque",sans-serif}
+.tap{display:block;margin:4px auto 0;background:var(--pill);color:var(--pillInk);font:700 10.5px var(--ui);border:0;border-radius:99px;padding:5px 10px;cursor:pointer}
+.tap:focus-visible{outline:2px solid var(--A);outline-offset:2px}
+.nav{position:absolute;left:0;right:0;bottom:0;display:flex;align-items:center;justify-content:space-around;padding:10px 12px 16px;background:var(--sbg);border-top:1px solid var(--line);font-size:10px;font-weight:600;color:var(--sub)}
+.nav span{display:grid;justify-items:center;gap:3px;padding:4px 12px;border-radius:12px}
+.nav .on{color:var(--ink);background:var(--pill)}
+.fab{position:absolute;right:16px;bottom:68px;width:52px;height:52px;border-radius:18px;background:var(--ink);color:var(--sbg);display:grid;place-items:center;font-size:26px;box-shadow:0 10px 20px -8px rgba(0,0,0,.5)}
+@keyframes pop{from{transform:scale(0);opacity:0}to{transform:scale(1)}}
+.dot{transform-box:fill-box;transform-origin:center;animation:pop .45s cubic-bezier(.3,1.6,.5,1) both}
+@media (prefers-reduced-motion:reduce){.dot{animation:none}}
+/* ---- Islamic layer: kept quiet on purpose ---- */
+.screen::before{content:"";position:absolute;inset:0 0 auto;height:330px;pointer-events:none;opacity:.55;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='44' viewBox='0 0 44 44'%3E%3Cg fill='none' stroke='%230E9F8E' stroke-opacity='.32' stroke-width='.8'%3E%3Crect x='12' y='12' width='20' height='20'/%3E%3Crect x='12' y='12' width='20' height='20' transform='rotate(45 22 22)'/%3E%3Cpath d='M0 22h8M36 22h8M22 0v8M22 36v8'/%3E%3C/g%3E%3C/svg%3E");
+  -webkit-mask-image:linear-gradient(180deg,#000 0%,transparent 100%);mask-image:linear-gradient(180deg,#000 0%,transparent 100%)}
+.screen>*{position:relative}
+.screen>.nav,.screen>.fab{position:absolute}
+.hijri{font-size:10.5px;color:var(--sub);font-weight:600;padding:2px 18px 0 45px}
+.ct .ar,.ar{font-family:"Amiri","Noto Naskh Arabic",serif;font-weight:700;color:var(--gold);font-size:14px;line-height:1;margin-left:5px}
+.card{position:relative}
+.ct b{font-weight:700}
+.nav .on{border-radius:16px 16px 6px 6px / 14px 14px 6px 6px;background:var(--pill)}
+.mid{background:var(--pill);color:var(--gold)}
+.notes{max-width:68ch;margin-top:36px;display:grid;gap:8px;color:var(--muted);font-size:14px;line-height:1.6}
+.notes h2{font-family:var(--display);color:var(--fg);font-size:20px;margin:0}
+.notes ul{margin:0;padding-left:18px}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <h1>Crescent Split, Islamic touch</h1>
+    <p>The final design on white, with a faint geometric star pattern behind the arc, a small star at its top, the Hijri date under the logo and an arch-shaped active tab. Tap "+33 istighfar" on the left phone to watch it update.</p>
+    <div class="ctrl"><button id="replay" type="button">Replay animation</button><button id="reset" type="button">Reset sample</button></div>
+  </header>
+  <div class="grid">
+    <section class="opt"><div class="phone" id="p1"></div><div class="tag">After Maghrib · in progress</div></section>
+    <section class="opt"><div class="phone" id="p2"></div><div class="tag">Both done · 100% together</div></section>
+  </div>
+  <div class="notes">
+    <h2>What's different from the final design</h2>
+    <ul>
+      <li>White background. A faint teal geometric star pattern fills the top half and fades out before the cards.</li>
+      <li>A small eight-point star sits at the top of the arc.</li>
+      <li>The Hijri date under the logo, and the active tab is shaped like an arch.</li>
+      <li>Everything else matches the final design: same cards, same add button, no extra Arabic labels or bullets.</li>
+      <li>Missed items stay a pale tint of each person's color. Nothing turns into a warning color.</li>
+    </ul>
+  </div>
+</div>
+
+<script>
+var crescent='<svg viewBox="0 0 24 24"><path d="M15 3a9 9 0 1 0 6 15.5A7.5 7.5 0 0 1 15 3z" fill="currentColor"/></svg>';
+function sample(){return {
+  p1:{A:{prayers:[1,1,1,1,2],verses:10,ist:100},B:{prayers:[0,1,1,1,2],verses:6,ist:40},yest:100,time:'6:12',next:'Isha at 6:49 PM'},
+  p2:{A:{prayers:[1,1,1,1,1],verses:10,ist:100},B:{prayers:[1,1,1,1,1],verses:10,ist:100},yest:86,time:'9:40',next:'All five prayed today'}
+};}
+var S=sample();
+function score(p){return (p.prayers.filter(function(s){return s===1}).length+Math.min(p.verses,10)/10+Math.min(p.ist,100)/100)/7;}
+
+function arc(d,animate){
+  var aF=score(d.A),bF=score(d.B),cx=150,cy=154,out='',k=0;
+  [{R:132,n:23},{R:115,n:20},{R:98,n:17}].forEach(function(g){
+    for(var i=0;i<g.n;i++){
+      var t=i/(g.n-1),a=Math.PI*(1-t),x=cx+g.R*Math.cos(a),y=cy-g.R*Math.sin(a),left=t<.5;
+      var frac=left?t/.5:(1-t)/.5,on=left?frac<=aF+1e-6:frac<=bF+1e-6;
+      if(Math.abs(t-.5)<1e-6){ on = aF>=1 && bF>=1; }
+      var col=left||Math.abs(t-.5)<1e-6?'var(--A)':'var(--B)';
+      out+='<circle '+(animate?'class="dot" style="animation-delay:'+(k++*9)+'ms"':'')+' cx="'+x.toFixed(1)+'" cy="'+y.toFixed(1)+'" r="6.6" fill="'+col+'"'+(on?'':' opacity=".22"')+'/>';
+    }
+  });
+  var lr=147,a0=Math.PI*.78,a1=Math.PI*.22;
+  out+='<path id="lp" d="M'+(cx+lr*Math.cos(a0)).toFixed(1)+' '+(cy-lr*Math.sin(a0)).toFixed(1)+' A'+lr+' '+lr+' 0 0 1 '+(cx+lr*Math.cos(a1)).toFixed(1)+' '+(cy-lr*Math.sin(a1)).toFixed(1)+'" fill="none"/>';
+  out+='<text font-family="Bricolage Grotesque,sans-serif" font-size="10" font-weight="700" letter-spacing="2.5" fill="var(--sub)"><textPath href="#lp" startOffset="50%" text-anchor="middle">TOGETHER TODAY</textPath></text>';
+  out+='<g transform="translate(150 -18)" fill="var(--gold)"><rect x="-4" y="-4" width="8" height="8"/><rect x="-4" y="-4" width="8" height="8" transform="rotate(45)"/></g>';
+  return '<svg viewBox="0 -26 300 186" aria-label="Together today">'+out+'</svg>';
+}
+function f(s,c){return s===1?'background:'+c:s===2?'background:transparent;box-shadow:inset 0 0 0 1.5px '+c+';opacity:.6':'background:'+c+';opacity:.2';}
+function salah(d){
+  var a=d.A.prayers.map(function(s){return '<i class="seg" style="'+f(s,'var(--A)')+'"></i>'}).join('');
+  var b=d.B.prayers.map(function(s){return '<i class="seg" style="'+f(s,'var(--B)')+'"></i>'}).join('');
+  var L='<div>'+['F','D','A','M','I'].map(function(x){return '<span>'+x+'</span>'}).join('')+'</div>';
+  return '<div class="card wide"><div class="ct"><b>Salah</b><span>'+d.next+'</span></div><div class="mirror"><div class="segs">'+a+'</div><div class="mid">'+crescent+'</div><div class="segs r">'+b+'</div></div><div class="lbls">'+L+'<span></span>'+L.replace('<div>','<div class="r">')+'</div></div>';
+}
+function quran(d){
+  return '<div class="card"><div class="ct"><b>Quran</b><span>10 ayat</span></div><div class="book"><div class="page l"><i style="height:'+Math.min(d.A.verses,10)*10+'%;background:var(--A)"></i><b></b></div><div class="page r"><i style="height:'+Math.min(d.B.verses,10)*10+'%;background:var(--B)"></i><b></b></div></div><div class="vals"><span style="color:var(--A)">'+d.A.verses+'<small>/10</small></span><span style="color:var(--B)">'+d.B.verses+'<small>/10</small></span></div></div>';
+}
+function istighfar(d,id){
+  // mini crescent split: 12 dots per side on one half circle
+  var cx=48,cy=46,R=40,n=12,out='';
+  for(var s=0;s<2;s++){var p=s?d.B:d.A,c=s?'var(--B)':'var(--A)';
+    for(var i=0;i<n;i++){var u=i/(n-1),a=(Math.PI/2-0.1)*u,ang=s?a:Math.PI-a;
+      out+='<circle cx="'+(cx+R*Math.cos(ang)).toFixed(1)+'" cy="'+(cy-R*Math.sin(ang)).toFixed(1)+'" r="3.6" fill="'+c+'"'+((i+1)/n<=Math.min(p.ist,100)/100+1e-6?'':' opacity=".2"')+'/>';}}
+  out+='<text x="48" y="40" text-anchor="middle" font-size="20" font-weight="800" fill="var(--ink)">'+(d.A.ist+d.B.ist)+'</text><text x="48" y="52" text-anchor="middle" font-size="8" font-weight="700" fill="var(--sub)" letter-spacing="1">OF 200</text>';
+  var btn = id==='p1' ? '<button class="tap" type="button" data-add="33">+33 istighfar</button>' : '<button class="tap" type="button" disabled>Done today</button>';
+  return '<div class="card"><div class="ct"><b>Istighfar</b><span>100 each</span></div><svg class="mini" viewBox="0 0 96 52">'+out+'</svg>'+btn+'</div>';
+}
+function render(id,animate){
+  var d=S[id],tog=Math.round((score(d.A)+score(d.B))/2*100);
+  var sub = tog>=100 ? 'MashaAllah, you completed today together 🤍' : 'Isha is next for both of you';
+  document.getElementById(id).innerHTML='<div class="screen">'+
+   '<div class="sb"><span>'+d.time+'</span><span>●●● 74%</span></div>'+
+   '<div class="hd"><div class="logo"><span style="color:var(--A)">'+crescent+'</span>rafiq</div><div class="hdr"><span class="st">🔥 12</span><span class="menu"><i></i><i></i><i></i></span><span class="av"></span></div></div><div class="hijri">'+(id==='p1'?'Tue · 14 Jumada al-Ula 1448':'Fri · 17 Jumada al-Ula 1448')+'</div>'+
+   '<div class="arcwrap">'+arc(d,animate)+'<div class="num"><b>'+tog+'</b><span>PERCENT</span></div></div>'+
+   '<div class="under"><div class="legend"><span><i style="background:var(--A)"></i>Ayesha</span><span><i style="background:var(--B)"></i>Rafi</span></div><div class="yest"><em>'+d.yest+'%</em>YESTERDAY</div></div>'+
+   '<div class="sec"><h3>Today\'s Progress</h3><div class="ss">'+sub+'</div></div>'+
+   '<div class="cards">'+salah(d)+quran(d)+istighfar(d,id)+'</div>'+
+   '<div class="fab" aria-label="Log a deed">+</div>'+
+   '<div class="nav"><span class="on">Together</span><span>Dhikr</span><span>Insights</span><span>Me</span></div></div>';
+}
+function all(anim){render('p1',anim);render('p2',anim);}
+all(true);
+document.addEventListener('click',function(e){
+  var b=e.target.closest('[data-add]'); if(!b) return;
+  S.p1.B.ist=Math.min(100,S.p1.B.ist+33); render('p1',false);
+});
+document.getElementById('replay').onclick=function(){all(true);};
+document.getElementById('reset').onclick=function(){S=sample();all(true);};
+</script>

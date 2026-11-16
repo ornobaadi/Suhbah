@@ -1,0 +1,282 @@
+<title>Suhbah Insights and Settings</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+<style>
+/* Layout: five numbered directions, each a pair of full-length phone screens (Insights left, Settings right). */
+:root{
+  --page:#F3F6F4; --ink:#11201B; --mute:#5E6F68; --rule:#D9E2DE; --chip:#E3EEE9; --chipink:#0B6F63;
+  --a:#0E9F8E; --b:#FF355E;
+  --disp:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --body:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){ --page:#0E1513; --ink:#EEF4F1; --mute:#9DB0A8; --rule:#26332E; --chip:#17332D; --chipink:#7FE0D2; color-scheme:dark } }
+:root[data-theme="dark"]{ --page:#0E1513; --ink:#EEF4F1; --mute:#9DB0A8; --rule:#26332E; --chip:#17332D; --chipink:#7FE0D2; color-scheme:dark }
+body{background:var(--page);color:var(--ink);font-family:var(--body);padding-block:28px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1060px;margin:0 auto;display:flex;flex-direction:column;gap:56px}
+.top h1{font-family:var(--disp);font-weight:800;font-size:clamp(28px,5vw,44px);letter-spacing:-.03em;margin:0;text-wrap:balance}
+.top p{color:var(--mute);max-width:62ch;font-size:15px;line-height:1.55;margin:10px 0 0}
+.jump{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.jump a{font:700 13px var(--body);color:var(--chipink);background:var(--chip);padding:8px 14px;border-radius:99px;text-decoration:none}
+.jump a:focus-visible,.ph button:focus-visible{outline:2px solid var(--chipink);outline-offset:2px}
+.dir{display:flex;flex-direction:column;gap:18px;border-top:1px solid var(--rule);padding-top:22px}
+.dir h2{font-family:var(--disp);font-weight:800;font-size:26px;letter-spacing:-.02em;margin:0}
+.dir h2 small{font:800 12px var(--disp);letter-spacing:.14em;color:var(--mute);display:block;margin-bottom:4px}
+.dir>p{color:var(--mute);max-width:68ch;margin:0;font-size:14.5px;line-height:1.55}
+.pair{display:flex;flex-wrap:wrap;gap:28px;justify-content:center;align-items:flex-start}
+.col{display:flex;flex-direction:column;gap:10px;align-items:center;max-width:100%}
+.col>span{font:800 11px var(--disp);letter-spacing:.14em;color:var(--mute)}
+
+/* ---------- the phone: always the app's own light look ---------- */
+.ph{--bg:#FCFDFC;--card:#fff;--line:#E4EBE8;--k:#11201B;--s:#6B7C75;--pill:#E8F2EE;--pk:#0B6F63;
+  --pa:color-mix(in srgb,var(--a) 18%,#fff);--pb:color-mix(in srgb,var(--b) 18%,#fff);
+  width:348px;max-width:100%;background:var(--bg);color:var(--k);border-radius:38px;border:8px solid #11201B;overflow:hidden;position:relative;font-family:var(--body);font-size:12.5px;line-height:1.4;box-shadow:0 24px 50px -24px rgba(17,32,27,.45)}
+.ph::before{content:"";position:absolute;inset:0 0 auto 0;height:230px;opacity:.5;pointer-events:none;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='44'%3E%3Cg fill='none' stroke='%230E9F8E' stroke-opacity='.32'%3E%3Crect x='13' y='13' width='18' height='18'/%3E%3Crect x='13' y='13' width='18' height='18' transform='rotate(45 22 22)'/%3E%3Cpath d='M22 0v9M22 35v9M0 22h9M35 22h9'/%3E%3C/g%3E%3C/svg%3E");
+  -webkit-mask-image:linear-gradient(#000,transparent);mask-image:linear-gradient(#000,transparent)}
+.scr{position:relative;padding:18px 14px 16px;display:flex;flex-direction:column;gap:10px}
+.ph h3{font:800 28px var(--disp);letter-spacing:-.03em;margin:6px 4px 0}
+.sub{color:var(--s);margin:-6px 4px 4px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px}
+.lbl{font:800 10px var(--disp);letter-spacing:.14em;color:var(--s);text-transform:uppercase}
+.sec{margin:8px 4px -2px}
+.d{font-family:var(--disp);font-weight:800;letter-spacing:-.03em;line-height:1}
+.row{display:flex;align-items:center;gap:10px}
+.sp{flex:1}
+.ca{color:var(--a)}.cb{color:var(--b)}
+.mut{color:var(--s)}
+.b7{font-weight:700}
+.nav{display:flex;justify-content:space-around;border-top:1px solid var(--line);padding:8px 10px 12px;background:var(--bg);position:relative}
+.nav i{font:600 11px var(--body);font-style:normal;color:var(--s);padding:11px 14px}
+.nav i.on{background:var(--pill);color:var(--k);font-weight:700;border-radius:16px 16px 6px 6px/14px 14px 6px 6px}
+.av{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;color:#fff;font:800 16px var(--disp);flex:none}
+.av.a{background:var(--a)}.av.b{background:var(--b)}
+.star{width:10px;height:10px;position:relative;display:inline-block;flex:none}
+.star::before,.star::after{content:"";position:absolute;inset:0;background:var(--c,var(--a))}
+.star::after{transform:rotate(45deg)}
+.pillc{display:inline-flex;align-items:center;gap:6px;background:var(--pill);color:var(--pk);font:700 11px var(--body);padding:5px 10px;border-radius:99px}
+.arch{border-radius:16px 16px 8px 8px/14px 14px 8px 8px;border:1px solid var(--line);background:var(--bg);padding:9px 2px;text-align:center;flex:1;min-width:0}
+.arch.on{background:var(--a);border-color:var(--a);color:#fff}
+.arch.on .mut{color:rgba(255,255,255,.85)}
+.arch b{font:800 14px var(--disp);display:block}
+.arch span{font-size:10px;font-weight:600}
+.bar{height:7px;border-radius:99px;display:flex;gap:2px;overflow:hidden}
+.bar u{background:var(--a)}.bar s{background:var(--b)}
+.set{display:flex;align-items:center;gap:12px;padding:11px 14px}
+.set+.set{border-top:1px solid var(--line)}
+.ic{width:34px;height:34px;border-radius:11px;background:var(--pill);display:grid;place-items:center;flex:none}
+.ic svg{width:17px;height:17px;stroke:var(--pk);fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.set b{font-weight:600;font-size:13.5px;display:block}
+.set small{color:var(--s);font-size:11.5px}
+.chev{color:var(--s);font-size:16px}
+.sw{width:22px;height:22px;border-radius:50%;background:var(--a);box-shadow:0 0 0 2px #fff,0 1px 5px rgba(17,32,27,.25);flex:none}
+.np{padding:0}
+.seg{display:flex;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.seg span{flex:1;text-align:center;padding:8px 4px;font-weight:700;font-size:12px;color:var(--s)}
+.seg span.on{background:var(--pill);color:var(--pk)}
+/* waqt shapes */
+.wq{display:inline-flex;gap:2px}
+.wq i{width:13px;height:11px;border-radius:3px;background:var(--pa);transform:skewX(-10deg)}
+.wq i+i{background:var(--pb);transform:skewX(10deg)}
+.wq i.y{background:var(--a)}.wq i+i.y{background:var(--b)}
+.grid5{display:grid;grid-template-columns:54px repeat(5,1fr);align-items:center;row-gap:7px;justify-items:center}
+.grid5 .dt{justify-self:start;color:var(--s);font-size:11px;font-weight:600}
+.mir{display:grid;grid-template-columns:1fr 78px 1fr;align-items:center;gap:6px;padding:7px 0}
+.mir .l,.mir .r{height:9px;border-radius:99px;background:var(--pa);position:relative;overflow:hidden}
+.mir .r{background:var(--pb)}
+.mir .l u,.mir .r u{position:absolute;top:0;bottom:0;border-radius:99px}
+.mir .l u{right:0;background:var(--a)}.mir .r u{left:0;background:var(--b)}
+.mir .m{text-align:center;font-weight:700;font-size:12px}
+.mir .m small{display:block;font-weight:600;color:var(--s);font-size:10.5px}
+.tile{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px;display:flex;flex-direction:column;gap:6px;min-height:112px}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.story .q{font:800 21px/1.18 var(--disp);letter-spacing:-.02em;margin:6px 0 12px;text-wrap:balance}
+.dots{display:flex;flex-wrap:wrap;gap:4px}
+.dots i{width:9px;height:9px;border-radius:50%;background:var(--pa)}
+.dots i.y{background:var(--a)}.dots i.z{background:var(--b)}.dots i.e{background:var(--pb)}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;justify-items:center}
+.cal button{all:unset;cursor:pointer;width:36px;height:36px;position:relative;display:grid;place-items:center;border-radius:50%}
+.cal button svg{position:absolute;inset:0}
+.cal button span{position:relative;font-weight:700;font-size:10.5px;color:var(--s)}
+.cal button.hi span{color:#fff}
+.cal button.sel{box-shadow:0 0 0 2px var(--bg),0 0 0 3.6px var(--k)}
+.swr{display:flex;gap:8px;flex-wrap:wrap}
+.swr button{all:unset;cursor:pointer;width:30px;height:30px;border-radius:50%;background:var(--c)}
+.swr button.sel{box-shadow:0 0 0 2px #fff,0 0 0 4px var(--k)}
+.field{border:1px solid var(--line);border-radius:14px;padding:11px 14px;font:700 18px var(--disp);background:#fff}
+.link{color:var(--s);font-weight:700;text-align:center;padding:6px}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <h1>Insights and Settings, five directions</h1>
+    <p>Each direction shows both screens for a paired couple, Ornob (teal) and Ayesha (red), on Monday 16 November. Every number is worked out from one shared set of 35 sample days, so the screens agree with each other. All five keep the approved home language: dots, arch shapes, the eight-point star and the two colors side by side.</p>
+    <nav class="jump" aria-label="Directions"><a href="#d1">1 Month Arc</a><a href="#d2">2 Waqt Board</a><a href="#d3">3 Stories</a><a href="#d4">4 Side by Side</a><a href="#d5">5 Touch Calendar</a></nav>
+  </header>
+  <div id="out"></div>
+</div>
+
+<script>
+/* ---------- one shared sample dataset ---------- */
+let seed=11;const R=()=>(seed=seed*16807%2147483647)/2147483647;
+const N=35,P=['Fajr','Dhuhr','Asr','Maghrib','Isha'],L=['F','D','A','M','I'];
+const pm=[.74,.9,.86,.96,.8],pp=[.86,.88,.8,.95,.72];
+const mk=(pr,i)=>{const boost=i>N-14?.12:(i%9===4?-.5:0);return{p:pr.map(x=>R()<x+boost),ay:R()<.68+boost?10:Math.floor(R()*10),is:R()<.6+boost?100:[0,33,66][Math.floor(R()*3)]}};
+const D=[];for(let i=0;i<N;i++)D.push({me:mk(pm,i),pa:mk(pp,i),date:new Date(2026,10,16-(N-1-i))});
+D[N-1].me={p:[1,1,0,0,0].map(Boolean),ay:6,is:66};D[N-1].pa={p:[1,1,1,0,0].map(Boolean),ay:10,is:33};
+const sc=x=>(x.p.filter(Boolean).length+Math.min(x.ay/10,1)+Math.min(x.is/100,1))/7;
+const tg=d=>(sc(d.me)+sc(d.pa))/2, pc=v=>Math.round(v*100), nf=n=>n.toLocaleString('en-US');
+const M=D.slice(5),sum=(a,f)=>a.reduce((s,x)=>s+f(x),0);
+let streak=tg(D[N-1])>=.6?1:0;for(let i=N-2;i>=0&&tg(D[i])>=.6;i--)streak++;
+let best=0,run=0;D.forEach(d=>{run=tg(d)>=.6?run+1:0;best=Math.max(best,run)});
+const full=M.filter(d=>tg(d)>=.999).length, avg=sum(M,tg)/30;
+const cm=P.map((_,k)=>M.filter(d=>d.me.p[k]).length),cp=P.map((_,k)=>M.filter(d=>d.pa.p[k]).length),cb=P.map((_,k)=>M.filter(d=>d.me.p[k]&&d.pa.p[k]).length);
+const kept=cb.indexOf(Math.max(...cb)),room=cb.indexOf(Math.min(...cb));
+const ayM=sum(M,d=>d.me.ay),ayP=sum(M,d=>d.pa.ay),isM=sum(M,d=>d.me.is),isP=sum(M,d=>d.pa.is);
+const prayed=sum(M,d=>d.me.p.filter(Boolean).length+d.pa.p.filter(Boolean).length);
+const WD=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+const wavg=WD.map((_,w)=>{const x=M.filter(d=>d.date.getDay()===w);return sum(x,tg)/x.length});
+const bestWd=wavg.indexOf(Math.max(...wavg));
+const wk=sum(D.slice(N-7),tg)/7,wkPrev=sum(D.slice(N-14,N-7),tg)/7;
+const fmt=(d,o)=>d.toLocaleDateString('en-GB',o);
+const T=['4:55','11:44','3:37','5:13','6:31'];
+
+/* ---------- small pieces ---------- */
+const op=v=>v<=0?.1:(.22+.78*v).toFixed(2);
+const split=(a,b,r=18)=>`<svg viewBox="0 0 36 36" width="${r*2}" height="${r*2}" aria-hidden="true"><path d="M18 2a16 16 0 0 0 0 32z" fill="var(--a)" fill-opacity="${op(a)}"/><path d="M18 2a16 16 0 0 1 0 32z" fill="var(--b)" fill-opacity="${op(b)}"/></svg>`;
+const wq=(a,b)=>`<span class="wq"><i class="${a?'y':''}"></i><i class="${b?'y':''}"></i></span>`;
+const nav=on=>`<div class="nav">${['Together','Dhikr','Insights','Me'].map(t=>`<i class="${t===on?'on':''}">${t}</i>`).join('')}</div>`;
+const phone=(body,on)=>`<div class="ph"><div class="scr">${body}</div>${nav(on)}</div>`;
+const bar=(a,b)=>`<div class="bar"><u style="flex:${a}"></u><s style="flex:${b}"></s></div>`;
+const I={user:'<path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM4 20c1.5-4 14.500-4 16 0"/>',pal:'<circle cx="12" cy="12" r="8.500"/><circle cx="9" cy="10" r="1"/><circle cx="14.500" cy="9" r="1"/>',pin:'<path d="M12 21s7-6.200 7-11a7 7 0 0 0-14 0c0 4.800 7 11 7 11z"/><circle cx="12" cy="10" r="2.500"/>',calc:'<rect x="5" y="3" width="14" height="18" rx="3"/><path d="M9 8h6M9 13h.010M12 13h.010M15 13h.010M9 17h.010M12 17h.010M15 17h.010"/>',heart:'<path d="M12 20s-7-4.500-7-10a4 4 0 0 1 7-2.500A4 4 0 0 1 19 10c0 5.500-7 10-7 10z"/>',out:'<path d="M14 4h4a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-4M4 12h11M11 8l4 4-4 4"/>',bin:'<path d="M5 7h14M10 7V4h4v3M7 7l1 13h8l1-13"/>',g:'<path d="M20 12a8 8 0 1 1-2.500-5.800M20 12h-8"/>',copy:'<rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/>'};
+const ic=k=>`<span class="ic"><svg viewBox="0 0 24 24">${I[k]}</svg></span>`;
+const set=(k,t,v,tr='<span class="chev">›</span>')=>`<div class="set">${ic(k)}<div class="sp"><b>${t}</b>${v?`<small>${v}</small>`:''}</div>${tr}</div>`;
+const times=(next=2)=>`<div class="row" style="gap:6px">${P.map((p,k)=>`<div class="arch ${k===next?'on':''}"><span class="mut">${p}</span><b>${T[k]}</b></div>`).join('')}</div>`;
+const acct=`<div class="card np">${set('g','Google account','ornob@example.com','<span class="pillc">Synced</span>')}${set('out','Sign out')}${set('bin','Delete account','Removes your profile and every log')}</div>`;
+
+/* ---------- 1 · Month Arc ---------- */
+function arc30(){const cx=160,cy=150,r=132;let s='';M.forEach((d,i)=>{const t=Math.PI-Math.PI*i/29,x=cx+r*Math.cos(t),y=cy-r*Math.sin(t);
+  s+=`<g transform="translate(${(x-6).toFixed(1)} ${(y-6).toFixed(1)}) scale(.8)"><path d="M7.500 0a7.500 7.500 0 0 0 0 15z" fill="var(--a)" fill-opacity="${op(sc(d.me))}"/><path d="M7.500 0a7.500 7.500 0 0 1 0 15z" fill="var(--b)" fill-opacity="${op(sc(d.pa))}"/></g>`});
+  return `<svg viewBox="0 0 320 168" style="width:100%;display:block" role="img" aria-label="Thirty days on an arc, each dot split between Ornob and Ayesha">${s}<text x="12" y="166" font-size="9" font-weight="700" fill="#6B7C75" font-family="var(--body)">18 OCT</text><text x="308" y="166" text-anchor="end" font-size="9" font-weight="700" fill="#6B7C75" font-family="var(--body)">TODAY</text></svg>`}
+const i1=phone(`<h3>Insights</h3><p class="sub">Your last 30 days, one dot a day</p>
+<div style="position:relative;margin:2px 0 0">${arc30()}<div style="position:absolute;left:0;right:0;bottom:6px;text-align:center"><div class="d" style="font-size:66px">${pc(avg)}</div><div class="lbl" style="color:var(--k);margin-top:4px">Percent together</div></div></div>
+<div class="row" style="justify-content:center;gap:14px;margin-top:-2px"><span class="row" style="gap:5px"><i class="star"></i><span class="mut b7">Ornob, left half</span></span><span class="row" style="gap:5px"><i class="star" style="--c:var(--b)"></i><span class="mut b7">Ayesha, right half</span></span></div>
+<div class="card row" style="padding:0;gap:0;text-align:center">${[[streak,'day streak'],[best,'best streak'],[full,'full days']].map((x,i)=>`<div style="flex:1;padding:13px 4px;${i?'border-left:1px solid var(--line)':''}"><div class="d" style="font-size:26px">${x[0]}</div><div class="mut b7" style="font-size:11px;margin-top:3px">${x[1]}</div></div>`).join('')}</div>
+<div class="lbl sec">Prayed together, of 30 days</div>
+<div class="card"><div class="row" style="gap:6px">${P.map((p,k)=>`<div class="arch ${k===kept?'on':''}"><span class="mut">${p}</span><b>${cb[k]}</b></div>`).join('')}</div><p class="mut" style="margin:10px 2px 0">${P[kept]} is the one you keep together most. ${P[room]} has the most room to grow.</p></div>
+<div class="lbl sec">This week</div>
+<div class="card row"><div class="sp"><div class="d" style="font-size:30px">${pc(wk)}%</div><div class="mut b7" style="margin-top:3px">${wk>=wkPrev?'Up':'Down'} from ${pc(wkPrev)}% last week</div></div><div class="row" style="gap:5px">${D.slice(N-7).map(d=>split(sc(d.me),sc(d.pa),11)).join('')}</div></div>
+<div class="row" style="gap:8px;align-items:stretch"><div class="card sp"><div class="mut b7">Ayat read</div><div class="d" style="font-size:26px;margin:6px 0 9px">${nf(ayM+ayP)}</div>${bar(ayM,ayP)}<div class="row b7" style="margin-top:5px;font-size:11px"><span class="ca">${ayM}</span><span class="sp"></span><span class="cb">${ayP}</span></div></div><div class="card sp"><div class="mut b7">Istighfar</div><div class="d" style="font-size:26px;margin:6px 0 9px">${nf(isM+isP)}</div>${bar(isM,isP)}<div class="row b7" style="margin-top:5px;font-size:11px"><span class="ca">${nf(isM)}</span><span class="sp"></span><span class="cb">${nf(isP)}</span></div></div></div>`,'Insights');
+const s1=phone(`<h3>Me</h3>
+<div class="card" style="text-align:center;padding:20px 14px 16px"><div class="row" style="justify-content:center;gap:0"><span class="av a" style="width:66px;height:66px;font-size:26px;box-shadow:0 0 0 3px #fff">O</span><span style="background:#fff;border-radius:50%;padding:5px;margin:0 -12px;z-index:1;display:grid;box-shadow:0 1px 6px rgba(17,32,27,.18)"><i class="star" style="width:14px;height:14px;background:linear-gradient(90deg,var(--a) 50%,var(--b) 50%)"></i></span><span class="av b" style="width:66px;height:66px;font-size:26px;box-shadow:0 0 0 3px #fff">A</span></div>
+<div class="d" style="font-size:22px;margin-top:12px">Ornob &amp; Ayesha</div><div class="mut" style="margin-top:4px">Paired for 34 days · ${streak}-day streak</div>
+<div class="row" style="justify-content:center;gap:6px;margin-top:12px"><span class="pillc">Code K7Q2MX</span><span class="pillc">${pc(tg(D[N-1]))}% today</span></div></div>
+<div class="lbl sec">Prayer times · Dhaka</div>
+<div class="card">${times()}<div class="row" style="margin-top:10px"><span class="mut sp">University of Karachi · Hanafi Asr</span><b style="color:var(--pk)">Change</b></div></div>
+<div class="lbl sec">You</div>
+<div class="card np">${set('user','Nickname','Ornob')}${set('pal','Color','Your half of the arc','<span class="sw"></span>')}</div>
+<div class="lbl sec">Your pair</div>
+<div class="card np">${set('copy','Invite code','K7Q2MX · used by Ayesha')}${set('heart','Leave pair','Go back to solo. Your logs stay.')}</div>
+<div class="lbl sec">Account</div>${acct}`,'Me');
+
+/* ---------- 2 · Waqt Board ---------- */
+const i2=phone(`<h3>Insights</h3><p class="sub">Every prayer, both of you</p>
+<div class="card"><div class="row"><div class="sp"><div class="d" style="font-size:44px">${prayed}<span class="mut" style="font-size:16px;letter-spacing:0"> / 300</span></div><div class="mut b7" style="margin-top:4px">prayers logged together in 30 days</div></div><div style="text-align:right"><div class="d ca" style="font-size:20px">${sum(cm,x=>x)}</div><div class="d cb" style="font-size:20px;margin-top:4px">${sum(cp,x=>x)}</div></div></div></div>
+<div class="lbl sec">Last 14 days</div>
+<div class="card"><div class="grid5"><span></span>${L.map(l=>`<span class="lbl">${l}</span>`).join('')}
+${D.slice(N-14).reverse().map((d,i)=>`<span class="dt" ${i?'':'style="color:var(--k);font-weight:800"'}>${i?fmt(d.date,{weekday:'short',day:'numeric'}):'Today'}</span>${P.map((_,k)=>wq(d.me.p[k],d.pa.p[k])).join('')}`).join('')}
+<span class="dt b7" style="color:var(--k);margin-top:4px">Both</span>${P.map((_,k)=>`<b class="d" style="font-size:15px;margin-top:4px">${D.slice(N-14).filter(d=>d.me.p[k]&&d.pa.p[k]).length}</b>`).join('')}</div>
+<div class="row" style="margin-top:12px;gap:14px;justify-content:center"><span class="row" style="gap:5px">${wq(1,0)}<span class="mut b7">Ornob</span></span><span class="row" style="gap:5px">${wq(0,1)}<span class="mut b7">Ayesha</span></span></div></div>
+<div class="row" style="gap:8px;align-items:stretch"><div class="card sp"><div class="lbl">Most kept</div><div class="d" style="font-size:22px;margin:7px 0 3px">${P[kept]}</div><div class="mut">${cb[kept]} of 30 days together</div></div><div class="card sp"><div class="lbl">Most room</div><div class="d" style="font-size:22px;margin:7px 0 3px">${P[room]}</div><div class="mut">${cb[room]} of 30 days together</div></div></div>
+<div class="lbl sec">Quran and istighfar, 14 days</div>
+<div class="card">${[['Ayat',d=>d.ay>=10],['Istighfar',d=>d.is>=100]].map(([t,f],j)=>`<div class="row" style="${j?'margin-top:12px':''}"><b style="width:62px">${t}</b><div class="sp"><div class="dots" style="flex-wrap:nowrap;justify-content:space-between">${D.slice(N-14).map(d=>`<i class="${f(d.me)?'y':''}"></i>`).join('')}</div><div class="dots" style="flex-wrap:nowrap;justify-content:space-between;margin-top:4px">${D.slice(N-14).map(d=>`<i class="${f(d.pa)?'z':'e'}"></i>`).join('')}</div></div></div>`).join('')}<p class="mut" style="margin:10px 0 0">A filled dot is a day that reached the goal.</p></div>`,'Insights');
+function dayline(){const x=h=>18+(h-4)*(284/15.5),y=h=>{const t=(h-4.9)/(18.5-4.9);return 96-74*Math.sin(Math.PI*Math.max(0,Math.min(1,t)))};
+  const H=[4.92,11.73,15.62,17.22,18.52],now=14.42;let path='';for(let h=4.9;h<=18.52;h+=.2)path+=`${path?'L':'M'}${x(h).toFixed(1)} ${y(h).toFixed(1)}`;
+  return `<svg viewBox="0 0 320 158" style="width:100%;display:block" role="img" aria-label="Today's prayer times along the sun's path"><path d="${path}" fill="none" stroke="#E4EBE8" stroke-width="2" stroke-dasharray="2 5" stroke-linecap="round"/><path d="M12 96H308" stroke="#E4EBE8"/>
+  ${H.map((h,k)=>{const lo=k===3?24:0,an=k===0?'start':k===1||k===3?'middle':'end',dx=k===0?-6:k===2?6:k===4?8:0;return `<g><circle cx="${x(h)}" cy="${y(h)}" r="${k===2?7:5}" fill="${k<2?'var(--a)':k===2?'#fff':'var(--pa)'}" stroke="var(--a)" stroke-width="${k===2?2.5:0}"/>${k===3?`<path d="M${x(h)} 102v22" stroke="#E4EBE8"/>`:''}<text x="${x(h)}" y="${114+lo}" dx="${dx}" text-anchor="${an}" font-size="9.5" font-weight="700" fill="#6B7C75" font-family="var(--body)">${P[k]}</text><text x="${x(h)}" y="${128+lo}" dx="${dx}" text-anchor="${an}" font-size="11.5" font-weight="800" fill="#11201B" font-family="var(--disp)">${T[k]}</text></g>`}).join('')}
+  <circle cx="${x(now)}" cy="${y(now)}" r="4" fill="#11201B"/><text x="${x(now)}" y="${y(now)-10}" text-anchor="middle" font-size="9" font-weight="800" fill="#11201B" font-family="var(--disp)" letter-spacing="1">NOW</text></svg>`}
+const s2=phone(`<h3>Me</h3>
+<div class="card"><div class="row"><div class="sp"><div class="lbl">Next prayer</div><div class="d" style="font-size:30px;margin-top:6px">Asr in 1h 12m</div></div><span class="pillc">Dhaka</span></div>${dayline()}
+<div class="row" style="margin-top:6px"><span class="av b" style="width:22px;height:22px;font-size:10px">A</span><span class="mut sp">Ayesha is in Sylhet. Her Asr is at 3:31.</span></div></div>
+<div class="lbl sec">How times are worked out</div>
+<div class="card np">${set('pin','Location','Dhaka · from your search')}${set('calc','Method','University of Karachi')}<div class="set" style="display:block"><b style="margin-bottom:8px">Asr time</b><div class="seg"><span>Standard</span><span class="on">Hanafi</span></div></div></div>
+<div class="lbl sec">You and your partner</div>
+<div class="card np"><div class="set"><span class="av a">O</span><div class="sp"><b>Ornob</b><small>You · teal</small></div><b style="color:var(--pk)">Edit</b></div><div class="set"><span class="av b">A</span><div class="sp"><b>Ayesha</b><small>Paired 34 days ago · code K7Q2MX</small></div><span class="chev">›</span></div></div>
+<div class="lbl sec">Account</div>${acct}`,'Me');
+
+/* ---------- 3 · Stories ---------- */
+const story=(eye,q,viz)=>`<div class="card story"><div class="lbl">${eye}</div><div class="q">${q}</div>${viz}</div>`;
+const i3=phone(`<h3>Insights</h3><p class="sub">What the last 30 days say</p>
+${story('Streak',`<span class="ca">${streak} days</span> in a row at 60% or more, together.`,`<div class="dots">${Array.from({length:best},(_,i)=>`<i class="${i<streak?'y':''}" style="width:12px;height:12px"></i>`).join('')}</div><p class="mut" style="margin:8px 0 0">${streak>=best?'This is your best streak yet.':`Your best is ${best}. ${best-streak} more to match it.`}</p>`)}
+${story('Salah',`You both prayed <span class="ca">${P[kept]}</span> on ${cb[kept]} of 30 days.`,`<div class="dots">${M.map(d=>`<i class="${d.me.p[kept]&&d.pa.p[kept]?'y':''}"></i>`).join('')}</div>`)}
+${story('Rhythm',`<span class="ca">${WD[bestWd]}s</span> are your fullest day, ${pc(wavg[bestWd])}% on average.`,`<div class="row" style="gap:6px;align-items:flex-end;height:54px">${[1,2,3,4,5,6,0].map(w=>`<div style="flex:1;text-align:center"><div style="height:${Math.round(8+34*wavg[w])}px;border-radius:7px 7px 3px 3px/6px 6px 3px 3px;background:${w===bestWd?'var(--a)':'var(--pa)'}"></div><div class="mut b7" style="font-size:10px;margin-top:4px">${WD[w][0]}</div></div>`).join('')}</div>`)}
+${story('Quran',`Together you read <span class="ca">${nf(ayM+ayP)} ayat</span>.`,`${bar(ayM,ayP)}<div class="row b7" style="margin-top:6px"><span class="ca">Ornob ${ayM}</span><span class="sp"></span><span class="cb">Ayesha ${ayP}</span></div>`)}
+${story('Istighfar',`<span class="ca">${nf(isM+isP)}</span> times you turned back to Allah.`,`${bar(isM,isP)}<div class="row b7" style="margin-top:6px"><span class="ca">${nf(isM)}</span><span class="sp"></span><span class="cb">${nf(isP)}</span></div>`)}
+${story('Full days',`<span class="ca">${full} days</span> where you both reached 100%.`,`<div class="row" style="gap:4px;flex-wrap:wrap">${M.filter(d=>tg(d)>=.999).map(d=>`<span class="pillc">${fmt(d.date,{day:'numeric',month:'short'})}</span>`).join('')}</div>`)}`,'Insights');
+const s3=phone(`<h3>Me</h3><p class="sub">Tap a tile to change it</p>
+<div class="tiles">
+<div class="tile"><div class="lbl">Nickname</div><div class="sp"></div><div class="row"><span class="av a">O</span><div class="d" style="font-size:22px">Ornob</div></div></div>
+<div class="tile"><div class="lbl">Color</div><div class="sp"></div><div class="row"><span style="width:38px;height:38px;border-radius:50%;background:var(--a)"></span><div><b>Teal</b><div class="mut">Your half</div></div></div></div>
+<div class="tile" style="grid-column:1/-1;min-height:0"><div class="row"><div class="lbl sp">Partner</div><span class="pillc">Code K7Q2MX</span></div><div class="row" style="margin-top:6px"><span class="av b">A</span><div class="sp"><div class="d" style="font-size:20px">Ayesha</div><div class="mut">Paired for 34 days · ${streak}-day streak</div></div><span class="chev">›</span></div></div>
+<div class="tile" style="grid-column:1/-1;min-height:0"><div class="row"><div class="lbl sp">Prayer times</div><span class="mut b7">Dhaka</span></div>${times()}<div class="mut">University of Karachi · Hanafi Asr</div></div>
+<div class="tile"><div class="lbl">Account</div><div class="sp"></div><div><b>Google</b><div class="mut" style="overflow-wrap:anywhere">ornob@example.com</div></div></div>
+<div class="tile"><div class="lbl">Backup</div><div class="sp"></div><div><b>Synced</b><div class="mut">35 days saved</div></div></div>
+</div>
+<div class="link" style="margin-top:6px">Sign out</div><div class="link" style="font-weight:600">Delete account</div>`,'Me');
+
+/* ---------- 4 · Side by Side ---------- */
+const mir=(t,sm,a,b,max,fa=a,fb=b)=>`<div class="mir"><div class="row" style="gap:6px"><b class="ca" style="width:34px;text-align:right">${fa}</b><div class="l sp"><u style="width:${Math.min(100,a/max*100)}%"></u></div></div><div class="m">${t}${sm?`<small>${sm}</small>`:''}</div><div class="row" style="gap:6px"><div class="r sp"><u style="width:${Math.min(100,b/max*100)}%"></u></div><b class="cb" style="width:34px">${fb}</b></div></div>`;
+const am=sum(M,d=>sc(d.me))/30,ap=sum(M,d=>sc(d.pa))/30;
+const i4=phone(`<h3>Insights</h3><p class="sub">You on the left, Ayesha on the right</p>
+<div class="card"><div class="row"><span class="av a" style="width:46px;height:46px">O</span><div class="sp" style="text-align:center"><div class="d" style="font-size:40px">${pc(avg)}%</div><div class="lbl" style="margin-top:4px">Together, 30 days</div></div><span class="av b" style="width:46px;height:46px">A</span></div>
+<div class="row" style="margin-top:10px"><b class="ca">${pc(am)}% Ornob</b><span class="sp"></span><b class="cb">Ayesha ${pc(ap)}%</b></div></div>
+<div class="lbl sec">Salah, days prayed of 30</div>
+<div class="card" style="padding-block:8px">${P.map((p,k)=>mir(p,`${cb[k]} together`,cm[k],cp[k],30)).join('')}</div>
+<div class="lbl sec">Quran and istighfar</div>
+<div class="card" style="padding-block:8px">${mir('Ayat','read',ayM,ayP,300)}${mir('Istighfar','said',isM,isP,3000,nf(isM),nf(isP))}${mir('Goal days','all 7 done',M.filter(d=>sc(d.me)>=.999).length,M.filter(d=>sc(d.pa)>=.999).length,30)}</div>
+<div class="lbl sec">Together</div>
+<div class="card row" style="padding:0;gap:0;text-align:center">${[[streak,'day streak'],[best,'best streak'],[full,'full days']].map((x,i)=>`<div style="flex:1;padding:13px 4px;${i?'border-left:1px solid var(--line)':''}"><div class="d" style="font-size:26px">${x[0]}</div><div class="mut b7" style="font-size:11px;margin-top:3px">${x[1]}</div></div>`).join('')}</div>
+<div class="card"><div class="row" style="justify-content:space-between">${D.slice(N-7).map((d,i)=>`<div style="text-align:center">${split(sc(d.me),sc(d.pa),15)}<div class="b7" style="font-size:10px;color:${i===6?'var(--k)':'var(--s)'}">${i===6?'Today':fmt(d.date,{weekday:'narrow'})}</div></div>`).join('')}</div></div>`,'Insights');
+const who=(c,n,l,city,nx,me)=>`<div class="card sp" style="text-align:center;padding:16px 10px"><span class="av ${c}" style="width:54px;height:54px;font-size:22px;margin:0 auto">${l}</span><div class="d" style="font-size:19px;margin-top:9px">${n}</div><div class="mut" style="margin-top:3px">${city}</div><div class="pillc" style="margin-top:9px">${nx}</div><div class="b7" style="color:var(--pk);margin-top:11px">${me?'Edit name and color':'Paired 34 days'}</div></div>`;
+const s4=phone(`<h3>Me</h3>
+<div class="row" style="gap:8px;align-items:stretch">${who('a','Ornob','O','Dhaka','Asr 3:37',1)}${who('b','Ayesha','A','Sylhet','Asr 3:31',0)}</div>
+<div class="lbl sec">Your pair</div>
+<div class="card np">${set('copy','Invite code','K7Q2MX','<b style="color:var(--pk)">Copy</b>')}${set('heart','Leave pair','Go back to solo. Your logs stay.')}</div>
+<div class="lbl sec">Your prayer times</div>
+<div class="card">${times()}</div>
+<div class="card np">${set('pin','Location','Dhaka')}${set('calc','Method','University of Karachi · Hanafi Asr')}</div>
+<div class="lbl sec">Account</div>${acct}`,'Me');
+
+/* ---------- 5 · Touch Calendar ---------- */
+const detail=i=>{const d=D[i],t=i===N-1;return `<div class="row"><div class="sp"><div class="lbl">${t?'Today':fmt(d.date,{weekday:'long'})}</div><div class="d" style="font-size:22px;margin-top:5px">${fmt(d.date,{day:'numeric',month:'long'})}</div></div><div style="text-align:right"><div class="d" style="font-size:30px">${pc(tg(d))}%</div><div class="mut b7">together</div></div></div>
+<div class="row" style="margin-top:12px;justify-content:space-between">${P.map((p,k)=>`<div style="text-align:center">${wq(d.me.p[k],d.pa.p[k])}<div class="mut b7" style="font-size:10px;margin-top:3px">${p}</div></div>`).join('')}</div>
+<div class="row" style="margin-top:12px;gap:8px">${[['Ayat',d.me.ay,d.pa.ay],['Istighfar',d.me.is,d.pa.is]].map(x=>`<div class="sp" style="background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:8px 10px"><div class="mut b7" style="font-size:10.5px">${x[0]}</div><b class="ca">${x[1]}</b> <span class="mut">·</span> <b class="cb">${x[2]}</b></div>`).join('')}</div>`};
+const i5=phone(`<h3>Insights</h3><p class="sub">Tap any day to open it</p>
+<div class="card row"><i class="star" style="width:26px;height:26px;margin:6px;background:linear-gradient(135deg,var(--a) 50%,var(--b) 50%)"></i><div class="sp"><div class="d" style="font-size:24px">${streak}-day streak</div><div class="mut">Best ${best} · ${full} full days this month</div></div></div>
+<div class="card"><div class="cal" style="margin-bottom:8px">${[0,1,2,3,4,5,6].map(i=>`<span class="lbl">${fmt(D[i].date,{weekday:'narrow'})}</span>`).join('')}</div>
+<div class="cal" id="cal">${D.map((d,i)=>`<button type="button" data-i="${i}" class="${tg(d)>.6?'hi':''} ${i===N-1?'sel':''}" aria-label="${fmt(d.date,{day:'numeric',month:'long'})}, ${pc(tg(d))} percent">${split(sc(d.me),sc(d.pa))}<span>${d.date.getDate()}</span></button>`).join('')}</div></div>
+<div class="card" id="det" aria-live="polite">${detail(N-1)}</div>
+<div class="row" style="gap:8px;align-items:stretch"><div class="card sp"><div class="mut b7">This week</div><div class="d" style="font-size:26px;margin-top:6px">${pc(wk)}%</div><div class="mut">last week ${pc(wkPrev)}%</div></div><div class="card sp"><div class="mut b7">Kept together most</div><div class="d" style="font-size:26px;margin-top:6px">${P[kept]}</div><div class="mut">${cb[kept]} of 30 days</div></div></div>`,'Insights');
+const COL=[['#0E9F8E','Teal'],['#3A7BFF','Blue'],['#7B5CFF','Violet'],['#E85AAD','Pink'],['#FF8A3D','Orange'],['#F2B705','Yellow'],['#2FB24C','Green'],['#8B5E3C','Brown']];
+const s5=phone(`<h3>Me</h3><p class="sub">Everything on one page, no menus</p>
+<div class="lbl sec">Nickname</div><div class="field">Ornob</div>
+<div class="lbl sec">Your color</div>
+<div class="card"><div class="swr" id="swr">${COL.map((c,i)=>`<button type="button" style="--c:${c[0]}" data-c="${c[0]}" class="${i?'':'sel'}" aria-label="${c[1]}"></button>`).join('')}<span style="width:30px;height:30px;border-radius:50%;background:var(--pb);display:grid;place-items:center;font-size:8px;font-weight:800;color:var(--b)" title="Taken by Ayesha">A</span></div><p class="mut" style="margin:10px 0 0">Try one. Every screen on this page follows. Red is Ayesha's.</p></div>
+<div class="lbl sec">Prayer times</div>
+<div class="card"><div class="row"><span class="pillc">Dhaka</span><span class="sp"></span><b style="color:var(--pk)">Use my location</b></div><div style="margin:12px 0">${times()}</div><div class="row" style="margin-bottom:8px"><b class="sp">Method</b><span class="mut">University of Karachi ▾</span></div><div class="seg"><span>Standard Asr</span><span class="on">Hanafi Asr</span></div></div>
+<div class="lbl sec">Partner</div>
+<div class="card row"><span class="av b">A</span><div class="sp"><b style="font-size:14px">Ayesha</b><div class="mut">Paired 34 days · K7Q2MX</div></div><b class="mut">Leave</b></div>
+<div class="lbl sec">Account</div>
+<div class="card row"><div class="sp"><b style="font-size:14px">ornob@example.com</b><div class="mut">Google · synced</div></div><b style="color:var(--pk)">Sign out</b></div>
+<div class="link" style="font-weight:600">Delete account and all logs</div>`,'Me');
+
+/* ---------- page ---------- */
+const dirs=[
+ ['Month Arc','The home arc, stretched over a month. Each of the 30 dots is one day, split into your half and your partner\'s half, with the month\'s together score in the middle. Settings opens with the two of you joined by a star.',i1,s1],
+ ['Waqt Board','Built on the Salah card\'s skewed shapes. Fourteen days by five prayers shows who prayed what at a glance. Settings leads with today\'s prayers on the sun\'s path, and shows your partner\'s next prayer when you are in different cities.',i2,s2],
+ ['Stories','Each insight is one sentence with a small picture under it, so the page reads like a letter about your month. Settings becomes tiles that show the current value large.',i3,s3],
+ ['Side by Side','One spine down the middle: you fill to the left, your partner to the right, the same way the arc splits. Settings puts both people at the top as equals.',i4,s4],
+ ['Touch Calendar','The calendar is the screen. Tap any day and the card under it shows that day\'s prayers, ayat and istighfar for both of you. Settings has no sub-pages: color, Asr and method change in place.',i5,s5]];
+document.getElementById('out').innerHTML=dirs.map((d,i)=>`<section class="dir" id="d${i+1}" style="margin-bottom:56px"><h2><small>DIRECTION ${i+1}</small>${d[0]}</h2><p>${d[1]}</p><div class="pair"><div class="col"><span>INSIGHTS</span>${d[2]}</div><div class="col"><span>SETTINGS</span>${d[3]}</div></div></section>`).join('');
+document.getElementById('cal').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;document.querySelectorAll('#cal button').forEach(x=>x.classList.remove('sel'));b.classList.add('sel');document.getElementById('det').innerHTML=detail(+b.dataset.i)});
+document.getElementById('swr').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;document.querySelectorAll('#swr button').forEach(x=>x.classList.remove('sel'));b.classList.add('sel');document.documentElement.style.setProperty('--a',b.dataset.c)});
+</script>

@@ -1,0 +1,492 @@
+{
+ "schema": "brand-identity/sets@1",
+ "sets": [
+  {
+   "identity": {
+    "set": {
+     "id": "A",
+     "name": "Two Gardens",
+     "recommended": true,
+     "mechanism": "Two people, two colours, one arc: the mark is the app's own together arc, and the two halves are the only saturated colours on a clean white ground.",
+     "expression_move": "The two-colour arc is the only loud thing; everything else is ink on white.",
+     "differs_by": "Muslim Pro, Athan and Pillars lead with a single green or teal. Suhbah keeps a green half so it still reads as a Muslim app, and adds a crimson half that none of them use: the second person."
+    },
+    "axes": {
+     "warm_cool": -1,
+     "playful_serious": -1,
+     "quiet_loud": -1
+    },
+    "type": {
+     "pairing_mode": "contrast",
+     "display": {
+      "family": "Bricolage Grotesque",
+      "source": "google",
+      "license": "OFL-1.1",
+      "weights": [
+       700
+      ],
+      "location": {
+       "opsz": 96,
+       "wdth": 100,
+       "wght": 700
+      },
+      "features": [],
+      "case": "lower",
+      "tracking": -20,
+      "fallback": "system-ui, sans-serif",
+      "file": null
+     },
+     "text": {
+      "family": "Plus Jakarta Sans",
+      "source": "google",
+      "license": "OFL-1.1",
+      "weights": [
+       400,
+       600
+      ],
+      "location": {
+       "wght": 400
+      },
+      "features": [
+       "tnum"
+      ],
+      "case": "as-is",
+      "tracking": 0,
+      "fallback": "system-ui, sans-serif",
+      "file": null
+     },
+     "mono": null
+    },
+    "logo": {
+     "type": "symbol+wordmark",
+     "concept": "The together arc from the Today screen, drawn as three strokes split into two halves.",
+     "symbol": "logo/symbol.svg",
+     "wordmark": {
+      "text": "suhbah",
+      "role": "display",
+      "location": null,
+      "tracking": -20,
+      "case": "lower"
+     },
+     "monogram": null,
+     "lockups": [
+      "horizontal",
+      "stacked"
+     ],
+     "colors": {
+      "left": "brand-1",
+      "right": "brand-2",
+      "wordmark": "text"
+     },
+     "tags": [
+      "abstract-geometric"
+     ],
+     "clear_space": {
+      "unit": "cap-height",
+      "multiple": 1,
+      "inferred": true
+     },
+     "min_size": {
+      "px": 24,
+      "mm": 8
+     }
+    },
+    "palette_build": {
+     "strategy": null,
+     "accent": null,
+     "light_bg": "#FFFFFF",
+     "dark_bg": null,
+     "neutral_tint": null,
+     "neutral_chroma": null,
+     "extra": [
+      "#E9A21B:Saffron:streak flame and celebration only"
+     ]
+    },
+    "defaults_used": [],
+    "rationale": [
+     {
+      "claim": "The arc mark and both typefaces are kept from the app as the founder approved them; only the colours change between sets.",
+      "evidence": "practice",
+      "source": "DESIGN.md"
+     },
+     {
+      "claim": "Green conforms to the category while the crimson half is unshared among the named competitors.",
+      "evidence": "judgement",
+      "source": "designer"
+     }
+    ]
+   },
+   "palette": {
+    "schema": "brand-identity/palette@1",
+    "name": "Two Gardens",
+    "direction": "Emerald and Pomegranate on white, with Saffron kept for the streak.",
+    "brand": [
+     {
+      "id": "brand-1",
+      "name": "Emerald",
+      "hex": "#0B7D5E",
+      "source": "chosen",
+      "locked": true,
+      "usage": "left half of the arc, primary buttons, your own progress",
+      "print": {
+       "lab_d50": null,
+       "cmyk": null,
+       "pantone_ref": null
+      }
+     },
+     {
+      "id": "brand-2",
+      "name": "Pomegranate",
+      "hex": "#C7224F",
+      "source": "chosen",
+      "locked": true,
+      "usage": "right half of the arc, the partner's progress",
+      "print": {
+       "lab_d50": null,
+       "cmyk": null,
+       "pantone_ref": null
+      }
+     }
+    ],
+    "feels": [
+     "warm",
+     "clear",
+     "together"
+    ]
+   },
+   "symbol_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><g id=\"left\" data-color=\"brand-1\"><path d=\"M2.00 74.00A48.00 48.00 0 0 1 45.32 26.23A5.00 5.00 0 0 1 46.29 36.18A38.00 38.00 0 0 0 12.00 74.00A5.00 5.00 0 0 1 2.00 74.00ZM16.00 74.00A34.00 34.00 0 0 1 45.09 40.36A5.00 5.00 0 0 1 46.54 50.25A24.00 24.00 0 0 0 26.00 74.00A5.00 5.00 0 0 1 16.00 74.00ZM30.00 74.00A20.00 20.00 0 0 1 44.47 54.78A5.00 5.00 0 0 1 47.24 64.39A10.00 10.00 0 0 0 40.00 74.00A5.00 5.00 0 0 1 30.00 74.00Z\"/></g><g id=\"right\" data-color=\"brand-2\"><path d=\"M54.68 26.23A48.00 48.00 0 0 1 98.00 74.00A5.00 5.00 0 0 1 88.00 74.00A38.00 38.00 0 0 0 53.71 36.18A5.00 5.00 0 0 1 54.68 26.23ZM54.91 40.36A34.00 34.00 0 0 1 84.00 74.00A5.00 5.00 0 0 1 74.00 74.00A24.00 24.00 0 0 0 53.46 50.25A5.00 5.00 0 0 1 54.91 40.36ZM55.53 54.78A20.00 20.00 0 0 1 70.00 74.00A5.00 5.00 0 0 1 60.00 74.00A10.00 10.00 0 0 0 52.76 64.39A5.00 5.00 0 0 1 55.53 54.78Z\"/></g></svg>",
+   "symbol_small_svg": null,
+   "wordmark_detail_svg": null
+  },
+  {
+   "identity": {
+    "set": {
+     "id": "B",
+     "name": "Tile and Lamp",
+     "recommended": false,
+     "mechanism": "A glazed tile under lamplight: a deep blue half and an amber half on warm paper, so the arc reads like a dome seen at dusk.",
+     "expression_move": "The warm paper ground carries the mood; the arc stays simple.",
+     "differs_by": "Breaks the category's green entirely. Blue and amber are the well-rated orange with navy direction, and no named competitor owns it."
+    },
+    "axes": {
+     "warm_cool": -2,
+     "playful_serious": 0,
+     "quiet_loud": 0
+    },
+    "type": {
+     "pairing_mode": "contrast",
+     "display": {
+      "family": "Bricolage Grotesque",
+      "source": "google",
+      "license": "OFL-1.1",
+      "weights": [
+       700
+      ],
+      "location": {
+       "opsz": 96,
+       "wdth": 100,
+       "wght": 700
+      },
+      "features": [],
+      "case": "lower",
+      "tracking": -20,
+      "fallback": "system-ui, sans-serif",
+      "file": null
+     },
+     "text": {
+      "family": "Plus Jakarta Sans",
+      "source": "google",
+      "license": "OFL-1.1",
+      "weights": [
+       400,
+       600
+      ],
+      "location": {
+       "wght": 400
+      },
+      "features": [
+       "tnum"
+      ],
+      "case": "as-is",
+      "tracking": 0,
+      "fallback": "system-ui, sans-serif",
+      "file": null
+     },
+     "mono": null
+    },
+    "logo": {
+     "type": "symbol+wordmark",
+     "concept": "The same arc, read as a tiled dome lit from one side.",
+     "symbol": "logo/symbol.svg",
+     "wordmark": {
+      "text": "suhbah",
+      "role": "display",
+      "location": null,
+      "tracking": -20,
+      "case": "lower"
+     },
+     "monogram": null,
+     "lockups": [
+      "horizontal",
+      "stacked"
+     ],
+     "colors": {
+      "left": "brand-1",
+      "right": "brand-2",
+      "wordmark": "text"
+     },
+     "tags": [
+      "abstract-geometric"
+     ],
+     "clear_space": {
+      "unit": "cap-height",
+      "multiple": 1,
+      "inferred": true
+     },
+     "min_size": {
+      "px": 24,
+      "mm": 8
+     }
+    },
+    "palette_build": {
+     "strategy": null,
+     "accent": null,
+     "light_bg": "#FFF8EA",
+     "dark_bg": null,
+     "neutral_tint": null,
+     "neutral_chroma": null,
+     "extra": [
+      "#0B7D5E:Emerald:success and completed states"
+     ]
+    },
+    "defaults_used": [],
+    "rationale": [
+     {
+      "claim": "The arc mark and both typefaces are kept from the app as the founder approved them; only the colours change between sets.",
+      "evidence": "practice",
+      "source": "DESIGN.md"
+     },
+     {
+      "claim": "Orange with navy is among the better rated colour directions (O'Donovan 2011, Schloss and Palmer 2011).",
+      "evidence": "strong",
+      "source": "references/color.md"
+     }
+    ]
+   },
+   "palette": {
+    "schema": "brand-identity/palette@1",
+    "name": "Tile and Lamp",
+    "direction": "Lapis and deep amber on warm paper.",
+    "brand": [
+     {
+      "id": "brand-1",
+      "name": "Lapis",
+      "hex": "#1F3FA8",
+      "source": "chosen",
+      "locked": true,
+      "usage": "left half of the arc, primary buttons",
+      "print": {
+       "lab_d50": null,
+       "cmyk": null,
+       "pantone_ref": null
+      }
+     },
+     {
+      "id": "brand-2",
+      "name": "Lamp Amber",
+      "hex": "#E8820C",
+      "source": "chosen",
+      "locked": true,
+      "usage": "right half of the arc, highlights",
+      "print": {
+       "lab_d50": null,
+       "cmyk": null,
+       "pantone_ref": null
+      }
+     }
+    ],
+    "feels": [
+     "crafted",
+     "glowing",
+     "calm"
+    ]
+   },
+   "symbol_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><g id=\"left\" data-color=\"brand-1\"><path d=\"M2.00 74.00A48.00 48.00 0 0 1 45.32 26.23A5.00 5.00 0 0 1 46.29 36.18A38.00 38.00 0 0 0 12.00 74.00A5.00 5.00 0 0 1 2.00 74.00ZM16.00 74.00A34.00 34.00 0 0 1 45.09 40.36A5.00 5.00 0 0 1 46.54 50.25A24.00 24.00 0 0 0 26.00 74.00A5.00 5.00 0 0 1 16.00 74.00ZM30.00 74.00A20.00 20.00 0 0 1 44.47 54.78A5.00 5.00 0 0 1 47.24 64.39A10.00 10.00 0 0 0 40.00 74.00A5.00 5.00 0 0 1 30.00 74.00Z\"/></g><g id=\"right\" data-color=\"brand-2\"><path d=\"M54.68 26.23A48.00 48.00 0 0 1 98.00 74.00A5.00 5.00 0 0 1 88.00 74.00A38.00 38.00 0 0 0 53.71 36.18A5.00 5.00 0 0 1 54.68 26.23ZM54.91 40.36A34.00 34.00 0 0 1 84.00 74.00A5.00 5.00 0 0 1 74.00 74.00A24.00 24.00 0 0 0 53.46 50.25A5.00 5.00 0 0 1 54.91 40.36ZM55.53 54.78A20.00 20.00 0 0 1 70.00 74.00A5.00 5.00 0 0 1 60.00 74.00A10.00 10.00 0 0 0 52.76 64.39A5.00 5.00 0 0 1 55.53 54.78Z\"/></g></svg>",
+   "symbol_small_svg": null,
+   "wordmark_detail_svg": null
+  },
+  {
+   "identity": {
+    "set": {
+     "id": "C",
+     "name": "After Isha",
+     "recommended": false,
+     "mechanism": "The arc as light in the night sky: a turquoise half and a saffron half glowing on deep midnight, for an app most used before Fajr and after Isha.",
+     "expression_move": "The dark midnight ground is the loud move; type and layout stay quiet.",
+     "differs_by": "Every named competitor is light and green. A dark first identity with two light colours stands apart on the home screen."
+    },
+    "axes": {
+     "warm_cool": 1,
+     "playful_serious": 1,
+     "quiet_loud": 1
+    },
+    "type": {
+     "pairing_mode": "contrast",
+     "display": {
+      "family": "Bricolage Grotesque",
+      "source": "google",
+      "license": "OFL-1.1",
+      "weights": [
+       700
+      ],
+      "location": {
+       "opsz": 96,
+       "wdth": 100,
+       "wght": 700
+      },
+      "features": [],
+      "case": "lower",
+      "tracking": -20,
+      "fallback": "system-ui, sans-serif",
+      "file": null
+     },
+     "text": {
+      "family": "Plus Jakarta Sans",
+      "source": "google",
+      "license": "OFL-1.1",
+      "weights": [
+       400,
+       600
+      ],
+      "location": {
+       "wght": 400
+      },
+      "features": [
+       "tnum"
+      ],
+      "case": "as-is",
+      "tracking": 0,
+      "fallback": "system-ui, sans-serif",
+      "file": null
+     },
+     "mono": null
+    },
+    "logo": {
+     "type": "symbol+wordmark",
+     "concept": "The same arc, drawn in light on a night ground.",
+     "symbol": "logo/symbol.svg",
+     "wordmark": {
+      "text": "suhbah",
+      "role": "display",
+      "location": null,
+      "tracking": -20,
+      "case": "lower"
+     },
+     "monogram": null,
+     "lockups": [
+      "horizontal",
+      "stacked"
+     ],
+     "colors": {
+      "left": "brand-1",
+      "right": "brand-2",
+      "wordmark": "text"
+     },
+     "tags": [
+      "abstract-geometric"
+     ],
+     "clear_space": {
+      "unit": "cap-height",
+      "multiple": 1,
+      "inferred": true
+     },
+     "min_size": {
+      "px": 24,
+      "mm": 8
+     }
+    },
+    "palette_build": {
+     "strategy": null,
+     "accent": null,
+     "light_bg": null,
+     "dark_bg": "#141E38",
+     "neutral_tint": null,
+     "neutral_chroma": null,
+     "extra": [
+      "#F096BA:Rosewater:partner highlights"
+     ]
+    },
+    "defaults_used": [],
+    "rationale": [
+     {
+      "claim": "The arc mark and both typefaces are kept from the app as the founder approved them; only the colours change between sets.",
+      "evidence": "practice",
+      "source": "DESIGN.md"
+     },
+     {
+      "claim": "Teal and yellow are vivid only when light, so they need the dark partner ground.",
+      "evidence": "strong",
+      "source": "references/color.md"
+     }
+    ],
+    "card": {
+     "ground": "dark"
+    }
+   },
+   "palette": {
+    "schema": "brand-identity/palette@1",
+    "name": "After Isha",
+    "direction": "Turquoise and saffron light on midnight.",
+    "brand": [
+     {
+      "id": "brand-1",
+      "name": "Turquoise",
+      "hex": "#3CC2C4",
+      "source": "chosen",
+      "locked": true,
+      "usage": "left half of the arc on dark grounds",
+      "print": {
+       "lab_d50": null,
+       "cmyk": null,
+       "pantone_ref": null
+      }
+     },
+     {
+      "id": "brand-2",
+      "name": "Saffron",
+      "hex": "#FFC94D",
+      "source": "chosen",
+      "locked": true,
+      "usage": "right half of the arc on dark grounds",
+      "print": {
+       "lab_d50": null,
+       "cmyk": null,
+       "pantone_ref": null
+      }
+     },
+     {
+      "id": "brand-3",
+      "name": "Midnight",
+      "hex": "#1C2A4D",
+      "source": "chosen",
+      "locked": true,
+      "usage": "icon ground, dark surfaces, text on light",
+      "print": {
+       "lab_d50": null,
+       "cmyk": null,
+       "pantone_ref": null
+      }
+     }
+    ],
+    "feels": [
+     "calm",
+     "nightly",
+     "glowing"
+    ]
+   },
+   "symbol_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><g id=\"left\" data-color=\"brand-1\"><path d=\"M2.00 74.00A48.00 48.00 0 0 1 45.32 26.23A5.00 5.00 0 0 1 46.29 36.18A38.00 38.00 0 0 0 12.00 74.00A5.00 5.00 0 0 1 2.00 74.00ZM16.00 74.00A34.00 34.00 0 0 1 45.09 40.36A5.00 5.00 0 0 1 46.54 50.25A24.00 24.00 0 0 0 26.00 74.00A5.00 5.00 0 0 1 16.00 74.00ZM30.00 74.00A20.00 20.00 0 0 1 44.47 54.78A5.00 5.00 0 0 1 47.24 64.39A10.00 10.00 0 0 0 40.00 74.00A5.00 5.00 0 0 1 30.00 74.00Z\"/></g><g id=\"right\" data-color=\"brand-2\"><path d=\"M54.68 26.23A48.00 48.00 0 0 1 98.00 74.00A5.00 5.00 0 0 1 88.00 74.00A38.00 38.00 0 0 0 53.71 36.18A5.00 5.00 0 0 1 54.68 26.23ZM54.91 40.36A34.00 34.00 0 0 1 84.00 74.00A5.00 5.00 0 0 1 74.00 74.00A24.00 24.00 0 0 0 53.46 50.25A5.00 5.00 0 0 1 54.91 40.36ZM55.53 54.78A20.00 20.00 0 0 1 70.00 74.00A5.00 5.00 0 0 1 60.00 74.00A10.00 10.00 0 0 0 52.76 64.39A5.00 5.00 0 0 1 55.53 54.78Z\"/></g></svg>",
+   "symbol_small_svg": null,
+   "wordmark_detail_svg": null
+  }
+ ]
+}

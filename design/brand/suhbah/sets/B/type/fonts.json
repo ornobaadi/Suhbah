@@ -1,0 +1,29 @@
+{
+  "display": {
+    "family": "Bricolage Grotesque",
+    "file": "C:\\Users\\Krypto\\.cache\\brand-identity\\fonts\\instances\\BricolageGrotesque-859b40a780bf4acd.ttf",
+    "location": {
+      "opsz": 96,
+      "wdth": 100,
+      "wght": 700
+    },
+    "weights": [
+      700
+    ],
+    "features": []
+  },
+  "text": {
+    "family": "Plus Jakarta Sans",
+    "file": "C:\\Users\\Krypto\\.cache\\brand-identity\\fonts\\instances\\PlusJakartaSans-03b65755a0a0ffb7.ttf",
+    "location": {
+      "wght": 400
+    },
+    "weights": [
+      400,
+      600
+    ],
+    "features": [
+      "tnum"
+    ]
+  }
+}

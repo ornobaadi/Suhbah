@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Suhbah launch screen: the arc centred on the brand ground (white, or near-black in dark mode). -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@color/splash_background" />
+    <item>
+        <bitmap android:gravity="center" android:src="@drawable/splash_mark" />
+    </item>
+</layer-list>

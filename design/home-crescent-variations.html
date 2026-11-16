@@ -1,0 +1,262 @@
+<title>Crescent Split Variations</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Amiri:wght@700&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: gallery of five phones, each a self-contained theme via per-screen tokens; the page frame stays neutral. */
+:root{
+  --bg:#f2f2f0; --fg:#1b1d1c; --muted:#6a6f6c; --chip:#e5e6e3;
+  --ui:"Plus Jakarta Sans",system-ui,sans-serif;
+  --display:"Bricolage Grotesque","Plus Jakarta Sans",system-ui,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+  --ar:"Amiri","Noto Naskh Arabic",serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#111312;--fg:#eaecea;--muted:#9ba29e;--chip:#1f2321;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#111312;--fg:#eaecea;--muted:#9ba29e;--chip:#1f2321;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--ui);margin:0}
+.wrap{max-width:1560px;margin:0 auto;padding-block:40px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.top{max-width:72ch;display:grid;gap:10px;margin-bottom:36px}
+.top h1{font-family:var(--display);font-weight:800;font-size:clamp(28px,4vw,40px);margin:0;letter-spacing:-.02em;text-wrap:balance}
+.top p{margin:0;color:var(--muted);line-height:1.6;font-size:15px}
+.state{font-family:var(--mono);font-size:12px;color:var(--muted);background:var(--chip);border-radius:6px;padding:8px 10px;max-width:100%;line-height:1.6}
+.replay{justify-self:start;font:600 13px var(--ui);background:var(--fg);color:var(--bg);border:0;border-radius:99px;padding:9px 16px;cursor:pointer}
+.replay:focus-visible{outline:2px solid var(--muted);outline-offset:3px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:52px 28px}
+.opt{display:grid;gap:14px;align-content:start;min-width:0}
+.meta{display:grid;gap:6px}
+.tag{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.meta h2{margin:0;font-family:var(--display);font-size:22px;letter-spacing:-.01em}
+.meta p{margin:0;color:var(--muted);font-size:14px;line-height:1.55}
+.meta ul{margin:0;padding-left:18px;color:var(--muted);font-size:13px;line-height:1.6}
+
+/* phone */
+.phone{width:340px;max-width:100%;aspect-ratio:340/740;border-radius:42px;padding:10px;background:#0c0d0d;box-shadow:0 24px 50px -22px rgba(0,0,0,.4);margin:0 auto}
+.screen{--bg:#fff;--ink:#111;--sub:#777;--card:#fff;--line:#eee;--A:#0E9F8E;--B:#FF355E;--pill:#eee;--pillInk:#333;--hero:var(--bg);--heroInk:var(--ink);--heroSub:var(--sub);
+  width:100%;height:100%;border-radius:33px;overflow:hidden;position:relative;background:var(--bg);color:var(--ink)}
+.hero{background:var(--hero);color:var(--heroInk);padding-bottom:12px}
+.sb{display:flex;justify-content:space-between;padding:10px 22px 0;font-size:11px;font-weight:600;opacity:.7}
+.hd{display:flex;align-items:center;justify-content:space-between;padding:10px 18px 0}
+.logo{display:flex;align-items:center;gap:7px;font-family:var(--display);font-weight:700;font-size:16px}
+.logo svg{width:18px;height:18px}
+.hdr{display:flex;align-items:center;gap:10px;font-size:12px;font-weight:700}
+.av{width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,var(--A) 50%,var(--B) 50%)}
+.arcwrap{position:relative;margin:2px auto 0;width:300px;max-width:100%}
+.arcwrap svg{width:100%;display:block;overflow:visible}
+.num{position:absolute;left:0;right:0;text-align:center;line-height:.86;pointer-events:none}
+.num b{font-family:var(--display);font-weight:800;font-size:76px;letter-spacing:-.045em;display:block}
+.num b sup{font-size:.36em;letter-spacing:0;vertical-align:.95em;margin-left:2px}
+.num span{font-family:var(--display);font-weight:700;font-size:11px;letter-spacing:.16em;color:var(--heroSub)}
+.ar{font-family:var(--ar);font-size:18px;color:var(--heroSub);line-height:1}
+.under{display:flex;justify-content:center;align-items:center;gap:10px;margin-top:8px;flex-wrap:wrap}
+.who{display:flex;gap:6px}
+.who span{display:flex;align-items:center;gap:5px;font-size:11px;font-weight:700;padding:4px 9px 4px 5px;border-radius:99px;background:color-mix(in srgb,var(--c) 14%,transparent);color:var(--heroInk)}
+.who i{width:14px;height:14px;border-radius:50%;background:var(--c);display:grid;place-items:center;font-style:normal;font-size:8px;color:#fff}
+.yest{background:var(--pill);color:var(--pillInk);font-family:var(--display);font-weight:700;font-size:11px;padding:5px 10px;border-radius:99px}
+.sec{padding:14px 16px 0;display:flex;justify-content:space-between;align-items:end}
+.sec h3{margin:0;font-family:var(--display);font-weight:800;font-size:17px}
+.sec .ss{font-size:11px;color:var(--sub);margin-top:2px}
+.sec .cnt{font-family:var(--display);font-weight:800;font-size:12px;color:var(--sub)}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:10px 16px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:11px 12px;min-width:0}
+.card.wide{grid-column:1/-1}
+.ct{display:flex;justify-content:space-between;align-items:center;font-size:12px;font-weight:700}
+.ct span{font-weight:500;color:var(--sub);font-size:10.5px}
+.mirror{display:grid;grid-template-columns:1fr 26px 1fr;align-items:center;gap:6px;margin-top:9px}
+.segs{display:flex;gap:3px}.segs.r{flex-direction:row-reverse}
+.seg{flex:1;height:20px;border-radius:6px}
+.mid{width:26px;height:26px;border-radius:50%;background:var(--line);display:grid;place-items:center;color:var(--sub)}
+.mid svg{width:13px;height:13px}
+.lbls{display:grid;grid-template-columns:1fr 26px 1fr;gap:6px;margin-top:5px;font-size:9px;font-weight:700;color:var(--sub);letter-spacing:.05em}
+.lbls div{display:flex;justify-content:space-around}.lbls .r{flex-direction:row-reverse}
+.verses{display:grid;gap:5px;margin-top:9px}
+.vrow{display:flex;gap:3px}
+.vrow i{flex:1;height:10px;border-radius:3px}
+.vcap{display:flex;justify-content:space-between;font-family:var(--display);font-weight:800;font-size:12px;margin-top:6px}
+.ring{width:64px;height:64px;border-radius:50%;margin:7px auto 3px;display:grid;place-items:center;position:relative}
+.ring .in{width:50px;height:50px;border-radius:50%;display:grid;place-items:center}
+.ring .core{width:38px;height:38px;border-radius:50%;background:var(--card);display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:11px;line-height:1}
+.cap{text-align:center;font-size:10.5px;color:var(--sub)}
+.nav{position:absolute;left:0;right:0;bottom:0;display:flex;align-items:center;justify-content:space-around;padding:10px 12px 16px;background:var(--bg);border-top:1px solid var(--line);font-size:10px;font-weight:600;color:var(--sub)}
+.nav span{display:grid;justify-items:center;gap:3px}
+.nav span i{width:18px;height:3px;border-radius:2px;background:currentColor;opacity:.4}
+.nav .on{color:var(--ink)}.nav .on i{opacity:1;background:var(--A)}
+.fab{position:absolute;right:16px;bottom:66px;width:52px;height:52px;border-radius:18px;background:var(--B);color:#fff;display:grid;place-items:center;font-size:26px;font-weight:400;box-shadow:0 10px 22px -8px color-mix(in srgb,var(--B) 70%,transparent)}
+
+/* motion: dots pop in from the tips toward the meeting point */
+@keyframes pop{from{transform:scale(0);opacity:0}to{transform:scale(1)}}
+.dot{transform-box:fill-box;transform-origin:center;animation:pop .45s cubic-bezier(.3,1.6,.5,1) both}
+@media (prefers-reduced-motion:reduce){.dot{animation:none}}
+
+/* themes */
+.t1{--bg:#fbfaf8;--ink:#14161a;--sub:#7b7e86;--card:#fff;--line:#eeece8;--pill:#f1efea;--pillInk:#4a4a4a}
+.t2{--bg:#f6f7f6;--ink:#0f1c1a;--sub:#6f7d79;--card:#fff;--line:#e6ebe9;--hero:#0b3a35;--heroInk:#fff;--heroSub:#8fc7bd;--A:#38e0c3;--pill:#14504a;--pillInk:#cdeee8}
+.t3{--bg:#ffffff;--ink:#101418;--sub:#80868f;--card:#f6f7f9;--line:#eef0f3;--pill:#f2f4f7;--pillInk:#3b4250}
+.t4{--bg:#f7f6fb;--ink:#17152b;--sub:#7d7a93;--card:#fff;--line:#ebe9f4;--A:#11a594;--pill:#ecebf6;--pillInk:#3f3a6b}
+.t5{--bg:#121016;--ink:#f6f2ee;--sub:#958f9c;--card:#1c1922;--line:#2a2631;--A:#2fe0c8;--pill:#241f2b;--pillInk:#f6f2ee}
+.t2 .hd .hdr .st,.t2 .logo{color:#fff}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <h1>Crescent Split, five ways</h1>
+    <p>Every phone keeps what you liked: two people's dots meeting in one arc, a big together number, then each deed side by side. Each variation changes the shape or the meaning of the dots so it stops reading as a copy of the reference. Colors are teal and radical red #FF355E; users will pick their own at onboarding.</p>
+    <div class="state">100% = 5 prayers + 10 verses of Quran + 100 istighfar, per person (7 goals each)<br>After Maghrib · Ayesha: 4 prayers, 10/10 verses, 100/100 istighfar = 6 of 7<br>Rafi: 3 prayers (Fajr not logged), 6/10 verses, 40/100 istighfar = 4 of 7 · Together 71%</div>
+    <button class="replay" id="replay" type="button">Replay animation</button>
+  </header>
+  <div class="grid" id="grid"></div>
+</div>
+
+<script>
+var A = {name:'Ayesha', c:'var(--A)', prayers:[1,1,1,1,2], verses:10, istighfar:100};
+var B = {name:'Rafi',   c:'var(--B)', prayers:[0,1,1,1,2], verses:6,  istighfar:40};
+function score(p){ var done=p.prayers.filter(function(s){return s===1}).length; return (done + p.verses/10 + p.istighfar/100)/7; }
+var aF = score(A), bF = score(B), TOG = Math.round((aF+bF)/2*100);
+var crescent = '<svg viewBox="0 0 24 24"><path d="M15 3a9 9 0 1 0 6 15.5A7.5 7.5 0 0 1 15 3z" fill="currentColor"/></svg>';
+
+var V = [
+ {cls:'t1', tag:'Variation 1', name:'Lying Crescent', arc:'lune',
+  desc:'The arc becomes an actual crescent moon lying on its back, the way it sits low in the sky after sunset. Ayesha fills from the left tip, Rafi from the right, and you meet at the thick bottom. The number sits in the hollow of the moon.',
+  pros:['Same feeling as the reference, but the shape is clearly yours','A strong logo: the crescent is the app icon']},
+ {cls:'t2', tag:'Variation 2', name:'Star Arc', arc:'stars',
+  desc:'The dots become little eight-point stars (the rub el hizb shape from the mushaf). The top half of the screen is a deep green night block, so the arc glows. Cards sit on light grey below.',
+  pros:['Feels lively and festive, especially in Ramadan','Color-blocked hero is very different from the reference\'s flat page']},
+ {cls:'t3', tag:'Variation 3', name:'Deed Rings', arc:'bands',
+  desc:'Every dot means something. Outer ring: 5 big dots each for the prayers. Middle: 10 dots each for the verses. Inner: small dots for istighfar, one per 5. You can read exactly what\'s left straight from the arc.',
+  pros:['Honest and readable: the arc is the progress, not decoration','Tradeoff: busier, since three dot sizes share one arc']},
+ {cls:'t4', tag:'Variation 4', name:'Badr', arc:'circle',
+  desc:'The arc keeps going into a full circle. Each of you wraps up one side from the bottom. When the day hits 100%, the two halves close into a full moon (badr).',
+  pros:['Built-in celebration moment: the circle closes','Tradeoff: least like the reference, so it loses some of that instant "arc" recognition']},
+ {cls:'t5', tag:'Variation 5', name:'Night Poster', arc:'poster',
+  desc:'Dark and bold. One row of large dots and a huge number that overlaps the arc, with the Arabic word for together underneath. Feels like a poster, made for screenshots and share cards.',
+  pros:['The most exciting, and the radical red really glows on dark','Tradeoff: needs a light mode designed separately for daytime']}
+];
+
+/* ---------- arc geometry ---------- */
+var delay=0;
+function dot(x,y,r,col,on,shape){
+  var st=' style="animation-delay:'+(delay+=12)+'ms"';
+  var op = on? '' : ' opacity="'+(shape==='star'?'.25':'.2')+'"';
+  if(shape==='star'){
+    var s=r*1.55;
+    return '<g class="dot"'+st+' fill="'+col+'"'+op+'><rect x="'+(x-s/2).toFixed(1)+'" y="'+(y-s/2).toFixed(1)+'" width="'+s.toFixed(1)+'" height="'+s.toFixed(1)+'" rx="1.2"/><rect x="'+(x-s/2).toFixed(1)+'" y="'+(y-s/2).toFixed(1)+'" width="'+s.toFixed(1)+'" height="'+s.toFixed(1)+'" rx="1.2" transform="rotate(45 '+x.toFixed(1)+' '+y.toFixed(1)+')"/></g>';
+  }
+  return '<circle class="dot"'+st+' cx="'+x.toFixed(1)+'" cy="'+y.toFixed(1)+'" r="'+r+'" fill="'+col+'"'+op+'/>';
+}
+/* Semi-circle rings. Each side fills from its base up toward the top. */
+function semi(rings, cx, cy, shape, gapDeg){
+  var out='', g=(gapDeg||0)*Math.PI/180;
+  rings.forEach(function(rg){
+    var half = Math.floor(rg.n/2);
+    for(var side=0; side<2; side++){
+      var p = side? B:A, f = side? bF:aF, nn = rg.count ? rg.count : half;
+      for(var i=0;i<nn;i++){
+        var u = nn===1?0:i/(nn-1);
+        var a = (Math.PI/2 - g/2) * u;           // 0 at base -> top
+        var ang = side? a : Math.PI - a;
+        var x = cx + rg.R*Math.cos(ang), y = cy - rg.R*Math.sin(ang);
+        var on = rg.fn ? rg.fn(p,i) : (i+1)/nn <= f + 1e-6;
+        out += dot(x,y,rg.r,p.c,on,shape);
+      }
+    }
+  });
+  return out;
+}
+function arcSVG(v){
+  delay=0; var out='', vb, numTop;
+  if(v.arc==='lune'){
+    // lying crescent: outer circle minus inner circle shifted up
+    var cx=150, oy=62, R=126, iy=6, ri=116, s=12.4, pts=[];
+    for(var row=0; row<30; row++){
+      var y=40+row*s*0.866;
+      for(var col=-14; col<=14; col++){
+        var x=cx+col*s+(row%2? s/2:0);
+        var dO=Math.hypot(x-cx,y-oy), dI=Math.hypot(x-cx,y-iy);
+        if(dO<=R-6 && dI>=ri+6) pts.push([x,y]);
+      }
+    }
+    var L=pts.filter(function(p){return p[0]<cx-0.1}).sort(function(a,b){return a[0]-b[0]});
+    var Rr=pts.filter(function(p){return p[0]>cx+0.1}).sort(function(a,b){return b[0]-a[0]});
+    var M=pts.filter(function(p){return Math.abs(p[0]-cx)<=0.1});
+    L.forEach(function(p,i){ out+=dot(p[0],p[1],5.2,A.c,(i+1)/L.length<=aF+1e-6); });
+    Rr.forEach(function(p,i){ out+=dot(p[0],p[1],5.2,B.c,(i+1)/Rr.length<=bF+1e-6); });
+    M.forEach(function(p){ out+=dot(p[0],p[1],5.2,'var(--line)',true); });
+    vb='0 20 300 172'; numTop='14%';
+    out+='<text x="150" y="34" text-anchor="middle" font-family="Bricolage Grotesque,sans-serif" font-size="9.5" font-weight="700" letter-spacing="2.5" fill="var(--heroSub)">TOGETHER TODAY</text>';
+  }
+  if(v.arc==='stars'){
+    out=semi([{R:130,n:24,r:6.2},{R:112,n:20,r:6.2},{R:94,n:16,r:6.2}],150,160,'star');
+    out+='<g transform="translate(140 6)" color="#ffd7df"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M15 3a9 9 0 1 0 6 15.5A7.5 7.5 0 0 1 15 3z" fill="currentColor"/></svg></g>';
+    vb='0 0 300 168'; numTop='auto';
+  }
+  if(v.arc==='bands'){
+    out=semi([
+      {R:132,count:5,r:9.5,fn:function(p,i){return p.prayers[i]===1}},
+      {R:110,count:10,r:5.6,fn:function(p,i){return i<p.verses}},
+      {R:92,count:20,r:3.3,fn:function(p,i){return i<p.istighfar/5}}
+    ],150,160,'circle',10);
+    vb='0 4 300 166'; numTop='auto';
+  }
+  if(v.arc==='circle'){
+    var cx=150, cy=118, rings=[{R:104,n:22,r:6.4},{R:88,n:18,r:6.4}];
+    rings.forEach(function(rg){
+      for(var side=0;side<2;side++){
+        var p=side?B:A, f=side?bF:aF;
+        for(var i=0;i<rg.n;i++){
+          var u=i/(rg.n-1), a=Math.PI/2 + (Math.PI-0.18)*u*(side?-1:1) + (side?-0.09:0.09);
+          var x=cx+rg.R*Math.cos(a), y=cy+rg.R*Math.sin(a);
+          out+=dot(x,y,rg.r,p.c,(i+1)/rg.n<=f+1e-6);
+        }
+      }
+    });
+    vb='0 4 300 228'; numTop='33%';
+  }
+  if(v.arc==='poster'){
+    out=semi([{R:132,n:18,r:11}],150,150,'circle');
+    vb='0 0 300 162'; numTop='auto';
+  }
+  return {svg:'<svg viewBox="'+vb+'" aria-label="Together arc, '+TOG+' percent">'+out+'</svg>', top:numTop};
+}
+
+/* ---------- cards ---------- */
+function fill(s,c){ return s===1?'background:'+c : s===2?'background:transparent;box-shadow:inset 0 0 0 1.5px '+c+';opacity:.55':'background:'+c+';opacity:.18'; }
+function prayers(){
+  var a=A.prayers.map(function(s){return '<i class="seg" style="'+fill(s,A.c)+'"></i>'}).join('');
+  var b=B.prayers.map(function(s){return '<i class="seg" style="'+fill(s,B.c)+'"></i>'}).join('');
+  var L='<div>'+['F','D','A','M','I'].map(function(x){return '<span>'+x+'</span>'}).join('')+'</div>';
+  return '<div class="card wide"><div class="ct">Salah<span>Isha at 6:49 PM</span></div><div class="mirror"><div class="segs">'+a+'</div><div class="mid">'+crescent+'</div><div class="segs r">'+b+'</div></div><div class="lbls">'+L+'<span></span>'+L.replace('<div>','<div class="r">')+'</div></div>';
+}
+function verses(){
+  function row(p){var h='';for(var i=0;i<10;i++)h+='<i style="'+fill(i<p.verses?1:0,p.c)+'"></i>';return '<div class="vrow">'+h+'</div>';}
+  return '<div class="card"><div class="ct">Quran<span>10 verses</span></div><div class="verses">'+row(A)+row(B)+'</div><div class="vcap"><span style="color:'+A.c+'">'+A.verses+'</span><span style="color:'+B.c+'">'+B.verses+'</span></div></div>';
+}
+function istighfar(){
+  return '<div class="card"><div class="ct">Istighfar<span>100 each</span></div><div class="ring" style="background:conic-gradient('+A.c+' 0 '+A.istighfar+'%,color-mix(in srgb,'+A.c+' 18%,transparent) 0)"><div class="in" style="background:var(--card)"><div class="in" style="width:42px;height:42px;background:conic-gradient('+B.c+' 0 '+B.istighfar+'%,color-mix(in srgb,'+B.c+' 18%,transparent) 0)"><div class="core" style="width:32px;height:32px">'+(A.istighfar+B.istighfar)+'</div></div></div></div><div class="cap">Tap to count</div></div>';
+}
+
+function screen(v){
+  var arc=arcSVG(v);
+  var numStyle = arc.top==='auto' ? 'bottom:0' : 'top:'+arc.top;
+  var big = v.arc==='poster' ? 'font-size:118px' : '';
+  var lbl = v.arc==='poster' ? '<div class="ar" style="margin-top:6px">مَعًا</div><span>TOGETHER TODAY</span>' : v.arc==='circle' ? '<span>TOGETHER</span><div class="ar" style="margin-top:6px">مَعًا</div>' : '<span>TOGETHER</span>';
+  return '<div class="screen '+v.cls+'"><div class="hero">'+
+    '<div class="sb"><span>6:12</span><span>●●● 74%</span></div>'+
+    '<div class="hd"><div class="logo"><span style="color:var(--B)">'+crescent+'</span>rafiq</div><div class="hdr"><span class="st">🔥 12 days</span><span class="av"></span></div></div>'+
+    '<div class="arcwrap" style="'+(v.arc==='poster'?'margin-top:18px':'')+'">'+arc.svg+'<div class="num" style="'+numStyle+'"><b style="'+big+'">'+TOG+'<sup>%</sup></b>'+lbl+'</div></div>'+
+    '<div class="under" style="'+(v.arc==='poster'?'margin-top:34px':'')+'"><div class="who"><span style="--c:'+A.c+'"><i>A</i>Ayesha</span><span style="--c:'+B.c+'"><i>R</i>Rafi</span></div><div class="yest">Yesterday 100%</div></div>'+
+    '</div>'+
+    '<div class="sec"><div><h3>Today\'s deeds</h3><div class="ss">Isha is next for both of you</div></div><div class="cnt">10 of 14</div></div>'+
+    '<div class="cards">'+prayers()+verses()+istighfar()+'</div>'+
+    '<div class="fab" aria-label="Log a deed">+</div>'+
+    '<div class="nav"><span class="on"><i></i>Together</span><span><i></i>Dhikr</span><span><i></i>Insights</span><span><i></i>Me</span></div>'+
+  '</div>';
+}
+
+function render(){
+  document.getElementById('grid').innerHTML = V.map(function(v){
+    return '<section class="opt"><div class="phone">'+screen(v)+'</div><div class="meta"><span class="tag">'+v.tag+'</span><h2>'+v.name+'</h2><p>'+v.desc+'</p><ul>'+v.pros.map(function(p){return '<li>'+p+'</li>'}).join('')+'</ul></div></section>';
+  }).join('');
+}
+render();
+document.getElementById('replay').addEventListener('click', render);
+</script>

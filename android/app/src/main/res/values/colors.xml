@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Suhbah brand: Ink Emerald #12A679 (left half), Pomegranate #C7224F (right half) -->
+    <color name="ic_launcher_background">#FFFFFF</color>
+    <color name="splash_background">#FFFFFF</color>
+</resources>

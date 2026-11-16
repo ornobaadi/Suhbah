@@ -1,0 +1,534 @@
+{
+  "schema": "brand-identity/identity@1",
+  "brand": {
+    "name": "Suhbah",
+    "tagline": "Pray together, even when apart.",
+    "languages": [
+      "en"
+    ],
+    "doc_lang": "en",
+    "sector": "Shared worship tracker app for Muslims",
+    "numbers": true,
+    "copy": {
+      "sentence": {
+        "en": "Two people, one arc. Log your prayers and watch your day fill up together."
+      },
+      "nav": [
+        "Today",
+        "Journey",
+        "Me"
+      ],
+      "cta": "Invite your Rafiq"
+    }
+  },
+  "set": {
+    "id": "B",
+    "name": "Tile and Lamp",
+    "recommended": false,
+    "mechanism": "A glazed tile under lamplight: a deep blue half and an amber half on warm paper, so the arc reads like a dome seen at dusk.",
+    "expression_move": "The warm paper ground carries the mood; the arc stays simple.",
+    "differs_by": "Breaks the category's green entirely. Blue and amber are the well-rated orange with navy direction, and no named competitor owns it."
+  },
+  "axes": {
+    "warm_cool": -2,
+    "playful_serious": 0,
+    "quiet_loud": 0
+  },
+  "components": {
+    "logo": {
+      "mode": "new",
+      "status": "proposed",
+      "source": null,
+      "sha256": null
+    },
+    "type": {
+      "mode": "new",
+      "status": "proposed",
+      "source": null,
+      "sha256": null
+    },
+    "palette": {
+      "mode": "new",
+      "status": "proposed",
+      "source": null,
+      "sha256": null
+    }
+  },
+  "type": {
+    "pairing_mode": "contrast",
+    "display": {
+      "family": "Bricolage Grotesque",
+      "source": "google",
+      "license": "OFL-1.1",
+      "weights": [
+        700
+      ],
+      "location": {
+        "opsz": 96,
+        "wdth": 100,
+        "wght": 700
+      },
+      "features": [],
+      "case": "lower",
+      "tracking": -20,
+      "fallback": "system-ui, sans-serif",
+      "file": null
+    },
+    "text": {
+      "family": "Plus Jakarta Sans",
+      "source": "google",
+      "license": "OFL-1.1",
+      "weights": [
+        400,
+        600
+      ],
+      "location": {
+        "wght": 400
+      },
+      "features": [
+        "tnum"
+      ],
+      "case": "as-is",
+      "tracking": 0,
+      "fallback": "system-ui, sans-serif",
+      "file": null
+    },
+    "mono": null
+  },
+  "logo": {
+    "type": "symbol+wordmark",
+    "concept": "The same arc, read as a tiled dome lit from one side.",
+    "symbol": "logo/symbol.svg",
+    "wordmark": {
+      "text": "suhbah",
+      "role": "display",
+      "location": null,
+      "tracking": -20,
+      "case": "lower"
+    },
+    "monogram": null,
+    "lockups": [
+      "horizontal",
+      "stacked"
+    ],
+    "colors": {
+      "left": "brand-1",
+      "right": "brand-2",
+      "wordmark": "text"
+    },
+    "tags": [
+      "abstract-geometric"
+    ],
+    "clear_space": {
+      "unit": "cap-height",
+      "multiple": 1,
+      "inferred": true
+    },
+    "min_size": {
+      "px": 24,
+      "mm": 8
+    }
+  },
+  "palette": "palette.json",
+  "defaults_used": [],
+  "rationale": [
+    {
+      "claim": "The arc mark and both typefaces are kept from the app as the founder approved them; only the colours change between sets.",
+      "evidence": "practice",
+      "source": "DESIGN.md"
+    },
+    {
+      "claim": "Orange with navy is among the better rated colour directions (O'Donovan 2011, Schloss and Palmer 2011).",
+      "evidence": "strong",
+      "source": "references/color.md"
+    }
+  ],
+  "derived": [
+    {
+      "file": "card.png",
+      "requires": [
+        "logo",
+        "type",
+        "palette"
+      ],
+      "inputs_sha256": "aaf6a7de54042ca83cbab153f0cfd79178416f45bd7817535678cf98bc37af05"
+    }
+  ],
+  "audit": {
+    "schema": "brand-identity/audit@1",
+    "passed": true,
+    "counts": {
+      "gate": 0,
+      "warn": 12,
+      "info": 16
+    },
+    "findings": [
+      {
+        "id": "palette.contrast.light.accent-on-background",
+        "component": "palette",
+        "severity": "warn",
+        "measured": 2.6,
+        "threshold": 3.0,
+        "message": "light: accent #e8820c on background #fff8ea is 2.60:1, below 3.0:1 (accent fill against the page (needs a label or border if lower); WCAG 2, no rounding)",
+        "suggested_fix": {
+          "change": "modes.light.accent",
+          "from": "#e8820c",
+          "to": "#be6a0a",
+          "how": "use accent-600 (same scale)",
+          "ratio_after": 3.78
+        },
+        "roles": [
+          "light.accent",
+          "light.background"
+        ]
+      },
+      {
+        "id": "palette.isoluminant.dark.primary-dark.accent",
+        "component": "palette",
+        "severity": "warn",
+        "measured": 0.1,
+        "threshold": 12.0,
+        "message": "#7a9be6 and #e8820c are both saturated (C* 42/76) with almost equal lightness (Delta L* 0.1); edges between them vibrate and text on either is unreadable",
+        "suggested_fix": {
+          "change": "dark.accent",
+          "from": "#e8820c",
+          "to": "#c46100",
+          "how": "darken by OKLCH L -0.10, same hue"
+        },
+        "roles": [
+          "dark.primary",
+          "dark.accent"
+        ]
+      },
+      {
+        "id": "palette.contrast.light.border-on-background",
+        "component": "palette",
+        "severity": "info",
+        "measured": 1.35,
+        "threshold": 3.0,
+        "message": "light: border #e0d7c4 on background #fff8ea is 1.35:1, below 3.0:1 (borders: dividers are exempt, input outlines need 3:1; WCAG 2, no rounding)",
+        "suggested_fix": {
+          "change": "modes.light.border",
+          "from": "#e0d7c4",
+          "to": "#978f7d",
+          "how": "darken by OKLCH L -0.23, same hue",
+          "ratio_after": 3.04
+        },
+        "roles": [
+          "light.border",
+          "light.background"
+        ]
+      },
+      {
+        "id": "palette.contrast.dark.link-on-text",
+        "component": "palette",
+        "severity": "info",
+        "measured": 2.47,
+        "threshold": 3.0,
+        "message": "dark: link #7a9be6 on text #f2f3f5 is 2.47:1, below 3.0:1 (underline links in dark mode (WCAG G183: without underline a link needs 3:1 against body text); WCAG 2, no rounding)",
+        "suggested_fix": {
+          "change": "modes.dark.link",
+          "from": "#7a9be6",
+          "to": "#5a7dd6",
+          "how": "use primary-600 (same scale)",
+          "ratio_after": 3.54
+        },
+        "roles": [
+          "dark.link",
+          "dark.text"
+        ]
+      },
+      {
+        "id": "palette.contrast.dark.border-on-background",
+        "component": "palette",
+        "severity": "info",
+        "measured": 1.87,
+        "threshold": 3.0,
+        "message": "dark: border #3b414d on background #0c0f18 is 1.87:1, below 3.0:1 (borders: dividers are exempt, input outlines need 3:1; WCAG 2, no rounding)",
+        "suggested_fix": {
+          "change": "modes.dark.border",
+          "from": "#3b414d",
+          "to": "#6e737e",
+          "how": "use neutral-500 (same scale)",
+          "ratio_after": 4.03
+        },
+        "roles": [
+          "dark.border",
+          "dark.background"
+        ]
+      },
+      {
+        "id": "palette.structure.lightness-range",
+        "component": "palette",
+        "severity": "info",
+        "measured": [
+          31.1,
+          64.3
+        ],
+        "threshold": [
+          30,
+          85
+        ],
+        "message": "no brand/action colour is very light (L* >= 85) and none is very dark (L* <= 30); the neutrals carry the extremes, which is fine for most identities",
+        "suggested_fix": null,
+        "roles": [
+          "brand",
+          "light.primary",
+          "light.accent"
+        ]
+      },
+      {
+        "id": "palette.gamut.brand-2",
+        "component": "palette",
+        "severity": "info",
+        "measured": 0.98,
+        "threshold": 0.9,
+        "message": "#e8820c sits at the sRGB gamut edge (98% of max chroma); vivid colours like this often fall outside CMYK process gamut: specify Lab D50 + tolerance, check with the printer, consider a spot colour",
+        "suggested_fix": null,
+        "roles": [
+          "brand-2"
+        ]
+      },
+      {
+        "id": "palette.harmony.primary-accent",
+        "component": "palette",
+        "severity": "info",
+        "measured": -0.52,
+        "threshold": -0.3,
+        "message": "Ou-Luo two-colour model scores #1f3fa8 + #e8820c at -0.52 (negative = less harmonious on a grey CRT test, no context): model signal only; the pairing table in references/pairing.md takes precedence",
+        "suggested_fix": null,
+        "roles": [
+          "light.primary",
+          "light.accent"
+        ]
+      },
+      {
+        "id": "type.display.coverage.en_Latn.extended",
+        "component": "type",
+        "severity": "info",
+        "measured": "95/102",
+        "threshold": "100% auxiliary + punctuation",
+        "message": "Bricolage Grotesque lacks English auxiliary/punctuation characters: Ĕ Ĭ Ŏ ĕ ĭ ŏ ʻ",
+        "suggested_fix": "fine if the brand never writes them (loanwords, names); else another family"
+      },
+      {
+        "id": "type.display.confusables",
+        "component": "type",
+        "severity": "info",
+        "measured": 0.941,
+        "threshold": "0.9 (heuristic, uncalibrated)",
+        "message": "Bricolage Grotesque: I/l look alike at small sizes (IoU 0.94 at 48 px)",
+        "suggested_fix": "no ss/cv alternates; choose another face for small text and data"
+      },
+      {
+        "id": "type.display.web-weight",
+        "component": "type",
+        "severity": "info",
+        "measured": 126,
+        "threshold": null,
+        "message": "Bricolage Grotesque: ~126 KB WOFF2 for the brief's characters (one variable file, all weights; estimate)",
+        "suggested_fix": null
+      },
+      {
+        "id": "type.text.coverage.en_Latn.extended",
+        "component": "type",
+        "severity": "info",
+        "measured": "101/102",
+        "threshold": "100% auxiliary + punctuation",
+        "message": "Plus Jakarta Sans lacks English auxiliary/punctuation characters: ʻ",
+        "suggested_fix": "fine if the brand never writes them (loanwords, names); else another family"
+      },
+      {
+        "id": "type.text.confusables",
+        "component": "type",
+        "severity": "warn",
+        "measured": 0.925,
+        "threshold": "0.9 (heuristic, uncalibrated)",
+        "message": "Plus Jakarta Sans: I/l look alike at small sizes (IoU 0.93 at 48 px)",
+        "suggested_fix": "try ss01 'Lancip Alternates', ss02 'Lurus Alternates', ss03 'Lingkar Alternates'"
+      },
+      {
+        "id": "type.text.web-weight",
+        "component": "type",
+        "severity": "info",
+        "measured": 27,
+        "threshold": null,
+        "message": "Plus Jakarta Sans: ~27 KB WOFF2 for the brief's characters (one variable file, all weights; estimate)",
+        "suggested_fix": null
+      },
+      {
+        "id": "logo.ids",
+        "component": "logo",
+        "severity": "info",
+        "measured": null,
+        "threshold": null,
+        "message": "symbol.svg: 2 element(s) without an id",
+        "suggested_fix": "give every primitive a semantic id so edits change one element per round"
+      },
+      {
+        "id": "logo.contrast",
+        "component": "logo",
+        "severity": "warn",
+        "measured": 2.6,
+        "threshold": ">= 3.0:1 (WCAG 2.2 SC 1.4.11, practice)",
+        "message": "full-color: brand-2 #e8820c on #fff8ea is 2.60:1",
+        "suggested_fix": "use a one-colour version on this ground, or declare logo.device tile|outline",
+        "roles": [
+          "brand-2"
+        ]
+      },
+      {
+        "id": "logo.contrast",
+        "component": "logo",
+        "severity": "warn",
+        "measured": 2.13,
+        "threshold": ">= 3.0:1 (WCAG 2.2 SC 1.4.11, practice)",
+        "message": "full-color-dark: brand-1 #1f3fa8 on #0c0f18 is 2.13:1",
+        "suggested_fix": "use a one-colour version on this ground, or declare logo.device tile|outline",
+        "roles": [
+          "brand-1"
+        ]
+      },
+      {
+        "id": "logo.contrast",
+        "component": "logo",
+        "severity": "warn",
+        "measured": 2.6,
+        "threshold": ">= 3.0:1 (WCAG 2.2 SC 1.4.11, practice)",
+        "message": "on-light-background: brand-2 #e8820c on #fff8ea is 2.60:1",
+        "suggested_fix": "use a one-colour version on this ground, or declare logo.device tile|outline",
+        "roles": [
+          "brand-2"
+        ]
+      },
+      {
+        "id": "logo.contrast",
+        "component": "logo",
+        "severity": "warn",
+        "measured": 2.13,
+        "threshold": ">= 3.0:1 (WCAG 2.2 SC 1.4.11, practice)",
+        "message": "on-dark-background: brand-1 #1f3fa8 on #0c0f18 is 2.13:1",
+        "suggested_fix": "use a one-colour version on this ground, or declare logo.device tile|outline",
+        "roles": [
+          "brand-1"
+        ]
+      },
+      {
+        "id": "logo.light-swap",
+        "component": "logo",
+        "severity": "info",
+        "measured": 2.6,
+        "threshold": null,
+        "message": "symbol-only: brand-2 #e8820c is 2.60:1 on #fff8ea; drawn in the light text colour #171c26 (a colour stays only where it reads)",
+        "suggested_fix": null,
+        "roles": [
+          "brand-2"
+        ]
+      },
+      {
+        "id": "logo.light-swap",
+        "component": "logo",
+        "severity": "info",
+        "measured": 2.6,
+        "threshold": null,
+        "message": "favicon-16: brand-2 #e8820c is 2.60:1 on #fff8ea; drawn in the light text colour #171c26 (a colour stays only where it reads)",
+        "suggested_fix": null,
+        "roles": [
+          "brand-2"
+        ]
+      },
+      {
+        "id": "logo.light-swap",
+        "component": "logo",
+        "severity": "info",
+        "measured": 2.6,
+        "threshold": null,
+        "message": "favicon-32: brand-2 #e8820c is 2.60:1 on #fff8ea; drawn in the light text colour #171c26 (a colour stays only where it reads)",
+        "suggested_fix": null,
+        "roles": [
+          "brand-2"
+        ]
+      },
+      {
+        "id": "logo.light-swap",
+        "component": "logo",
+        "severity": "info",
+        "measured": 2.6,
+        "threshold": null,
+        "message": "favicon-48: brand-2 #e8820c is 2.60:1 on #fff8ea; drawn in the light text colour #171c26 (a colour stays only where it reads)",
+        "suggested_fix": null,
+        "roles": [
+          "brand-2"
+        ]
+      },
+      {
+        "id": "logo.small-size",
+        "component": "logo",
+        "severity": "warn",
+        "measured": {
+          "stroke_px2": 0.03,
+          "gap_px2": 10.22
+        },
+        "threshold": "1 px (raster erosion test, heuristic, uncalibrated)",
+        "message": "symbol at 16 px: features narrower than 1 px (lost 0.03 px², clogged 10.22 px²)",
+        "suggested_fix": "add or simplify symbol-small.svg: fewer, bolder parts"
+      },
+      {
+        "id": "default.cream-ground",
+        "component": "cohesion",
+        "severity": "warn",
+        "measured": null,
+        "threshold": null,
+        "message": "matches the AI-defaults list (cream-ground) without a brief-grounded reason",
+        "suggested_fix": "justify it in defaults_used[] from the brief, or change it"
+      },
+      {
+        "id": "default.terracotta-clay",
+        "component": "cohesion",
+        "severity": "warn",
+        "measured": null,
+        "threshold": null,
+        "message": "matches the AI-defaults list (terracotta-clay) without a brief-grounded reason",
+        "suggested_fix": "justify it in defaults_used[] from the brief, or change it"
+      },
+      {
+        "id": "cohesion.sets-close",
+        "component": "cohesion",
+        "severity": "warn",
+        "measured": [
+          "A–B",
+          "B–C"
+        ],
+        "threshold": "2 axes, 2 steps",
+        "message": "sets too alike on the axes: A–B, B–C differ by 2+ steps on fewer than 2 axes (heuristic)",
+        "suggested_fix": null
+      },
+      {
+        "id": "cohesion.no-default-free-set",
+        "component": "cohesion",
+        "severity": "warn",
+        "measured": null,
+        "threshold": null,
+        "message": "every set uses at least one AI-defaults item; build one set without any",
+        "suggested_fix": null
+      }
+    ],
+    "defaults": {
+      "matched": [
+        "cream-ground",
+        "terracotta-clay"
+      ]
+    }
+  },
+  "palette_build": {
+    "strategy": null,
+    "accent": null,
+    "light_bg": "#FFF8EA",
+    "dark_bg": null,
+    "neutral_tint": null,
+    "neutral_chroma": null,
+    "extra": [
+      "#0B7D5E:Emerald:success and completed states"
+    ]
+  }
+}

@@ -1,0 +1,297 @@
+<title>Suhbah App Icons</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Plus+Jakarta+Sans:wght@500;700&family=Reem+Kufi:wght@700&family=Aref+Ruqaa:wght@700&family=Amiri:wght@700&family=Noto+Nastaliq+Urdu:wght@700&family=Rakkas&display=swap">
+<style>
+/* Layout: three families (Solid Arc, Suhbah Word, Sad), three finished icons each, shown big with real launcher sizes, plus a home-screen strip and a Play Store row to judge them in context. */
+:root{
+  --bg:#F3F6F4; --card:#FFFFFF; --ink:#11201B; --sub:#5F7069; --line:#DCE5E1; --chip:#E8F2EE; --chipInk:#0B6F63;
+  --wall1:#24345C; --wall2:#0E6B55;
+  --display:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;
+  --body:"Plus Jakarta Sans",ui-sans-serif,system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0E1513;--card:#151E1B;--ink:#E7EFEB;--sub:#93A49D;--line:#24322D;--chip:#1B2A25;--chipInk:#7FE0D2;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0E1513;--card:#151E1B;--ink:#E7EFEB;--sub:#93A49D;--line:#24322D;--chip:#1B2A25;--chipInk:#7FE0D2;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);padding-block:32px 56px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1120px;margin:0 auto;display:grid;gap:26px}
+h1{font:800 36px/1.05 var(--display);letter-spacing:-1px;margin:0 0 8px;text-wrap:balance}
+.lede{color:var(--sub);font-size:15px;line-height:1.55;max-width:64ch;margin:0}
+.bar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:14px}
+.bar span{font:700 12px var(--body);color:var(--sub);margin-right:4px}
+.seg{all:unset;cursor:pointer;font:700 13px var(--body);padding:8px 14px;border-radius:99px;border:1px solid var(--line);background:var(--card);color:var(--ink)}
+.seg[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.seg:focus-visible{outline:2px solid #0B7D5E;outline-offset:2px}
+.ctx{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px}
+@media (max-width:760px){.ctx{grid-template-columns:minmax(0,1fr)}}
+.home{border-radius:28px;padding:22px 16px 18px;max-height:520px;overflow:auto;background:radial-gradient(120% 90% at 20% 0%,#3A5C8C 0,transparent 60%),linear-gradient(160deg,var(--wall1),var(--wall2));display:grid;grid-template-columns:repeat(5,1fr);gap:16px 6px}
+.home .app{display:flex;flex-direction:column;align-items:center;gap:6px}
+.home .app svg{width:52px;height:52px;filter:drop-shadow(0 3px 6px rgba(0,0,0,.25))}
+.home .app small{font:600 11px var(--body);color:#fff;opacity:.92}
+.store{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:16px;display:grid;gap:10px;align-content:start}
+.store .row{display:flex;gap:12px;align-items:center}
+.store svg{width:56px;height:56px;flex:none;border-radius:14px}
+.store b{font-size:14px;display:block}.store small{color:var(--sub);font-size:12px}
+.store .stars{color:#E9A21B;font-size:11px}
+.round{display:grid;gap:16px;padding-top:26px;border-top:1px solid var(--line)}
+.rhead{display:flex;gap:14px;align-items:baseline;flex-wrap:wrap}
+.rtag{font:800 11px var(--display);letter-spacing:1.6px;text-transform:uppercase;background:var(--chip);color:var(--chipInk);padding:5px 10px;border-radius:99px}
+.rtag.new{background:#0B7D5E;color:#fff}
+h2.fam{font:800 26px var(--display);letter-spacing:-.6px;margin:0}
+.famnote{color:var(--sub);font-size:14px;margin:0;max-width:70ch;line-height:1.5}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:26px;padding:0 0 18px;display:grid;gap:12px;min-width:0;align-content:start;overflow:hidden}
+.card>div,.card>p{padding:0 18px}
+.stage{display:grid;place-items:center;padding:30px 18px 22px;background:radial-gradient(circle at 50% 40%,var(--chip),transparent 70%)}
+.top{display:flex;gap:18px;align-items:center}
+.big{width:min(196px,70%);aspect-ratio:1;max-width:100%;filter:drop-shadow(0 14px 22px rgba(17,32,27,.24))}
+.big svg{width:100%;height:100%;display:block}
+.sizes{display:flex;gap:14px;align-items:flex-end;justify-content:center;padding-top:16px}
+.sizes svg:nth-child(1){width:56px;height:56px}.sizes svg:nth-child(2){width:40px;height:40px}.sizes svg:nth-child(3){width:24px;height:24px}
+.num{font:800 12px var(--display);letter-spacing:1.6px;color:var(--chipInk);text-transform:uppercase}
+.meta{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.card h3{font:800 18px var(--display);letter-spacing:-.3px;margin:0}
+.card p{margin:0;font-size:13.5px;line-height:1.55;color:var(--sub)}
+.note{font-size:13px;color:var(--sub);line-height:1.55;max-width:70ch}
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>Suhbah icon explorations</h1>
+    <p class="lede">Every icon direction so far, newest first: the arc color variations at the top, the very first ten ideas at the bottom. Codes stay the same so you can pick from any round.</p>
+    <div class="bar" role="group" aria-label="Launcher mask"><span>Mask</span>
+      <button class="seg" data-mask="squircle" aria-pressed="true">Squircle</button>
+      <button class="seg" data-mask="circle" aria-pressed="false">Circle</button>
+      <button class="seg" data-mask="square" aria-pressed="false">Rounded square</button>
+    </div>
+  </header>
+  <section class="ctx">
+    <div class="home" id="home" aria-label="Home screen preview"></div>
+    <div class="store" id="store" aria-label="Play Store preview"></div>
+  </section>
+  <div id="fams" style="display:grid;gap:30px"></div>
+  <p class="note">Pick one code (for example A3). I'll trace the Arabic into vector paths for the real icon so it never depends on a font, then export the adaptive icon layers, the splash mark and the 512px Play Store icon.</p>
+</div>
+
+<script>
+const C={em:"#0B7D5E",emL:"#14A07A",emD:"#06513D",pom:"#C7224F",pomL:"#E0436C",saf:"#E9A21B",safL:"#FFC94D",mid:"#1C2A4D",midL:"#2C4170",ink:"#11201B",inkL:"#1F3A31",cream:"#FFFDF7",creamD:"#EDF3EF",turq:"#47C9C9",rose:"#F096BA"};
+let MASK="squircle",uid=0;
+const maskPath=()=>MASK==="circle"?'<circle cx="54" cy="54" r="54"/>':MASK==="square"?'<rect width="108" height="108" rx="24"/>':'<path d="M54 0C88 0 108 20 108 54S88 108 54 108 0 88 0 54 20 0 54 0Z"/>';
+// polished ground: vertical light, a soft top glow and a faint rim
+function icon(top,bottom,inner,defs="",glow=.18){const i=uid++;return `<svg viewBox="0 0 108 108" role="img"><defs>
+ <clipPath id="k${i}">${maskPath()}</clipPath>
+ <linearGradient id="bg${i}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${top}"/><stop offset="1" stop-color="${bottom}"/></linearGradient>
+ <radialGradient id="gl${i}" cx=".3" cy="0" r=".9"><stop offset="0" stop-color="#fff" stop-opacity="${glow}"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+ <filter id="sh${i}" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="2.2" stdDeviation="2.2" flood-color="#000" flood-opacity=".22"/></filter>
+ ${defs.replaceAll("$",i)}</defs>
+ <g clip-path="url(#k${i})"><rect width="108" height="108" fill="url(#bg${i})"/><rect width="108" height="108" fill="url(#gl${i})"/>
+ <g filter="url(#sh${i})">${inner.replaceAll("$",i)}</g>
+ <path d="${MASK==="circle"?"M54 .6a53.4 53.4 0 1 1 0 106.8a53.4 53.4 0 1 1 0-106.8":"M0 0"}" fill="none" stroke="#fff" stroke-opacity=".14"/></g></svg>`}
+function star(x,y,s,c){return `<g transform="translate(${x} ${y})"><rect x="${-s/2}" y="${-s/2}" width="${s}" height="${s}" rx=".6" fill="${c}"/><rect x="${-s/2}" y="${-s/2}" width="${s}" height="${s}" rx=".6" fill="${c}" transform="rotate(45)"/></g>`}
+function arcs(radii,w,l,r,cy=74,gap=3.2){return radii.map(R=>`<path d="M${54-R} ${cy} A${R} ${R} 0 0 1 ${54-gap} ${cy-R+.15}" fill="none" stroke="${l}" stroke-width="${w}" stroke-linecap="round"/><path d="M${54+gap} ${cy-R+.15} A${R} ${R} 0 0 1 ${54+R} ${cy}" fill="none" stroke="${r}" stroke-width="${w}" stroke-linecap="round"/>`).join("")}
+const word=(y,size,fill,extra="")=>`<text x="54" y="${y}" text-anchor="middle" font-family="'Reem Kufi',serif" font-weight="700" font-size="${size}" fill="${fill}" ${extra}>صحبة</text>`;
+const sad=(y,size,fill)=>`<text x="54" y="${y}" text-anchor="middle" font-family="'Reem Kufi',serif" font-weight="700" font-size="${size}" fill="${fill}">ص</text>`;
+const split=(a,b)=>`<linearGradient id="sp$" x1="0" x2="1"><stop offset=".5" stop-color="${a}"/><stop offset=".5" stop-color="${b}"/></linearGradient>`;
+const grad=(id,a,b)=>`<linearGradient id="${id}$" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${a}"/><stop offset="1" stop-color="${b}"/></linearGradient>`;
+
+const FONTS=[
+ ["Reem Kufi","Kufi","Geometric and architectural, like tilework lettering."],
+ ["Aref Ruqaa","Ruqaa","The everyday handwritten script: warm and personal."],
+ ["Amiri","Naskh","Classic book calligraphy, the script of printed Qurans."],
+ ["Noto Nastaliq Urdu","Nastaliq","Flowing and slanted, the most graceful of the set."],
+ ["Rakkas","Display","Heavy and confident, built to be read at a glance."]
+];
+// arc on top, letter underneath, no star
+const dayArc=(l,r)=>arcs([30,21,12],6,l,r,56,2.8);
+const letter=(font,fill,size,y)=>`<text x="54" y="${y}" text-anchor="middle" font-family="'${font}',serif" font-weight="700" font-size="${size}" fill="${fill}">ص</text>`;
+const tune={"Reem Kufi":[40,92],"Aref Ruqaa":[44,93],"Amiri":[46,90],"Noto Nastaliq Urdu":[30,86],"Rakkas":[42,91]};
+const strokes=(d)=>grad("al",d?"#2BC08F":"#14A07A",d?"#14A07A":"#0B7D5E").replace('id="al$"','id="al$e"')+grad("ap",d?"#FF6F95":"#E0436C",d?"#E0436C":"#B01C45").replace('id="ap$"','id="ap$e"');
+const FAMS=[
+ {name:"Round 5: Arc only, color variations",note:"Just the arc: three strokes, two halves, no star, no letter. Same shape, twelve grounds and color pairs.",items:[{code:"A1",name:"Classic",why:"The app's own Emerald and Pomegranate on white. The default pair, exactly as on Today.",svg:()=>icon("#FFFFFF","#EEF3F0",arcs([33,23.5,14],7,"#0B7D5E","#C7224F",70),"",0)},{code:"A2",name:"Midnight",why:"Turquoise and Rosewater glowing on midnight. Soft and calm at night.",svg:()=>icon("#2C4170","#121B33",arcs([33,23.5,14],7,"#47C9C9","#F096BA",70),"",0.18)},{code:"A3",name:"Emerald ground",why:"Cream and Saffron on the brand green. Warm, confident, very recognisable.",svg:()=>icon("#14A07A","#06513D",arcs([33,23.5,14],7,"#FFFDF7","#FFC94D",70),"",0.18)},{code:"A4",name:"Dawn",why:"Saffron and Pomegranate on warm paper, like the sky at Fajr.",svg:()=>icon("#FFFDF7","#F6EEDC",arcs([33,23.5,14],7,"#E9A21B","#C7224F",70),"",0)},{code:"A5",name:"Ink",why:"Bright green and saffron on deep ink. High contrast, premium.",svg:()=>icon("#1F3A31","#0C1814",arcs([33,23.5,14],7,"#2BC08F","#FFC94D",70),"",0.14)},{code:"A6",name:"Lapis",why:"Cream and Saffron on lapis blue, like Samarkand tiles.",svg:()=>icon("#3359D1","#1A2F7A",arcs([33,23.5,14],7,"#FFFDF7","#FFC94D",70),"",0.2)},{code:"A7",name:"Pomegranate",why:"Cream and Saffron on a rich red. Bold and joyful.",svg:()=>icon("#E0436C","#9A1238",arcs([33,23.5,14],7,"#FFFDF7","#FFC94D",70),"",0.2)},{code:"A8",name:"Mint",why:"Emerald and Lapis on soft mint. Fresh, gentle, very 'wellbeing'.",svg:()=>icon("#E8F2EE","#D3E6DE",arcs([33,23.5,14],7,"#0B7D5E","#2445B8",70),"",0)},{code:"A9",name:"Saffron",why:"Midnight and cream on saffron. Sunny and the most eye-catching.",svg:()=>icon("#FFC94D","#E39A12",arcs([33,23.5,14],7,"#1C2A4D","#FFFDF7",70),"",0.25)},{code:"A10",name:"Amethyst night",why:"Amethyst and Turquoise on deep violet. Quiet, a little mystical.",svg:()=>icon("#3A2558","#1A1030",arcs([33,23.5,14],7,"#C77DD0","#47C9C9",70),"",0.14)},{code:"A11",name:"Oud",why:"Cream and Saffron on warm oud brown. Earthy and traditional.",svg:()=>icon("#8A4A14","#4A2405",arcs([33,23.5,14],7,"#FFFDF7","#FFC94D",70),"",0.16)},{code:"A12",name:"Monochrome",why:"Both halves in ink on white, the gap alone shows the two people. Most minimal.",svg:()=>icon("#FFFFFF","#EEF3F0",arcs([33,23.5,14],7,"#11201B","#11201B",70),"",0)}]},
+ {name:"Round 4: Daylight arc with ص on white",note:"The arc with its real colors, no star, and ص sitting underneath where the percentage lives in the app. Letter in midnight ink.",items:FONTS.map(([f,n,why],i)=>({code:"L"+(i+1),name:n,why,
+   svg:()=>icon("#FFFFFF","#EEF3F0",dayArc("url(#al$e)","url(#ap$e)")+letter(f,C.mid,...tune[f]),strokes(false),0)}))},
+ {name:"Round 4: Daylight arc with ص on midnight",note:"The same pairs on deep midnight: brighter strokes so the two halves glow, letter in warm cream.",items:FONTS.map(([f,n,why],i)=>({code:"N"+(i+1),name:n,why,
+   svg:()=>icon(C.midL,"#121B33",dayArc("url(#al$e)","url(#ap$e)")+letter(f,C.cream,...tune[f]),strokes(true))}))}
+ ,{name:"Round 3 finals: Solid Arc",note:"The arc from Today, drawn as three continuous strokes split into two halves.",items:[
+  {code:"S1",name:"Emerald",why:"Cream and rose strokes on a lit emerald ground, saffron star as the seal.",
+   svg:()=>icon(C.emL,C.emD,arcs([33,23.5,14],7,C.cream,C.rose,76)+star(54,30,7.5,C.safL))},
+  {code:"S2",name:"Daylight",why:"Light ground with the app's real colors and a hint of gradient in each stroke, like enamel.",
+   svg:()=>icon(C.cream,C.creamD,arcs([33,23.5,14],7,"url(#gl$e)","url(#gp$e)",76)+star(54,30,7.5,C.saf),grad("gl","#14A07A","#0B7D5E").replace('id="gl$"','id="gl$e"')+grad("gp","#E0436C","#B01C45").replace('id="gp$"','id="gp$e"'),.0)},
+  {code:"S3",name:"Night Prayer",why:"Two heavier strokes on deep midnight with a glowing star, like the arc at Isha.",
+   svg:()=>icon(C.midL,"#141E38",`<circle cx="54" cy="30" r="12" fill="${C.safL}" opacity=".18"/>`+arcs([31,18.5],9,C.turq,C.rose,76,3.6)+star(54,30,8,C.safL))}
+ ]},
+ {name:"Round 3 finals: Suhbah Word",note:"The full word صحبة as a seal.",items:[
+  {code:"W1",name:"Seal",why:"Cream Kufi word on emerald, two member-color dots underneath like a signature.",
+   svg:()=>icon(C.emL,C.emD,word(62,32,C.cream)+`<circle cx="47" cy="77" r="4.6" fill="${C.cream}" opacity=".95"/><circle cx="61" cy="77" r="4.6" fill="${C.safL}"/>`)},
+  {code:"W2",name:"Under the Arc",why:"The word beneath a thin two-tone arc, on ink.",
+   svg:()=>icon(C.inkL,C.ink,arcs([34],4.2,C.turq,C.rose,62,3)+star(54,26,6,C.safL)+word(76,27,C.cream))},
+  {code:"W3",name:"Two Voices",why:"The word shades from one member color into the other, on cream.",
+   svg:()=>icon(C.cream,C.creamD,word(66,33,"url(#wg$)"),`<linearGradient id="wg$" x1="1" x2="0"><stop offset=".15" stop-color="${C.em}"/><stop offset=".85" stop-color="${C.pom}"/></linearGradient>`,0)}
+ ]},
+ {name:"Round 3 finals: Sad",note:"ص as a single bold mark.",items:[
+  {code:"D1",name:"Classic",why:"Cream ص with depth on lit emerald, saffron eight-point star.",
+   svg:()=>icon(C.emL,C.emD,sad(80,68,C.cream)+star(79,27,8,C.safL))},
+  {code:"D2",name:"Together",why:"The letter split in both members' colors on ink, with a thin arc above.",
+   svg:()=>icon(C.inkL,C.ink,arcs([36],3.4,C.turq,C.rose,66,3)+sad(82,60,"url(#sp$)"),split(C.turq,C.rose))},
+  {code:"D3",name:"Ink on Paper",why:"Emerald ص on warm cream with two small member-color dots.",
+   svg:()=>icon(C.cream,C.creamD,sad(80,68,C.em)+`<circle cx="75" cy="30" r="4.4" fill="${C.em}"/><circle cx="85" cy="30" r="4.4" fill="${C.pom}"/>`,"",0)}
+ ]}
+];
+
+// ---- Rounds 1 and 2, as first shown ----
+const K={em:"#0B7D5E",pom:"#C7224F",saf:"#E9A21B",mid:"#1C2A4D",ink:"#11201B",cream:"#FCFDFC",pill:"#E8F2EE",turq:"#3CC2C4",rose:"#E58BB0",lapis:"#2445B8"};
+function wrap(bg,inner,defs=""){const id="m"+(uid++);return `<svg viewBox="0 0 108 108" role="img"><defs><clipPath id="${id}">${maskPath()}</clipPath>${defs}</defs><g clip-path="url(#${id})"><rect width="108" height="108" fill="${bg}"/>${inner}</g></svg>`}
+function arcDots(cx,cy,r,n,from,to,fill,size){let s="";for(let i=0;i<n;i++){const a=from+(to-from)*(i/(n-1));s+=`<circle cx="${(cx+Math.cos(a)*r).toFixed(2)}" cy="${(cy-Math.sin(a)*r).toFixed(2)}" r="${size}" fill="${fill}"/>`}return s}
+function arch(l,r,top,bottom){const m=(l+r)/2,s=top+(r-l)*.62;return `M${l} ${bottom}L${l} ${s}C${l} ${s-(s-top)*.55} ${m-(r-l)*.18} ${top+(s-top)*.2} ${m} ${top}C${m+(r-l)*.18} ${top+(s-top)*.2} ${r} ${s-(s-top)*.55} ${r} ${s}L${r} ${bottom}Z`}
+function row(cx,cy,r,n,size,left,right,gap=.16){let s="";for(let i=0;i<n;i++){const a=Math.PI*(1-i/(n-1));if(Math.abs(a-Math.PI/2)<gap)continue;s+=`<circle cx="${(cx+Math.cos(a)*r).toFixed(2)}" cy="${(cy-Math.sin(a)*r).toFixed(2)}" r="${size}" fill="${a>Math.PI/2?left:right}"/>`}return s}
+function star0(x,y,s,c){return `<g transform="translate(${x} ${y})"><rect x="${-s/2}" y="${-s/2}" width="${s}" height="${s}" fill="${c}"/><rect x="${-s/2}" y="${-s/2}" width="${s}" height="${s}" fill="${c}" transform="rotate(45)"/></g>`}
+function arcFull(cx,cy,l,r,s=1){return row(cx,cy,34*s,13,4.2*s,l,r,.1)+row(cx,cy,25*s,10,4.2*s,l,r,.14)+row(cx,cy,16*s,7,4.2*s,l,r,.2)}
+function sadR(x,y,size,fill,font="Reem Kufi"){return `<text x="${x}" y="${y}" text-anchor="middle" font-family="'${font}',serif" font-weight="700" font-size="${size}" fill="${fill}">ص</text>`}
+
+const ROUND1=[
+ {code:"1.1",name:"Two Halves",why:"The together arc itself, cut down to two rows of dots, with a small star where they meet.",
+  svg:()=>wrap(K.cream,arcDots(54,70,30,7,Math.PI,Math.PI/2+.22,K.em,4.6)+arcDots(54,70,30,7,Math.PI/2-.22,0,K.pom,4.6)+arcDots(54,70,19.5,5,Math.PI,Math.PI/2+.3,K.em,4.6)+arcDots(54,70,19.5,5,Math.PI/2-.3,0,K.pom,4.6)+star0(54,36,8,K.saf))},
+ {code:"1.2",name:"Twin Mihrab",why:"Two pointed arches overlapping, like two people praying in the same row.",
+  svg:()=>wrap(K.em,`<path d="${arch(28,60,26,84)}" fill="${K.cream}"/><path d="${arch(48,80,26,84)}" fill="${K.saf}" opacity=".95"/><path d="${arch(48,60,40,84)}" fill="${K.em}" opacity=".35"/>`)},
+ {code:"1.3",name:"Shared Tasbih",why:"A loop of prayer beads, half in each person's color, joined by one lead bead and tassel.",
+  svg:()=>{let b="";const n=22;for(let i=0;i<n;i++){const a=Math.PI/2+(i+.5)*(2*Math.PI/n);b+=`<circle cx="${(54+Math.cos(a)*23).toFixed(2)}" cy="${(48-Math.sin(a)*23).toFixed(2)}" r="3.6" fill="${Math.cos(a)<0?K.turq:K.rose}"/>`}
+   return wrap(K.mid,b+`<circle cx="54" cy="74" r="5" fill="${K.saf}"/><path d="M54 79 L54 88" stroke="${K.saf}" stroke-width="3" stroke-linecap="round"/><path d="M50 88 h8 l-1.5 6 h-5z" fill="${K.saf}"/>`)}},
+ {code:"1.4",name:"Embrace",why:"Two crescents turned toward each other, closing into one full circle.",
+  svg:()=>{const id="c"+(uid++);return wrap(K.ink,`<circle cx="50" cy="54" r="25" fill="${K.turq}" mask="url(#${id}a)"/><circle cx="58" cy="54" r="25" fill="${K.rose}" mask="url(#${id}b)"/>`,`<mask id="${id}a"><rect width="108" height="108" fill="#fff"/><circle cx="62" cy="54" r="21" fill="#000"/></mask><mask id="${id}b"><rect width="108" height="108" fill="#fff"/><circle cx="46" cy="54" r="21" fill="#000"/></mask>`)}},
+ {code:"1.5",name:"Khatam",why:"The eight-point star made of two squares, one per person.",
+  svg:()=>wrap(K.cream,`<rect x="32" y="32" width="44" height="44" rx="5" fill="${K.em}"/><rect x="32" y="32" width="44" height="44" rx="5" fill="${K.pom}" opacity=".88" transform="rotate(45 54 54)"/><circle cx="54" cy="54" r="7" fill="${K.cream}"/>`)},
+ {code:"1.6",name:"Sad",why:"ص, the first letter of صُحْبَة, in a Kufi hand.",
+  svg:()=>wrap(K.em,sadR(54,74,64,K.cream)+`<circle cx="78" cy="30" r="5" fill="${K.saf}"/>`)},
+ {code:"1.7",name:"Two-Tone s",why:"The lowercase s of the wordmark, built from two arcs: yours on top, theirs below.",
+  svg:()=>wrap(K.pill,`<path d="M70 39 A15 15 0 1 0 54 54" fill="none" stroke="${K.em}" stroke-width="12" stroke-linecap="round"/><path d="M54 54 A15 15 0 1 1 38 69" fill="none" stroke="${K.pom}" stroke-width="12" stroke-linecap="round"/>`)},
+ {code:"1.8",name:"Side by Side",why:"Two waqt tiles filling up together: one full, one nearly there.",
+  svg:()=>{const id="t"+(uid++);const tile=(x,c,f)=>`<clipPath id="${id}${x}"><path d="${arch(x,x+22,28,82)}"/></clipPath><path d="${arch(x,x+22,28,82)}" fill="${c}" opacity=".22"/><rect x="${x}" y="${82-54*f}" width="22" height="${54*f}" fill="${c}" clip-path="url(#${id}${x})"/>`;return wrap(K.cream,tile(30,K.em,1)+tile(56,K.pom,.72))}},
+ {code:"1.9",name:"Five Times",why:"Five dots over a horizon, one per prayer, with the sun at its height.",
+  svg:()=>{let d="";[.08,.32,.5,.68,.92].forEach((u,i)=>{const x=20+68*u,y=74-Math.sin(u*Math.PI)*36;d+=`<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${i===2?8:4.6}" fill="${i===2?K.saf:i===0?K.turq:i===4?K.rose:K.cream}"/>`});
+   return wrap(K.mid,`<path d="M18 74 Q54 2 90 74" fill="none" stroke="${K.cream}" stroke-opacity=".22" stroke-width="1.6" stroke-dasharray="2 4"/>`+d+`<rect x="16" y="78" width="76" height="3" rx="1.5" fill="${K.cream}" opacity=".9"/>`)}},
+ {code:"1.10",name:"Under One Arch",why:"Two figures shoulder to shoulder inside one tall arch.",
+  svg:()=>wrap(K.saf,`<path d="${arch(24,84,16,96)}" fill="${K.cream}"/><circle cx="44" cy="52" r="8" fill="${K.em}"/><path d="M30 92 v-14 a14 14 0 0 1 28 0 v14z" fill="${K.em}"/><circle cx="64" cy="52" r="8" fill="${K.pom}"/><path d="M50 92 v-14 a14 14 0 0 1 28 0 v14z" fill="${K.pom}"/>`)}
+];
+
+const ROUND2=[
+ {code:"2.A",name:"Two Halves, refined",why:"The full three-row arc from Today, a gap where the halves meet, saffron star above.",
+  svg:()=>wrap(K.cream,arcFull(54,74,K.em,K.pom)+star0(54,30,7,K.saf))},
+ {code:"2.B",name:"Sad, together",why:"ص split down the middle in both colors, under a small arc of dots.",
+  svg:()=>{const g="g"+(uid++);return wrap(K.ink,row(54,62,36,13,3.2,K.turq,K.rose,.12)+sadR(54,80,62,`url(#${g})`),`<linearGradient id="${g}" x1="0" x2="1"><stop offset=".5" stop-color="${K.turq}"/><stop offset=".5" stop-color="${K.rose}"/></linearGradient>`)}},
+ {code:"2.1",name:"Arc on Emerald",why:"The refined arc reversed onto the brand green.",
+  svg:()=>wrap(K.em,arcFull(54,74,K.cream,K.rose)+star0(54,30,7,K.saf))},
+ {code:"2.2",name:"Filling Up",why:"Your half full, theirs still filling, on midnight.",
+  svg:()=>{let s="";[[34,13],[25,10],[16,7]].forEach(([r,n],ri)=>{for(let i=0;i<n;i++){const a=Math.PI*(1-i/(n-1));if(Math.abs(a-Math.PI/2)<.1+ri*.05)continue;const left=a>Math.PI/2;const lit=left||a>Math.PI*.32;s+=`<circle cx="${(54+Math.cos(a)*r).toFixed(2)}" cy="${(74-Math.sin(a)*r).toFixed(2)}" r="4.2" fill="${left?K.turq:(lit?K.rose:'#3A4668')}"/>`}});return wrap(K.mid,s+star0(54,30,7,K.saf))}},
+ {code:"2.3",name:"Solid Arc",why:"The arc as three thick split strokes.",
+  svg:()=>{let s="";[36,26,16].forEach(r=>{s+=`<path d="M${54-r} 76 A${r} ${r} 0 0 1 ${54-3} ${76-r}" fill="none" stroke="${K.em}" stroke-width="6.5" stroke-linecap="round"/><path d="M${54+3} ${76-r} A${r} ${r} 0 0 1 ${54+r} 76" fill="none" stroke="${K.pom}" stroke-width="6.5" stroke-linecap="round"/>`});return wrap(K.cream,s+star0(54,30,6,K.saf))}},
+ {code:"2.4",name:"Arch of Dots",why:"Dots along a pointed arch: the arc becomes a mihrab.",
+  svg:()=>{let s="";const l=26,r=82,top=20,bot=88,m=(l+r)/2,sp=top+(r-l)*.62;const pts=[];for(let i=0;i<=60;i++){const u=i/60;let x,y;if(u<.3){x=l;y=bot-(bot-sp)*(u/.3)}else if(u<.5){const k=(u-.3)/.2;x=l+(m-l)*Math.sin(k*Math.PI/2);y=sp-(sp-top)*Math.pow(k,1.4)}else if(u<.7){const k=(u-.5)/.2;x=m+(r-m)*(1-Math.cos(k*Math.PI/2));y=top+(sp-top)*Math.pow(k,.7)}else{x=r;y=sp+(bot-sp)*((u-.7)/.3)}pts.push([x,y])}
+   for(let i=0;i<17;i++){if(i===8)continue;const [x,y]=pts[Math.round(i/16*60)];s+=`<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="4.4" fill="${i<8?K.em:K.pom}"/>`}return wrap(K.cream,s+star0(54,22,7,K.saf))}},
+ {code:"2.5",name:"Sad in the Arc",why:"ص where the percentage sits in the app.",
+  svg:()=>wrap(K.cream,row(54,74,36,15,3.8,K.em,K.pom,.08)+row(54,74,27,12,3.8,K.em,K.pom,.11)+sadR(54,80,36,K.ink))},
+ {code:"2.6",name:"Sad on Two Grounds",why:"A cream ص bridging an Emerald half and a Pomegranate half.",
+  svg:()=>wrap(K.em,`<rect x="54" width="54" height="108" fill="${K.pom}"/>`+sadR(54,82,70,K.cream))},
+ {code:"2.7",name:"Ruqaa Sad",why:"ص in handwritten Ruqaa with a saffron star.",
+  svg:()=>wrap(K.em,sadR(54,80,66,K.cream,"Aref Ruqaa")+star0(54,24,6,K.saf))},
+ {code:"2.8",name:"Suhbah Word",why:"صحبة in Kufi with two member-color dots.",
+  svg:()=>wrap(K.ink,`<text x="54" y="64" text-anchor="middle" font-family="'Reem Kufi',serif" font-weight="700" font-size="34" fill="${K.cream}">صحبة</text><circle cx="47" cy="78" r="4.4" fill="${K.turq}"/><circle cx="61" cy="78" r="4.4" fill="${K.rose}"/>`)},
+ {code:"2.9",name:"Rising Arc",why:"Dots growing toward the top like Fajr light, under a saffron sun.",
+  svg:()=>{let s="";for(let i=0;i<11;i++){const a=Math.PI*(1-i/10);if(i===5)continue;const k=1-Math.abs(i-5)/5;s+=`<circle cx="${(54+Math.cos(a)*34).toFixed(2)}" cy="${(76-Math.sin(a)*34).toFixed(2)}" r="${(2.6+k*3.4).toFixed(2)}" fill="${i<5?K.em:K.pom}"/>`}return wrap(K.cream,s+`<circle cx="54" cy="42" r="8.5" fill="${K.saf}"/><rect x="18" y="80" width="72" height="3" rx="1.5" fill="${K.ink}" opacity=".14"/>`)}},
+ {code:"2.10",name:"Sad Under the Arch",why:"A two-tone ص standing in a cream pointed arch, on midnight.",
+  svg:()=>{const g="g"+(uid++);return wrap(K.mid,`<path d="${arch(26,82,16,96)}" fill="${K.cream}"/>`+sadR(54,82,48,`url(#${g})`),`<linearGradient id="${g}" x1="0" x2="1"><stop offset=".5" stop-color="${K.em}"/><stop offset=".5" stop-color="${K.pom}"/></linearGradient>`)}}
+];
+
+// Round 6: open hands in dua under the arc
+function duaHands(fill,line){
+ // Cupped palms in dua, palms toward the viewer. Each finger is its own capsule, drawn
+ // back to front (little finger first) so they overlap the way real fingers do.
+ const O=9, cap=(x1,y1,x2,y2,w)=>`<path d="M${x1} ${y1} L${x2} ${y2}" stroke="${line}" stroke-width="${w+2*O}" stroke-linecap="round"/><path d="M${x1} ${y1} L${x2} ${y2}" stroke="${fill}" stroke-width="${w}" stroke-linecap="round"/>`;
+ const patch=(x1,y1,x2,y2,w)=>`<path d="M${x1} ${y1} L${x2} ${y2}" stroke="${fill}" stroke-width="${w}" stroke-linecap="round"/>`;
+ const palm="M90 262 L236 268 C241 300 223 328 227 362 C231 400 224 440 216 540 L98 540 C94 460 70 410 74 340 Z";
+ const hand=`<g transform="translate(-10 0)" fill="none">
+  ${cap(214,262,244,128,38)}${cap(189,250,222,88,43)}${cap(159,246,191,66,45)}${cap(126,250,151,84,45)}
+  ${cap(98,345,54,190,46)}
+  <path d="${palm}" fill="${fill}" stroke="${line}" stroke-width="${O}" stroke-linejoin="round"/>
+  ${patch(214,270,222,236,38)}${patch(189,268,196,220,43)}${patch(159,268,166,214,45)}${patch(126,270,132,222,45)}
+  ${patch(98,345,84,300,44)}${patch(100,350,128,372,40)}
+  <path d="M96 292 C124 300 150 318 164 346 M124 300 C160 286 200 296 226 322" stroke="${line}" stroke-width="7" stroke-linecap="round" opacity=".7"/></g>`;
+ return `<g transform="translate(16.9 43) scale(.145)">${hand}<g transform="translate(512 0) scale(-1 1)">${hand}</g></g>`;
+}
+const ROUND6=[
+ {code:"H1",name:"Classic",why:"Emerald and pomegranate arc held above two open palms, on cream.",
+  svg:()=>icon(C.cream,C.creamD,arcs([24,15.5],5.6,C.em,C.pom,40)+duaHands("#F2DEC4","#9C7B58"),"",0)},
+ {code:"H2",name:"Midnight",why:"Turquoise and rose arc over cream hands on deep midnight, like a night dua.",
+  svg:()=>icon(C.midL,"#141E38",arcs([24,15.5],5.6,C.turq,C.rose,40)+duaHands(C.cream,"#8C94AA"))},
+ {code:"H3",name:"Saffron",why:"Warm saffron ground, emerald and pomegranate arc, cream hands.",
+  svg:()=>icon(C.safL,"#D98E0B",arcs([24,15.5],5.6,C.em,C.pom,40)+duaHands(C.cream,"#C99A4A"))},
+ {code:"H4",name:"Lapis",why:"Samarkand blue ground with a saffron and rose arc above cream hands.",
+  svg:()=>icon("#3557D0","#1A3290",arcs([24,15.5],5.6,C.safL,C.rose,40)+duaHands(C.cream,"#7F8FC8"))},
+ {code:"H5",name:"Emerald",why:"Lit emerald ground, cream and saffron arc, cream hands: the app's own green.",
+  svg:()=>icon(C.emL,C.emD,arcs([24,15.5],5.6,C.cream,C.safL,40)+duaHands(C.cream,"#6FB49C"))}
+];
+
+// Round 7: arc only, contrast studies
+const A7=(top,bot,l,r,glow=0)=>()=>icon(top,bot,arcs([33,23.5,14],7,l,r,70),"",glow);
+const mk=(pre,rows)=>rows.map((r,i)=>({code:pre+(i+1),name:r[0],why:r[1],svg:A7(...r.slice(2))}));
+const R7G=mk("G",[
+ ["White","The Classic pair on pure white. The cleanest and the reference.","#FFFFFF","#EEF3F0","#0B7D5E","#C7224F"],
+ ["Cream","Warm paper ground. Softer than white, same clear contrast.","#FFF8EA","#F3E7CF","#0B7D5E","#C7224F"],
+ ["Sand","A deeper warm ground. The arc feels printed on parchment.","#F1E2C6","#DFC9A2","#0A6B51","#B81D47"],
+ ["Mint","A pale green ground that leans toward the Emerald half.","#E8F5EE","#CFE8DB","#0B7D5E","#C7224F"],
+ ["Blush","A pale rose ground that leans toward the Pomegranate half.","#FDEEF2","#F6D5DF","#0B7D5E","#C7224F"],
+ ["Sky","A pale blue ground. Cool and calm, both halves stay strong.","#EAF1FB","#D2E0F5","#0B7D5E","#C7224F"],
+ ["Midnight","The same pair, brightened so it holds on a dark ground.","#2C4170","#121B33","#2FC79A","#F0527E",.18],
+ ["Ink","Near black green. The brightened pair glows the most here.","#1F3A31","#0C1814","#2FC79A","#F0527E",.18]]);
+const R7W=mk("P",[
+ ["Emerald + Saffron","Green and gold. Warm, very Islamic, high contrast on white.","#FFFFFF","#EEF3F0","#0B7D5E","#E9A21B"],
+ ["Lapis + Saffron","Blue and gold, like tilework. The strongest contrast of the set.","#FFFFFF","#EEF3F0","#2445B8","#E9A21B"],
+ ["Midnight + Saffron","Deep navy and gold. Serious and premium.","#FFFFFF","#EEF3F0","#1C2A4D","#E9A21B"],
+ ["Lapis + Pomegranate","Blue and red. Bold and energetic.","#FFFFFF","#EEF3F0","#2445B8","#C7224F"],
+ ["Emerald + Lapis","Green and blue. Calm, cool, less contrast between the halves.","#FFFFFF","#EEF3F0","#0B7D5E","#2445B8"],
+ ["Amethyst + Turquoise","Purple and teal. Playful and modern.","#FFFFFF","#EEF3F0","#A040A8","#3CC2C4"],
+ ["Midnight + Rosewater","Navy and soft pink. Gentle and friendly.","#FFFFFF","#EEF3F0","#1C2A4D","#E58BB0"],
+ ["Oud + Saffron","Brown and gold. Earthy, like wood and brass.","#FFFFFF","#EEF3F0","#743C0A","#E9A21B"]]);
+const R7D=mk("M",[
+ ["Saffron + Turquoise","Gold and teal on midnight. Bright and clear at small sizes.","#2C4170","#121B33","#FFC94D","#47C9C9",.18],
+ ["Saffron + Rosewater","Gold and pink on midnight. Warm and soft.","#2C4170","#121B33","#FFC94D","#F096BA",.18],
+ ["Cream + Saffron","White and gold on midnight. The calmest and most premium.","#2C4170","#121B33","#FFFDF7","#FFC94D",.18],
+ ["Emerald + Saffron","Bright green and gold on midnight.","#2C4170","#121B33","#2FC79A","#FFC94D",.18],
+ ["Cream + Saffron on Emerald","White and gold on the app's own green.","#14A07A","#06513D","#FFFDF7","#FFC94D",.18],
+ ["Cream + Rosewater on Emerald","White and pink on the app's green. Softer than gold.","#14A07A","#06513D","#FFFDF7","#F7B3CD",.18],
+ ["Cream + Saffron on Lapis","White and gold on lapis blue, like a mosque dome.","#3557D0","#1A3290","#FFFDF7","#FFC94D",.18],
+ ["Cream + Midnight on Saffron","White and navy on a gold ground. The loudest on a home screen.","#FFC94D","#D98E0B","#FFFDF7","#1C2A4D",.18]]);
+
+// Round 8: best two-color pairs on white
+const W8=r=>[r[0],r[1],"#FFFFFF","#EEF3F0",r[2],r[3]];
+const R8=mk("T",[
+ ["Teal + Coral","Opposites on the color wheel, one cool and one warm. Fresh and friendly, and each half is unmistakable.","#0E8C8C","#F2594B"],
+ ["Royal Blue + Orange","The textbook complementary pair. The highest energy of the set, very visible on a home screen.","#1F4FD8","#F57C1F"],
+ ["Navy + Coral","A dark anchor with one bright accent. Reads as premium and trustworthy, with a warm spark.","#14274E","#FF6B4A"],
+ ["Emerald + Deep Amber","Your Emerald with a darker gold that holds on white, where plain Saffron fades. Green and gold feel the most Islamic.","#0B7D5E","#EE8A12"],
+ ["Violet + Amber","Purple and gold are opposites, so both glow. Rich and a little royal.","#6A35C9","#F2A20C"],
+ ["Indigo + Magenta","Neighbors on the wheel, so they blend into one mark. Vivid and modern.","#3B2FB5","#E0368C"],
+ ["Forest + Terracotta","Muted green and clay. Earthy and calm, less loud than Classic.","#1E5B45","#D2603A"],
+ ["Teal + Plum","Cool teal with a deep plum. Elegant and unusual, few apps use it.","#0E9488","#7A2E6E"],
+ ["Ink + Emerald","Near black with one green half. The most minimal, like a logo stamp.","#11201B","#12A679"],
+ ["Lapis + Pomegranate, deeper","Blue and crimson from your own palette, darkened slightly. Bold and classic.","#1F3FA8","#C7224F"]].map(W8));
+
+// chronological: round 1, round 2, finals, arc + Sad, arc colors, hands
+(()=>{const byName=n=>FAMS.find(f=>f.name.startsWith(n));
+ const order=[{name:"Round 1: ten first ideas",note:"The first ten directions, as first shown.",items:ROUND1},
+  {name:"Round 2: your two picks refined, plus ten",note:"Two Halves and Sad reworked, then ten directions grown from them.",items:ROUND2},
+  byName("Round 3 finals: Solid Arc"),byName("Round 3 finals: Suhbah Word"),byName("Round 3 finals: Sad"),
+  byName("Round 4: Daylight arc with ص on white"),byName("Round 4: Daylight arc with ص on midnight"),byName("Round 5"),
+  {name:"Round 6: the arc over hands in dua",note:"Two open palms raised in dua with the colorful arc held above them, in five grounds.",items:ROUND6},
+  {name:"Round 7c: light arcs on colored backgrounds",note:"Dark and colored grounds with light color pairs, to compare against the white ones.",items:R7D},
+  {name:"Round 7b: other color pairs on white",note:"The Classic white background kept, with eight different color pairs for the two halves.",items:R7W},
+  {name:"Round 7a: the Classic colors on other backgrounds",note:"Emerald and Pomegranate kept, on eight different backgrounds. On dark grounds the two colors are brightened so they stay readable.",items:R7G},
+  {name:"Round 8: two-color pairs that work best on white",note:"G1's white background and arc, with ten pairs chosen by color-wheel rules: opposites for energy, a dark anchor plus a bright accent for a premium feel, neighbors for one blended mark. Every color is dark or saturated enough to stay clear on white.",items:R8}];
+ FAMS.length=0;order.reverse().forEach(f=>FAMS.push(f));})();
+function render(){uid=0;
+ const all=FAMS.flatMap(f=>f.items);
+ document.getElementById("home").innerHTML=all.map(ic=>`<div class="app">${ic.svg()}<small>${ic.code}</small></div>`).join("")+`<div class="app"></div>`;
+ document.getElementById("store").innerHTML=`<b style="font:800 13px var(--display);letter-spacing:1.4px;color:var(--sub);text-transform:uppercase">In the Play Store</b>`+["A1","A2","A3"].map(c=>{const ic=all.find(x=>x.code===c);return `<div class="row">${ic.svg()}<div><b>Suhbah: Pray Together</b><small>Lifestyle · ${c}</small><div class="stars">★★★★★</div></div></div>`}).join("");
+ document.getElementById("fams").innerHTML=FAMS.map((f,fi)=>{const [r,...rest]=f.name.split(": ");return `<section class="round"><div class="rhead"><span class="rtag${fi===0?' new':''}">${fi===0?'Latest · ':''}${r}</span><h2 class="fam">${rest.join(": ")||r}</h2></div><p class="famnote">${f.note}</p><div class="grid">${f.items.map(ic=>`<article class="card"><div class="stage"><div class="big">${ic.svg()}</div><div class="sizes">${ic.svg()}${ic.svg()}${ic.svg()}</div></div><div class="meta"><h3>${ic.name}</h3><span class="num">${ic.code}</span></div><p>${ic.why}</p></article>`).join("")}</div></section>`}).join("");}
+document.querySelectorAll(".seg").forEach(b=>b.addEventListener("click",()=>{MASK=b.dataset.mask;document.querySelectorAll(".seg").forEach(x=>x.setAttribute("aria-pressed",x===b));render()}));
+render();
+document.fonts&&document.fonts.ready.then(render);
+</script>
