@@ -21,7 +21,7 @@
 - App icon: `design/brand/final/play-store-icon-light-512.png`
 - Feature graphic: 1024 × 500 still needed.
 - Phone screenshots: at least 2 (Today, Journey, Me, onboarding).
-- Category: Lifestyle. Contact email: required by Play.
+- Category: Lifestyle. Contact email: ornobaadi.dev@gmail.com
 
 ## 5. Policy pages (GitHub Pages from `/docs`)
 - Privacy policy: https://ornobaadi.github.io/Suhbah/privacy/
