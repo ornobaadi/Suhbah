@@ -1,0 +1,15 @@
+:root{--bg:#FFFFFF;--ink:#11201B;--sub:#5C6B65;--line:#DCE4E0;--left:#12A679;--right:#C7224F}
+@media (prefers-color-scheme:dark){:root{--bg:#0C1814;--ink:#EEF4F1;--sub:#9AA9A3;--line:#2A3632}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.65 "Plus Jakarta Sans",system-ui,sans-serif;padding:40px max(20px,env(safe-area-inset-left)) 80px}
+main{max-width:680px;margin:0 auto}
+header{display:flex;align-items:center;gap:10px;margin-bottom:28px}
+header b{font:800 22px "Bricolage Grotesque",system-ui,sans-serif;letter-spacing:-.4px}
+h1{font:800 32px/1.15 "Bricolage Grotesque",system-ui,sans-serif;margin:0 0 6px;letter-spacing:-.6px}
+h2{font:700 19px "Bricolage Grotesque",system-ui,sans-serif;margin:34px 0 8px}
+.date{color:var(--sub);margin:0 0 24px}
+a{color:var(--left)}
+table{width:100%;border-collapse:collapse;font-size:14.5px}
+td,th{border-top:1px solid var(--line);padding:10px 8px 10px 0;text-align:left;vertical-align:top}
+ol li,ul li{margin:4px 0}
+footer{margin-top:48px;color:var(--sub);font-size:14px;border-top:1px solid var(--line);padding-top:16px}

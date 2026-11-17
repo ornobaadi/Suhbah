@@ -3,6 +3,7 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../core/brand.dart';
 import '../../core/member_colors.dart';
@@ -100,6 +101,17 @@ class MeTab extends ConsumerWidget {
               title: 'Delete account',
               value: 'Removes your profile and every log',
               onTap: a.deleteAccount,
+            ),
+          ],
+        ),
+        const SizedBox(height: 12),
+        SettingsGroup(
+          children: [
+            SettingsTile(
+              icon: Icons.privacy_tip_outlined,
+              title: 'Privacy Policy',
+              value: 'What Suhbah stores and why',
+              onTap: () => launchUrl(Uri.parse('https://ornobaadi.github.io/Suhbah/privacy/'), mode: LaunchMode.externalApplication),
             ),
           ],
         ),
