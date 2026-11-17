@@ -12,4 +12,4 @@ Write-Host "Created $jks. Fingerprints (add both in Firebase > Project settings 
 keytool -list -v -keystore $jks -alias upload | Select-String "SHA1:|SHA256:"
 Write-Host ""
 Write-Host "Next: copy android\key.properties.example to android\key.properties and fill in the passwords and this path:"
-Write-Host ($jks -replace '\','/')
+Write-Host $jks.Replace('\', '/')
